@@ -1,0 +1,162 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Parameters:
+  KeyPair:
+    Description: Select an existing EC2 key pair.
+    Type: AWS::EC2::KeyPair::KeyName
+Resources:
+
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsHostnames: true
+      Tags:
+      - Key: Name
+        Value: Migracion-datos-VPC
+
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+      - Key: Name
+        Value: myVPC Internet Gateway
+
+  AttachGateway:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref VPC
+      InternetGatewayId: !Ref InternetGateway
+
+  PublicSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: 10.0.0.0/24
+      MapPublicIpOnLaunch: 'true'
+      AvailabilityZone: !Select
+        - '0'
+        - !GetAZs ''
+      Tags:
+        - Key: Name
+          Value: Target Subnet
+
+  PublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref VPC
+      Tags:
+        - Key: Name
+          Value: Public Route Table
+
+  PublicRoute:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId: !Ref PublicRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref InternetGateway
+
+  PublicSubnetRouteTableAssociation1:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref PublicSubnet
+      RouteTableId: !Ref PublicRouteTable
+
+  NFSInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0dc2d3e4c0f9ebd18
+      BlockDeviceMappings: 
+      - DeviceName: "/dev/xvda"
+        Ebs: 
+          VolumeType: "standard"
+          DeleteOnTermination: "true"
+          VolumeSize: "8"
+      SecurityGroupIds: 
+        - !Ref NFSInstanceSecurityGroup
+      SubnetId: !Ref PublicSubnet
+      Tags:
+        - Key: "Name"
+          Value: "Servidor NFS"
+      KeyName: !Ref KeyPair
+      UserData:
+        'Fn::Base64': 
+          !Sub |
+            #!/bin/sh
+            yum update -y
+            service nfs start
+            echo "/mnt/nfs *(rw,sync,no_subtree_check,no_root_squash)" >> /etc/exports
+            mkdir /mnt/nfs
+            cd /mnt/nfs
+            wget https://github.com/chadwickbureau/baseballdatabank/archive/master.zip
+            unzip master.zip
+            rm master.zip
+            chmod 755 /mnt/nfs
+            exportfs -a
+            service nfs restart
+
+  ClientInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0dc2d3e4c0f9ebd18
+      BlockDeviceMappings: 
+      - DeviceName: "/dev/xvda"
+        Ebs: 
+          VolumeType: "standard"
+          DeleteOnTermination: "true"
+          VolumeSize: "8"
+      SecurityGroupIds: 
+        - !Ref ClientInstanceSecurityGroup
+      SubnetId: !Ref PublicSubnet 
+      Tags:
+        - Key: "Name"
+          Value: "Instancia cliente"
+      KeyName: !Ref KeyPair
+      UserData:
+        'Fn::Base64': 
+          !Sub |
+            #!/bin/bash -xe 
+            yum update -y
+            cd /home/ec2-user/
+            mkdir nas
+            wget https://github.com/chadwickbureau/baseballdatabank/archive/v2019.2.zip
+            unzip v2019.2.zip
+            mv /home/ec2-user/baseballdatabank-2019.2 /home/ec2-user/baseball-data-2018-version
+            rm v2019.2.zip
+          #mount -t nfs ${NFSInstance.PrivateIp}:/mnt/nfs /home/ec2-user/nas
+     #DependsOn: NFSInstance
+
+  ClientInstanceSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Enable SSH access via port 22
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 0.0.0.0/0
+      VpcId: !Ref VPC
+
+  NFSInstanceSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Enable access to NFS ports and SSH.
+      SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: '2049'
+        ToPort: '2049'
+        SourceSecurityGroupId: !Ref ClientInstanceSecurityGroup
+      - IpProtocol: tcp
+        FromPort: '22'
+        ToPort: '22'
+        SourceSecurityGroupId: !Ref ClientInstanceSecurityGroup
+      VpcId: !Ref VPC
+
+Outputs:
+  NFSInstancePrivateIP:
+    Description: Instancia NFS direcccion IP privada
+    Value: !GetAtt NFSInstance.PrivateIp
+  ClientInstancePrivateIP:
+    Description: Instancia cliente direcccion IP privada
+    Value: !GetAtt ClientInstance.PrivateIp
