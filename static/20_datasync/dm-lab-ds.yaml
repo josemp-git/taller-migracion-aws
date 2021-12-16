@@ -65,7 +65,7 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: t2.micro
-      ImageId: ami-0dc2d3e4c0f9ebd18
+      ImageId: ami-0ed9277fb7eb570c9
       BlockDeviceMappings: 
       - DeviceName: "/dev/xvda"
         Ebs: 
@@ -99,7 +99,7 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: t2.micro
-      ImageId: ami-0dc2d3e4c0f9ebd18
+      ImageId: ami-0ed9277fb7eb570c9
       BlockDeviceMappings: 
       - DeviceName: "/dev/xvda"
         Ebs: 

@@ -24,20 +24,20 @@ A continuación, desplegará una plantilla de AWS CloudFormation que creará una
 
 7. Haga click en ***Services*** y después en ***CloudFormation***.
 8. Haga click en ***Create stack*** y seleccione la opción ***With new resources (standard)***.
-9.    En el campo de ***Amazon S3 URL*** ingrese la siguiente URL: 
+9. En el campo de ***Amazon S3 URL*** ingrese la siguiente URL: 
 
 ```
 https://taller-migracion-dev.s3.amazonaws.com/30_storagegateway/dm-lab-sg.yaml
 ```
 
-10.    Haga click en ***Next***.
-11.    En el campo de ***Stack name*** escriba ***MigracionDatosStack***.
-12.    En el menú desplegable de ***KeyPair*** bajo la sección de ***Parameters*** elija el key pair que creó anteriormente (***dm-lab***).
-13.    Haga click en ***Next***.
-14.    En la siguiente pantalla haga click de nuevo en ***Next***.
-15.    En la siguiente pantalla haga click en ***Create stack***.
-16.    Espere unos minutos a que el status de lanzamiento de la plantilla indique ***CREATE_COMPLETE***.
-17.    Una vez que la plantilla haya sido desplegada, haga click en la sección de ***Outputs*** y copie el valor del parámetro ***ClientInstancePrivateIP*** (la dirección IP privada de la instancia cliente) y guárdelo en un archivo de texto ya que lo utilizará más adelante.
+10. Haga click en ***Next***.
+11. En el campo de ***Stack name*** escriba ***MigracionDatosStack***.
+12. En el menú desplegable de ***KeyPair*** bajo la sección de ***Parameters*** elija el key pair que creó anteriormente (***dm-lab***).
+13. Haga click en ***Next***.
+14. En la siguiente pantalla haga click de nuevo en ***Next***.
+15. En la siguiente pantalla haga click en ***Create stack***.
+16. Espere unos minutos a que el status de lanzamiento de la plantilla indique ***CREATE_COMPLETE***.
+17. Una vez que la plantilla haya sido desplegada, haga click en la sección de ***Outputs*** y copie el valor del parámetro ***ClientInstancePrivateIP*** (la dirección IP privada de la instancia cliente) y guárdelo en un archivo de texto ya que lo utilizará más adelante.
 
 
 ##### 3. Creación de bucket de Amazon S3

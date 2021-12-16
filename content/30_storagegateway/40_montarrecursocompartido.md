@@ -46,9 +46,9 @@ cp -rv /home/ec2-user/baseball-data-2018-version/ /home/ec2-user/gateway/
 12. Ejecute el siguiente comando para enlistar el contenido del directorio que copió:
 
 ```
-ls /home/ec2-user/gateway/baseball-data-2018
+ls /home/ec2-user/gateway/baseball-data-2018-version
 ```
 
-13.    Haga click en **_Services_** y después en ***S3***.
-14.    Ingrese al bucket que creó para este laboratorio.
-15.    Verifique que el directorio que acaba de copiar se encuentre en el bucket.
+13. Haga click en **_Services_** y después en ***S3***.
+14. Ingrese al bucket que creó para este laboratorio.
+15. Verifique que el directorio que acaba de copiar se encuentre en el bucket.

@@ -17,7 +17,7 @@ cd /var/www/html
 ```
 
 ```
-sudo wget http://cloudendure.oldschool.cloud/new/index.html
+sudo wget https://migracion.workshop.aws/10_cloudendure/new/index.html
 ```
 
 Este último comando va a descargar un archivo **index.html** en la ruta raíz del servidor Apache (/var/www/html/) con el que se va a sustituir la página de bienvenida de Apache que vio en el módulo anterior. Esta es la modificación que hará para probar la funcionalidad de **Continuous Data Replication**. 

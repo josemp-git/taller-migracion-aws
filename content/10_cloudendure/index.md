@@ -1,7 +1,7 @@
 ---
 chapter: true
 pre: <b>1. </b>
-title: Migración de un servidor con CloudEndure
+title: Migración de servidores con AWS CloudEndure
 weight: 10
 ---
 **CloudEndure** es una solución de migración basada en agentes que simplifica agiliza y reduce el costo de la migración a la nube al ofrecer una solución “lift-and-shift” altamente automatizada.

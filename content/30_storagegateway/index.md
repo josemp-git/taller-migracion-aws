@@ -1,6 +1,6 @@
 ---
 chapter: true
-pre: <b>3. </b>
+pre: <b>4. </b>
 title: Acceso local a los datos con AWS Storage Gateway
 weight: 30
 ---

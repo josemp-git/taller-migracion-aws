@@ -33,13 +33,13 @@ CloudEndure es una solución de migración a la nube basada en agentes que le pe
 
 ![Ready for testing](/static/images/ce/readyfortesting.png)
 
-10.    En lo que el proceso de replicación termina, haga clic en la sección de **Machines**.
-11.    Haga clic sobre **Linux Server** (sobre el nombre del servidor como tal, no seleccione la casilla) para ver los detalles del servidor que está en proceso de replicación.
-12.    Haga clic en la pestaña de **SOURCE** y copie la IP pública del apartado de **Public IPs**.
+10. En lo que el proceso de replicación termina, haga clic en la sección de **Machines**.
+11. Haga clic sobre **Linux Server** (sobre el nombre del servidor como tal, no seleccione la casilla) para ver los detalles del servidor que está en proceso de replicación.
+12. Haga clic en la pestaña de **SOURCE** y copie la IP pública del apartado de **Public IPs**.
 
 ![Source IP](/static/images/ce/sourceip.png)
 
-13.    Ingrese esta IP en su navegador web y podrá ver el mensaje de bienvenida del servidor web Apache que está instalado en la instancia:
+13. Ingrese esta IP en su navegador web y podrá ver el mensaje de bienvenida del servidor web Apache que está instalado en la instancia:
 
 ![Apache](/static/images/ce/apache.png)
 

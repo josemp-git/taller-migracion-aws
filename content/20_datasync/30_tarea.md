@@ -33,7 +33,7 @@ Una vez que su agente ha sido creado, deberá crear una tarea (task). En esta ta
 12. Haga clic en **Next**
 13. En **Task Name** ingrese un nombre para su tarea.
 14. En **Task logging** seleccione **Log basic information such as transfer errors** del menú desplegable de **Log level**.
-15.    Haga clic en el botón de **Autogenerate**.
+15. Haga clic en el botón de **Autogenerate**.
 
 ::alert[En la pantalla de **Configure settings**, usted puede configurar diferentes opciones adicionales como habilitar la verificación de los datos, regular el ancho de banda, modificar el modo de la transferencia, filtrar archivos y directorios, y calendarizar la frecuencia de ejecución de la tarea.]{type="info"}
 

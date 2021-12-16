@@ -1,10 +1,10 @@
 ---
 draft: false
 pre: <b style="color:#fff;">5. </b>
-title: Conéctese a su servidor SFTPP
+title: Conéctese a su servidor SFTP
 weight: 50
 ---
-1.    Utilice un cliente de SFTP como [**FileZilla**](https://filezilla-project.org/download.php) o [**Cyberduck**](https://cyberduck.io/download/) para conectarse al servidor SFTP con el usuario que creó (**user01**) y la **llave privada** que generó anteriormente. La dirección del servidor es el valor de **Endpoint** que guardó en el editor de texto.
+1. Utilice un cliente de SFTP como [**FileZilla**](https://filezilla-project.org/download.php) o [**Cyberduck**](https://cyberduck.io/download/) para conectarse al servidor SFTP con el usuario que creó (**user01**) y la **llave privada** que generó anteriormente. La dirección del servidor es el valor de **Endpoint** que guardó en el editor de texto.
 
 ![Create S3 bucket](/static/images/tr/conectar.png)
 

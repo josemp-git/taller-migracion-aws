@@ -133,14 +133,15 @@ CloudEndure requiere de acceso a la consola de AWS donde va a desplegar el servi
         "ec2\:CreateSubnet",
         "ec2\:AssociateAddress",
         "ec2\:DeleteKeyPair",
-        "ec2\:CreateNetworkAclEntry"
+        "ec2\:CreateNetworkAclEntry",
+        "outposts\:GetOutpostInstanceTypes"
       ],
       "Resource": "*"
     },
     {
       "Sid": "MigrationHubConfig",
       "Effect": "Allow",
-        "Action": [
+      "Action": [
         "mgh\:GetHomeRegion"
       ],
       "Resource": "*"
@@ -148,7 +149,7 @@ CloudEndure requiere de acceso a la consola de AWS donde va a desplegar el servi
     {
       "Sid": "VisualEditor5",
       "Effect": "Allow",
-        "Action": [
+      "Action": [
         "ec2\:RevokeSecurityGroupIngress",
         "mgh\:CreateProgressUpdateStream",
         "kms\:Decrypt",
@@ -235,7 +236,24 @@ CloudEndure requiere de acceso a la consola de AWS donde va a desplegar el servi
           "ec2\:ResourceTag/CloudEndure creation time": "*"
         }
       }
-    }
+    },
+     {
+            "Sid": "VisualEditor9",
+            "Effect": "Allow",
+            "Action": "ec2\:ModifyVolume",
+            "Resource": "arn\:aws\:ec2:*:*\:volume/*",
+            "Condition": {
+                "StringLike": {
+                    "ec2\:ResourceTag/Name": "CloudEndure*"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor10",
+            "Effect": "Allow",
+            "Action": "cloudwatch\:GetMetricData",
+            "Resource": "*"
+        }
   ]
 }
 ```
@@ -257,7 +275,7 @@ A continuación, debe crear un usuario al cual anexará la política que acaba d
 12. Haga clic en **Next: Permissions**.
 13. En la pantalla **Set permissions** seleccione la opción de **Attach existing policies directly** y en el campo de búsqueda ingrese el nombre de la política que creó anteriormente **(CloudEndurePolicy)**. 
 14. Seleccione la política y haga clic en **Next: Tags**.
-15.    En la siguiente pantalla haga clic en **Next: Review**.
-16.    Haga clic en **Create user**.
+15. En la siguiente pantalla haga clic en **Next: Review**.
+16. Haga clic en **Create user**.
 17. Si todo salió bien, debe ver un mensaje de Success en la siguiente pantalla. Haga clic en **Download .csv** para descargar las credenciales del usuario que acaba de crear. Guarde este archivo ya que lo necesitará más adelante.
 18. Proceda al siguiente módulo.
