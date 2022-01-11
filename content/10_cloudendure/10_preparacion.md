@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">1. </b>
-title: Preparación del ambiente
+title: 1. Preparación del ambiente
 weight: 10
 ---
 Antes de comenzar, debe asegurarse de estar trabajando en la región de N. Virgina. Esto lo puede verificar en el menú desplegable que se encuentra en la esquina superior derecha de la consola de AWS.
