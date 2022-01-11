@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">3. </b>
-title: Creación del servidor SFTP
+title: 3. Creación del servidor SFTP
 weight: 30
 ---
 1. Haga clic en **Services** y diríjase al servicio de **AWS Transfer Family**.

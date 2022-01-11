@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">4. </b>
-title: Creación de usuarios del servidor SFTP
+title: 4. Creación de usuarios del servidor SFTP
 weight: 40
 ---
 1. Haga clic en **Services** y diríjase al servicio de **CloudShell**.

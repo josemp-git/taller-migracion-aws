@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">4. </b>
-title: Comenzar la migración
+title: 4. Comenzar la migración
 weight: 40
 ---
 Una vez que su tarea haya sido creada con todos los parámetros necesarios, deberá iniciar esta tarea para comenzar el proceso de migración de datos.

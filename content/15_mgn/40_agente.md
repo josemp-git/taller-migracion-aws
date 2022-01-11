@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">4. </b>
-title: Instalación del Agente de Replicación
+title: 4. Instalación del Agente de Replicación
 weight: 40
 ---
 AWS Application Migration Service es una solución de migración a la nube basado en un **Agente de Replicación** que le permite migrar cargas de trabajo que se ejecuten en versiones soportadas de sistemas operativos Windows y Linux. A continuación, instalará el Agente de Replicación de AWS MGN en la instancia que migrará.

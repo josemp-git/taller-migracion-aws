@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">6. </b>
-title: 'OPCIONAL: Automatizar el encendido y apagado del servidor SFTP'
+title: 'OPCIONAL: 6. Automatizar el encendido y apagado del servidor SFTP'
 weight: 60
 ---
 Automatizar el encendido y apagado de su servidor SFTP en el horario de su elección puede ser algo muy conveniente desde el punto de vista de costos. Esto puede ser de gran utilidad en un proceso de migración en el cual solamente se migran datos durante una ventana de tiempo predeterminada. Esta automatización se puede lograr mediante el uso de funciones [AWS Lambda](https://aws.amazon.com/lambda/), reglas de [Amazon EventBridge](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html), y el [AWS SDK para Python (Boto3)](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html).

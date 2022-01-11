@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">1. </b>
-title: Creación de bucket de Amazon S3
+title: 1. Creación de bucket de Amazon S3
 weight: 10
 ---
 ::alert[Para este laboratorio puede utilizar el mismo bucket utilizado en los laboratorios anteriores, solamente asegúrese de crear los directorios como se indica en los pasos 6 y 7.]{type="info"}

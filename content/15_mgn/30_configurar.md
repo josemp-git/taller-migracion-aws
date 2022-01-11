@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">3. </b>
-title: Plantilla de configuración de replicación
+title: 3. Plantilla de configuración de replicación
 weight: 30
 ---
 La primera vez que ingresa al servicio de AWS Application Migration Service deberá configurar el servicio y crear la plantilla de configuración de replicación.

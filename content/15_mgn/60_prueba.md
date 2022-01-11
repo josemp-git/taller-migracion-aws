@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">6. </b>
-title: Lanzamiento en modo prueba
+title: 6. Lanzamiento en modo prueba
 weight: 60
 ---
 Antes de lanzar su instancia en la ubicación destino de manera definitiva, debe llevar a cabo lanzamientos en modo prueba. Al llevar a cabo estas pruebas, usted podrá verificar que su instancia de origen funciona correctamente en la ubicación destino. La ejecución del lanzamiento en modo de prueba se puede realizar después de que se haya completado la etapa inicial de sincronización y una vez que se haya configurado adecuadamente la plantilla de lanzamiento (módulo anterior).

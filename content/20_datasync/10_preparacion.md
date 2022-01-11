@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">1. </b>
-title: Preparación del ambiente
+title: 1. Preparación del ambiente
 weight: 10
 ---
 ##### 1. Crear de Key Pair

@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">3. </b>
-title: Creación de la tarea
+title: 3. Creación de la tarea
 weight: 30
 ---
 Una vez que su agente ha sido creado, deberá crear una tarea (task). En esta tarea usted definirá parámetros tales como el tipo de ubicación origen, la dirección IP de su servidor NFS, el bucket de Amazon S3 hacia donde migrará sus datos, y el agente de DataSync que utilizará para este proceso.

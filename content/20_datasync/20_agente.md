@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">2. </b>
-title: Creación del agente
+title: 2. Creación del agente
 weight: 20
 ---
 En este módulo, usted desplegará el agente de AWS DataSync en una instancia de Amazon EC2.

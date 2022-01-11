@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">2. </b>
-title: Creación de rol IAM
+title: 2. Creación de rol IAM
 weight: 20
 ---
 A continuación creará dos políticas de IAM. La primera política se aplicará a un rol de IAM y permitirá al servicio de AWS Transfer Family interactuar con el bucket de Amazon S3 que creó en el primer módulo. La segunda política permitirá que los usuarios que cree más adelante únicamente puedan acceder al directorio que lleva su nombre dentro del bucket de Amazon S3.

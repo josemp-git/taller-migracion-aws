@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">3. </b>
-title: Creación de recurso compartido
+title: 3. Creación de recurso compartido
 weight: 30
 ---
 Después de haber creado su File Gateway, deberá crear un File Share el cual montará en su instancia cliente.

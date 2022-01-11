@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">5. </b>
-title: Plantilla de lanzamiento
+title: 5. Plantilla de lanzamiento
 weight: 50
 ---
 Con las **Plantillas de lanzamiento** del servicio de Amazon EC2 se definen los parámetros necesarios para el lanzamiento del servidor tales como la subred, direcciones IP, roles IAM, grupos de seguridad y tipo de disco, entre otros.En este módulo usted configurará la plantailla de lanzamiento para ejecutar esta migración satisfactoriamente.

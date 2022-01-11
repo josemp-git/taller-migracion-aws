@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">4. </b>
-title: Montar recurso compartido
+title: 4. Montar recurso compartido
 weight: 40
 ---
 1. Haga click en **_Services_** y posteriormente seleccione el servicio de **_EC2_**.

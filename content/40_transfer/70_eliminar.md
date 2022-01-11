@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">7. </b>
-title: Eliminar recursos
+title: 7. Eliminar recursos
 weight: 70
 ---
 Para evitar cargos innecesarios, se recomienda elimnar los recursos creados durante este laboratorio una vez que lo haya concluido. Para eliminar los recursos creados ejecute los siguientes pasos:

@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">1. </b>
-title: Preparación del ambiente
+title: 1. Preparación del ambiente
 weight: 10
 ---
 ::alert[**ANTES DE CONTINUAR.** Si usted hizo el laboratorio de **Migración de datos con AWS DataSync** y no ha eliminado los recursos creados, puede omitir este módulo y continuar utilizando los recursos ya existentes.]{type="info"}

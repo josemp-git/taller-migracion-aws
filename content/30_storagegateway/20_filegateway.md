@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">2. </b>
-title: Creación de File Gateway
+title: 2. Creación de File Gateway
 weight: 20
 ---
 En este módulo usted creará un File Gateway utilizando una de las instancias que fueron creadas cuando lanzó la plantilla de [**AWS CloudFormation**](https://console.aws.amazon.com/cloudformation). Este gateway le permitirá acceder a los archivos contenidos en su bucket de [**Amazon S3**](https://s3.console.aws.amazon.com/s3/) desde su instancia local.

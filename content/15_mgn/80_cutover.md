@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">8. </b>
-title: 'OPCIONAL: Lanzamiento en modo cutover (traspaso)'
+title: 'OPCIONAL: 8. Lanzamiento en modo cutover (traspaso)'
 weight: 80
 ---
 En este módulo lanzará de nuevo su servidor, esta vez en modo cutover, y marcará el proceso de migración como finalizado, lo cual eliminará los recursos contenidos en el área de Staging.

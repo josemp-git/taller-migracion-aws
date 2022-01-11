@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">7. </b>
-title: Replicación continua de datos
+title: 7. Replicación continua de datos
 weight: 70
 ---
 A continuación, hará un cambio en el contenido de la instancia de origen para probar la funcionalidad de **Replicación continua de datos** (como es que los cambios que se hacen en el instancia de origen se están replicando continuamente al área de staging) y posteriormente lanzará de nuevo su instancia, con lo cual AWS MGN eliminará la instancia que fue lanzada previamente y creará una instancia nueva con los últimos cambios que se llevaron a cabo en la instancia de origen.
