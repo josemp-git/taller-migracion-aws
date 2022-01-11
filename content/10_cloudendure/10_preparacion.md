@@ -26,8 +26,8 @@ Para desplegar dicha plantilla siga los siguientes pasos:
 7. Haga clic en **Create stack** y seleccione la opción de **With new resources (standard)**.
 8. En el campo de **Amazon S3 URL** ingrese la siguiente URL: 
 
-```
-https://taller-migracion-dev.s3.amazonaws.com/10_cloudendure/cloudendurelab.yaml
+```json
+https://taller-migracion-dev.s3.amazonaws.com/cloudendurelab.yaml
 ```
 
 9. Haga clic en **Next**.
