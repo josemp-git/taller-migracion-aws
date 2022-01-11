@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">4. </b>
-title: Creación de un proyecto de migración
+title: 4. Creación de un proyecto de migración
 weight: 40
 ---
 Para poder llevar a cabo un proceso de migración de servidores con CloudEndure, debe crear un proyecto en la consola en donde establecerá parámetros tales como las credenciales de AWS que se utilizarán, las ubicaciones de origen y destino de los servidores a migrar, tipo de instancia de los servidores de replicación, VPC y subred de destino, etc. En este caso, hará una migración sencilla utilizando la mayoría de los valores predeterminados.

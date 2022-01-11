@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">2. </b>
-title: Creación de usuario IAM
+title: 2. Creación de usuario IAM
 weight: 20
 ---
 CloudEndure requiere de acceso a la consola de AWS donde va a desplegar el servidor que se va a migrar, por lo tanto, en la consola de AWS debe crear un usuario de IAM con los permisos necesarios para poder interactuar con CloudEndure.

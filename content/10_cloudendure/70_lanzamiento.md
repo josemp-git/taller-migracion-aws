@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">7. </b>
-title: Lanzamiento del servidor migrado
+title: 7. Lanzamiento del servidor migrado
 weight: 70
 ---
 Antes de lanzar su instancia en la ubicación destino de manera definitiva, debe llevar a cabo lanzamientos en modo prueba. 

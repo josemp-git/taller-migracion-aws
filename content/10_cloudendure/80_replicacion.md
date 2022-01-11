@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">8. </b>
-title: Replicación continua de datos
+title: 8. Replicación continua de datos
 weight: 80
 ---
 A continuación, hará un cambio en el contenido de la instancia de origen para probar la funcionalidad de **Continuous Data Replication** (como es que los cambios que se hacen en el instancia de origen se están replicando continuamente al área de staging) y posteriormente lanzará de nuevo su instancia (LAUNCH 1 TARGET MACHINE), con lo cual CloudEndure eliminará la instancia que fue lanzada previamente y creará una instancia nueva con los últimos cambios que se llevaron a cabo en la instancia de origen.

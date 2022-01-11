@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">6. </b>
-title: Configuración del Blueprint
+title: 6. Configuración del Blueprint
 weight: 60
 ---
 En el apartado de Blueprint se definen los parámetros necesarios para el lanzamiento del servidor tales como la subred, direcciones IP, roles IAM, grupos de seguridad y tipo de disco, entre otros.

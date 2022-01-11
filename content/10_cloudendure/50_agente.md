@@ -1,7 +1,6 @@
 ---
 draft: false
-pre: <b style="color:#fff;">5. </b>
-title: Instalación del agente de CloudEndure
+title: 5. Instalación del agente de CloudEndure
 weight: 50
 ---
 CloudEndure es una solución de migración a la nube basada en agentes que le permite migrar todas las aplicaciones y bases de datos que se ejecuten en versiones soportadas de sistemas operativos Windows y Linux. A continuación, instalará el agente de CloudEndure en la instancia que va a migrar para lo cual debe regresar a la consola de AWS y llevar a cabo los siguientes pasos:
