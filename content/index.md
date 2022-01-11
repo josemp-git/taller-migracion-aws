@@ -1,6 +1,5 @@
 ---
 draft: false
-pre: <b>0. </b>
 title: Taller de Migración a AWS
 weight: 0
 ---
