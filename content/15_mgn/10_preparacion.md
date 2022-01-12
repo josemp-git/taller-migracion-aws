@@ -33,7 +33,7 @@ Para desplegar dicha plantilla siga los siguientes pasos:
 9. En el campo de **Amazon S3 URL** ingrese la siguiente URL: 
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
-https://taller-migracion-dev.s3.amazonaws.com/15_mgn/mgn-lab.yaml
+https://taller-migracion-dev.s3.amazonaws.com/mgn-lab.yaml
 :::
 
 10. Haga clic en **Next**.

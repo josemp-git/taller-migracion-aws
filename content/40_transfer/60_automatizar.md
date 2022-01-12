@@ -19,7 +19,7 @@ Esta plantilla desplegará dos funciones AWS Lambda escritas en Python 3.8 y el 
 3. En el campo de **Amazon S3 URL** ingrese la siguiente URL: 
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
-http://taller-migracion-dev.s3.amazonaws.com/40_transfer/StartStopTransferSFTPServer.yaml
+http://taller-migracion-dev.s3.amazonaws.com/StartStopTransferSFTPServer.yaml
 :::
 
 4. Haga clic en **Next**.

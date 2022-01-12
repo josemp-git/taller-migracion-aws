@@ -16,7 +16,7 @@ cd /var/www/html
 :::
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
-sudo wget https://migracion.workshop.aws/10_cloudendure/new/index.html
+sudo wget https://taller-migracion-dev.s3.amazonaws.com/new/index.html
 :::
 
 Este último comando va a descargar un archivo **index.html** en la ruta raíz del servidor Apache (/var/www/html/) con el que se va a sustituir la página de bienvenida de Apache que vio en el módulo anterior. Esta es la modificación que hará para probar la funcionalidad de **Continuous Data Replication**. 

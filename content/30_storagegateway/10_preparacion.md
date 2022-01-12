@@ -26,7 +26,7 @@ A continuación, desplegará una plantilla de AWS CloudFormation que creará una
 9. En el campo de ***Amazon S3 URL*** ingrese la siguiente URL: 
 
 ```
-https://taller-migracion-dev.s3.amazonaws.com/30_storagegateway/dm-lab-sg.yaml
+https://taller-migracion-dev.s3.amazonaws.com/dm-lab-sg.yaml
 ```
 
 10. Haga click en ***Next***.

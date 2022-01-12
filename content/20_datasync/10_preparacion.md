@@ -29,7 +29,7 @@ A continuación, desplegará una plantilla de AWS CloudFormation que creará las
 9. En el campo de **Amazon S3 URL** ingrese la siguiente URL: 
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
-https://taller-migracion-dev.s3.amazonaws.com/20_datasync/dm-lab-ds.yaml
+https://taller-migracion-dev.s3.amazonaws.com/dm-lab-ds.yaml
 :::
 
 10. Haga click en **Next**.
