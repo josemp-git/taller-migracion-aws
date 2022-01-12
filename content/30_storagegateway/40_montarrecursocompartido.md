@@ -13,40 +13,40 @@ weight: 40
 
 6. Ejecute el siguiente comando para obtener privilegio root:
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 sudo su
-```
+:::
 
 7. Para montar su file share debe crear un directorio en donde montarlo; para esto jecute el siguiente comando:
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 mkdir /home/ec2-user/gateway
-```
+:::
 
 8. Ejecute el comando que guardó en el editor de texto para montar el file share en Linux sustituyendo **_[MounthPath]_** por la siguiente ruta:
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 /home/ec2-user/gateway
-```
+:::
 
 9. Ejecute el siguiente comando para enlistar el contenido de la directorio compartido que acaba de montar (si llevó a cabo los módulos de AWS DataSync encontrará los archivos que migró anteriormente):
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 ls /home/ec2-user/gateway
-```
+:::
 
 10. Dentro de la ruta en la que se encuentra hay un directorio llamado **_baseball-data-2018-version_** que contiene archivos CSV con estadísticas de baseball. Ejecute el siguiente comando para copiar estos archivos al recurso compartido que acaba de montar:
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 cp -rv /home/ec2-user/baseball-data-2018-version/ /home/ec2-user/gateway/
-```
+:::
 
 11. Ejecute de nuevo el comando del paso 9 para corroborar que el directorio **_baseball-data-2018-version_** se copió correctamente al recurso compartido.
 12. Ejecute el siguiente comando para enlistar el contenido del directorio que copió:
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 ls /home/ec2-user/gateway/baseball-data-2018-version
-```
+:::
 
 13. Haga click en **_Services_** y después en ***S3***.
 14. Ingrese al bucket que creó para este laboratorio.

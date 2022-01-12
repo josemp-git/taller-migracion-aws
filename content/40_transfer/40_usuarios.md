@@ -6,20 +6,21 @@ weight: 40
 1. Haga clic en **Services** y diríjase al servicio de **CloudShell**.
 2. Ejecute el siguiente comando:
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 ssh-keygen -P "" -f user01
-```
+:::
+
 ::alert[La ejecución de este comando generará dos archivos: **user01** (*llave privada*) y **user01.pub** (*llave pública*). Usted utilizará estas llaves para que su usuario se conecte al servidor SFTP.]{type="info"}
 
 3. Ejecute los siguiente comandos:
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 cat user01.pub
-```
+:::
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 cat user01
-```
+:::
 
 ::alert[La ejecución de estos comandos desplegará el contenido de cada archivo.]{type="info"}
 

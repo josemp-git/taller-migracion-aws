@@ -32,9 +32,9 @@ Para desplegar dicha plantilla siga los siguientes pasos:
 8. Haga clic en **Create stack** y seleccione la opción de **With new resources (standard)**.
 9. En el campo de **Amazon S3 URL** ingrese la siguiente URL: 
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 https://taller-migracion-dev.s3.amazonaws.com/15_mgn/mgn-lab.yaml
-```
+:::
 
 10. Haga clic en **Next**.
 11. En el campo de **Stack name** escriba **MGN-Lab**.

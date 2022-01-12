@@ -18,9 +18,9 @@ Esta plantilla desplegará dos funciones AWS Lambda escritas en Python 3.8 y el 
 2. Haga clic en **Create stack** y seleccione la opción de **With new resources (standard)**.
 3. En el campo de **Amazon S3 URL** ingrese la siguiente URL: 
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 http://taller-migracion-dev.s3.amazonaws.com/40_transfer/StartStopTransferSFTPServer.yaml
-```
+:::
 
 4. Haga clic en **Next**.
 5. En el campo de **Stack name** escriba **auto-on-off-lambda**.
@@ -41,9 +41,9 @@ A continuación, usted configurará una regla en el servicio de Amazon EventBrid
 13. En el recuadro de **Define pattern** seleccione **Schedule** y posteriormente seleccione **Cron expression**.
 14. En el campo de **Cron expression** ingrese lo siguiente:
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 0 21 * * ? *
-```
+:::
 
 16. En el recuadro de **Select Targets** seleccione **Lambda function** bajo la opción de **Target**.
 17. En el menú desplegable de **Function** seleccione la función con el nombre **auto-on-off-lambda-StartTransferSFTPServer**.
@@ -54,8 +54,8 @@ Lo anterior habrá creado una regla para ejecutar la función AWS Lambda que enc
 
 22. Repita los pasos para crear la regla, pero esta vez seleccione la función **auto-on-off-lambda-StopTransferSFTPServer** como **Target** e ingrese lo siguiente en el campo de **Cron expression**:
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 0 08 * * ? *
-```
+:::
 
 Esta regla ejecutará la función AWS Lambda que apagará su servidor SFTP todos los días a las 08:00 (UTC). Para más información acerca de como programar expresiones para reglas , consulte la [documentación disponible](https://docs.aws.amazon.com/es_es/AmazonCloudWatch/latest/events/ScheduledEvents.html).

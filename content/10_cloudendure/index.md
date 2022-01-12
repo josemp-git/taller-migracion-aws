@@ -20,7 +20,7 @@ Dentro de esta instancia usted instalará el agente de CloudEndure para llevar a
 
 ![Architecture Diagram](/static/images/ce/diagrama.png)
 
-::video{id=sqOeaQGecZE}
+::video{id=Joce88i_1Ts}
 
 #### Costos asociados
 

@@ -12,9 +12,9 @@ Una vez que su agente ha sido creado, deberá crear una tarea (task). En esta ta
 5. En **NFS Server** ingrese la IP del parámetro **NFSInstancePrivateIP** que guardó en el editor de texto.
 6. En **Mount path** ingrese la siguiente ruta:
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 /mnt/nfs
-```
+:::
 
 ![Tarea - ubicación origen](/static/images/ds/tareaorigen.png)
 

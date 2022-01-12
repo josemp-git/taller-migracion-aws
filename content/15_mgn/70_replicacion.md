@@ -11,17 +11,17 @@ A continuación, hará un cambio en el contenido de la instancia de origen para 
 4. En la pantalla de **Connect to instance** haga clic en el botón de **Connect**.
 5. En el CLI de la instancia ejecute los siguientes comandos: 
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 cd /var/www/html
-```
+:::
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 sudo mv index.html index.html.bak
-```
+:::
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 sudo wget https://migracion.workshop.aws/15_mgn/new/index.html
-```
+:::
 
 Este último comando descargará un archivo **index.html** en la ruta raíz del servidor Apache (/var/www/html/) con el que se sustituirá el mensaje anterior con uno nuevo. Esta es la modificación que hará para probar la funcionalidad de **Replicación continua de datos**. 
 

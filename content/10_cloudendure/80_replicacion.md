@@ -11,13 +11,13 @@ A continuación, hará un cambio en el contenido de la instancia de origen para 
 4. En la pantalla de **Connect to instance** haga clic en el botón de **Connect**.
 5. Una vez en el CLI de la instancia ejecute los siguientes comandos: 
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 cd /var/www/html
-```
+:::
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 sudo wget https://migracion.workshop.aws/10_cloudendure/new/index.html
-```
+:::
 
 Este último comando va a descargar un archivo **index.html** en la ruta raíz del servidor Apache (/var/www/html/) con el que se va a sustituir la página de bienvenida de Apache que vio en el módulo anterior. Esta es la modificación que hará para probar la funcionalidad de **Continuous Data Replication**. 
 

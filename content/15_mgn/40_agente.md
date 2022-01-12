@@ -28,15 +28,15 @@ En el apartado de **Details** podrá ver información como VPC, subred y segment
 
 8. Ingrese el siguiente comando en el CLI del servidor para descargar el instalador del Agente de Replicación:
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 wget -O ./aws-replication-installer-init.py https://aws-application-migration-service-us-east-1.s3.amazonaws.com/latest/linux/aws-replication-installer-init.py
-```
+:::
 
 9. Una vez que el instalador haya sido descargado exitosamente, ejecute el siguiente comando para instalar el agente, sustituyendo **ACCESS-KEY** y **SECRET-ACCESS-KEY** por el access key y secret access key que descargó previamente al crear el usuario IAM:
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 sudo python3 aws-replication-installer-init.py --region us-east-1 --aws-access-key-id ACCESS-KEY --aws-secret-access-key SECRET-ACCESS-KEY
-```
+:::
 
 10. Presione enter durante **Identify volumes for replication**.
 

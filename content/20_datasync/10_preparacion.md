@@ -28,9 +28,9 @@ A continuación, desplegará una plantilla de AWS CloudFormation que creará las
 8. Haga click en **Create stack** y seleccione la opción **With new resources (standard)**.
 9. En el campo de **Amazon S3 URL** ingrese la siguiente URL: 
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 https://taller-migracion-dev.s3.amazonaws.com/20_datasync/dm-lab-ds.yaml
-```
+:::
 
 10. Haga click en **Next**.
 11. En el campo de **Stack name** escriba **MigracionDatosStack**.
@@ -69,28 +69,29 @@ A continuación se conectará a la instancia cliente para montar el recurso comp
 
 29. Una vez conectado a su instancia cliente ejecute el siguiente comando sustituyendo el parámetro **NFSInstancePrivateIP** por la dirección IP correspondiente que guardó en el editor de texto:
 
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 sudo mount -t nfs NFSInstancePrivateIP:/mnt/nfs ~/nas
-```
+:::
+
 ::alert[Este comando montará un directorio compartido por la instancia que funge como servidor NFS.]{type="info"}
 
 30. Proceda a explorar el contenido de este directorio con los siguientes comandos:
 
 Para acceder al directorio
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 cd ~/nas
-```
+:::
 
 Para enlistar el contenido
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
 ls ~/nas
-```
-```
+:::
+:::code{showCopyAction=true showLineNumbers=false language=java}
 ls ~/nas/baseballdatabank-master/
-```
-```
+:::
+:::code{showCopyAction=true showLineNumbers=false language=java}
 ls ~/nas/baseballdatabank-master/core
-```
+:::
 
 En este directorio compartido encontrará información estadística de baseball de los últimos 20 años. En este laboratorio usted migrará esta información histórica a un bucket de Amazon S3 utilizando AWS DataSync.
 
