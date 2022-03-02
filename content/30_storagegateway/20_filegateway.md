@@ -12,7 +12,7 @@ En este módulo usted creará un File Gateway utilizando una de las instancias q
 aws ssm get-parameter --name /aws/service/storagegateway/ami/FILE_S3/latest --region us-east-1
 :::
 
-::alert[La ejecución de este comando le permite conocer la versión más reciente de la AMI de AWS de AWS Storage Gateway (ami-id).]{type="info"}
+::alert[La ejecución de este comando le permite conocer la versión más reciente de la AMI de AWS Storage Gateway (ami-id).]{type="info"}
 
 3. Copie el resultado de la ejecución del comando anterior y guárdelo en un archivo de texto.
 4. Copie la siguiente URL y sustituya el valor de **ami-id** por el valor de **value** resultado de la ejecución del comando del paso anterior:
