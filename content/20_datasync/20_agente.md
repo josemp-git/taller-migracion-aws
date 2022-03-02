@@ -6,13 +6,7 @@ weight: 20
 En este módulo, usted desplegará el agente de AWS DataSync en una instancia de Amazon EC2.
 
 1. Dentro de la consola de AWS, haga clic en **Services** y diríjase al servicio de **CloudShell**.
-2. Ejecute el siguiente comando, sustituyendo el valor de **$region** por la región en la que está trabajando:
-
-:::code{showCopyAction=true showLineNumbers=false language=java}
-aws ssm get-parameter --name /aws/service/datasync/ami --region $region
-:::
-
-::alert[Si usted se encuentra trabajando en la región de N. Virginia, el comando se ejecutaría así:]{type="info"}
+2. Ejecute el siguiente comando:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
 aws ssm get-parameter --name /aws/service/datasync/ami --region us-east-1
@@ -21,16 +15,10 @@ aws ssm get-parameter --name /aws/service/datasync/ami --region us-east-1
 ::alert[La ejecución de este comando le permite conocer la versión más reciente de la AMI de AWS DataSync (ami-id).]{type="info"}
 
 3. Copie el resultado de la ejecución del comando anterior y guárdelo en un archivo de texto.
-4. Copie la siguiente URL y sustituya los valores de **source-file-systemregion** por la región en la que va a desplegar su agente y el valor de **ami-id** por el valor de **value** resultado de la ejecución del comando del paso anterior:
+4. Copie la siguiente URL y sustituya el valor de **ami-id** por el valor de **value** resultado de la ejecución del comando del paso anterior:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
 https://console.aws.amazon.com/ec2/v2/home?region=source-file-systemregion#LaunchInstanceWizard\:ami=ami-id
-:::
-
-::alert[Si usted se encuentra trabajando en la región de N. Virginia, la URL quedaría así:]{type="info"}
-
-:::code{showCopyAction=true showLineNumbers=false language=java}
-https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard\:ami=ami-057d036cc57e1af91
 :::
 
 5. Una vez que haya sustituido los valores, copie la URL y péguela en su navegador web. Esta URL lo llevará a desplegar el agente de AWS DataSync como una instancia de Amazon EC2.
