@@ -13,7 +13,7 @@ Con las **Plantillas de lanzamiento** del servicio de Amazon EC2 se definen los 
 3. Haga clic en **Edit** en el apartado de **General launch settings**.
 4. Seleccione los siguientes valores:
 
-* **Instance type right sizing** = None
+* **Instance type right sizing** = Off
 * **Start instance upon launch** = Yes
 * **Copy private IP** = No
 * **Transfer server tags** = No
