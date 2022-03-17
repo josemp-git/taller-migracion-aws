@@ -17,7 +17,7 @@ Esto significa que el proceso de replicación se ha completado al 100%, por lo t
 
 ::alert[Si hace clic en el nombre de su servidor, también podrá verificar el estado de **Ready for testing** del ciclo de vida del proceso de migración.]{type="info"}
 
-![Ready for testing](/static/images/ce/readyfortesting.png)
+![Ready for testing](/static/images/mgn/readyfortesting.png)
 
 3. Seleccione la casilla de su servidor.
 4. Haga clic en el menú desplegable de **Test and Cutover**.
