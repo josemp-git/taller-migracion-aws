@@ -18,7 +18,7 @@ aws ssm get-parameter --name /aws/service/datasync/ami --region us-east-1
 4. Copie la siguiente URL y sustituya el valor de **ami-id** por el valor de **value** resultado de la ejecución del comando del paso anterior:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
-https://console.aws.amazon.com/ec2/v2/home?region=source-file-systemregion#LaunchInstanceWizard\:ami=ami-id
+https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-id
 :::
 
 5. Una vez que haya sustituido los valores, copie la URL y péguela en su navegador web. Esta URL lo llevará a desplegar el agente de AWS DataSync como una instancia de Amazon EC2.
