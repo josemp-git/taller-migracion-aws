@@ -27,7 +27,11 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 8. Del menú desplegable de **Key pair**, seleccione el key pair que creó previamente.
 9. Haga clic en **Edit** en el apartado de **Network settings**.
 10. En **VPC**, seleccione la VPC **Migracion-datos-VPC**.
-11. En el apartado de **Firewall (security groups)** seleccione la opción de **Create security group*** y cree una regla nueva que habilite el acceso al puerto TCP 80 (HTTP) desde su dirección IP.
+11. En el apartado de **Firewall (security groups)** seleccione la opción de **Create security group** y cree una regla nueva que habilite el acceso al puerto TCP 80 (HTTP) desde su dirección IP: 
+
+* Type = **HTTP**
+* Source type = **My IP**
+
 12. Elimine la regla que permite el acceso al puerto 22 (SSH) ya que en este acceso no se necesita.
 13. En el apartado de **Configure storage** mantenga los valores predeterminados (no es necesario agregar almacenamiento adicional).
 14. Haga clic en **Launch**.
