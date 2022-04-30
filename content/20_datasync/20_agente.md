@@ -23,8 +23,8 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 
 5. Una vez que haya sustituido los valores, copie la URL y péguela en su navegador web. Esta URL lo llevará a desplegar el agente de AWS DataSync como una instancia de Amazon EC2.
 6. Ingrese **Agente AWS DataSync** en el campo de **Name**
-7. Del menú desplegable de **Instance type** seleccione **m5.2xlarge**.
-8. Del menú desplegable de **Key paor** Seleccione el key pair que creó previamente.
+7. Del menú desplegable de **Instance type**, seleccione **m5.2xlarge**.
+8. Del menú desplegable de **Key pair**, seleccione el key pair que creó previamente.
 9. Haga clic en **Edit** en el apartado de **Network settings**.
 10. En **VPC**, seleccione la VPC **Migracion-datos-VPC**.
 11. En el apartado de **Firewall (security groups)** seleccione la opción de **Create security group*** y cree una regla nueva que habilite el acceso al puerto TCP 80 (HTTP) desde su dirección IP.
