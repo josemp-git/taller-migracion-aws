@@ -21,7 +21,11 @@ Lo primero que debe hacer es crear un key pair. Este key pair le permitirá acce
 
 A continuación, desplegará una plantilla de AWS CloudFormation que creará una instancia Amazon EC2 en la cual montará el recurso compartido que creará con AWS Storage Gateway. Esta **instancia cliente** actuará como si fuera su computadora "en sitio".
 
-7. Descargue [esta plantilla](/static/30_storagegateway/dm-lab-sg.yaml) de CloudFormation.
+7. Descargue esta plantilla de CloudFormation:
+
+```bash
+:assetUrl{path="/30_storagegateway/dm-lab-sg.yaml"}
+```
 
 8. Abra la siguiente URL en la pestaña de su navegador, copie la dirección IP que ahí aparece y guárdela en un archivo de texto.
 
