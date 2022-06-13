@@ -28,7 +28,12 @@ A continuación, desplegará una instancia de Linux en la región de N. Virgina 
 
 Para desplegar esta plantilla siga los siguientes pasos:
 
-7. Descargue [esta plantilla](/static/15_mgn/mgn-lab.yaml) de CloudFormation.
+7. Descargue esta plantilla de CloudFormation:
+
+```bash
+':assetUrl{path="/static/15_mgn/mgn-lab.yaml"}'
+```
+
 
 8. Abra la siguiente URL en la pestaña de su navegador, copie la dirección IP que ahí aparece y guárdela en un archivo de texto.
 
