@@ -31,7 +31,7 @@ Para desplegar esta plantilla siga los siguientes pasos:
 7. Descargue esta plantilla de CloudFormation:
 
 ```bash
-':assetUrl{path="/static/15_mgn/mgn-lab.yaml"}'
+:assetUrl{path="/15_mgn/mgn-lab.yaml"}
 ```
 
 
