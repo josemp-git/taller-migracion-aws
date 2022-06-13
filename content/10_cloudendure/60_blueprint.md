@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: 6. Configuración del Blueprint
 weight: 60
 ---

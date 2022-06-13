@@ -21,32 +21,49 @@ Lo primero que debe hacer es crear un key pair. Este key pair le permitirá acce
 
 A continuación, desplegará una plantilla de AWS CloudFormation que creará una instancia Amazon EC2 en la cual montará el recurso compartido que creará con AWS Storage Gateway. Esta **instancia cliente** actuará como si fuera su computadora "en sitio".
 
-7. Haga click en ***Services*** y después en ***CloudFormation***.
-8. Haga click en ***Create stack*** y seleccione la opción ***With new resources (standard)***.
-9. En el campo de ***Amazon S3 URL*** ingrese la siguiente URL: 
+7. Descargue la plantilla de CloudFormation:
 
-```
-https://taller-migracion-dev.s3.amazonaws.com/dm-lab-sg.yaml
-```
+:::code{showCopyAction=true showLineNumbers=false language=java}
+https://taller-migracion-dev.s3.amazonaws.com/mgn-lab.yaml
+:::
 
-10. Haga click en ***Next***.
-11. En el campo de ***Stack name*** escriba ***MigracionDatosStack***.
-12. En el menú desplegable de ***KeyPair*** bajo la sección de ***Parameters*** elija el key pair que creó anteriormente (***dm-lab***).
-13. Haga click en ***Next***.
-14. En la siguiente pantalla haga click de nuevo en ***Next***.
-15. En la siguiente pantalla haga click en ***Create stack***.
-16. Espere unos minutos a que el status de lanzamiento de la plantilla indique ***CREATE_COMPLETE***.
-17. Una vez que la plantilla haya sido desplegada, haga click en la sección de ***Outputs*** y copie el valor del parámetro ***ClientInstancePrivateIP*** (la dirección IP privada de la instancia cliente) y guárdelo en un archivo de texto ya que lo utilizará más adelante.
+8. Abra la siguiente URL en la pestaña de su navegador, copie la dirección IP que ahí aparece y guárdela en un archivo de texto.
+
+:::code{showCopyAction=true showLineNumbers=false language=java}
+http://checkip.amazonaws.com/
+:::
+
+9. Haga clic en **Services** y después en **CloudFormation** (también puede usar el campo de búsqueda).
+
+![CloudFormation](/static/images/mgn/cloudformation1.png)
+
+10. Haga clic en **Create stack** y seleccione la opción de **With new resources (standard)**.
+
+![CloudFormation](/static/images/mgn/cloudformation2.png)
+
+11. Seleccione **Upload a template file** y cargue la plantilla de CloudFormation que descargó anteriormente.
+
+![CloudFormation](/static/images/mgn/cloudformation3.png)
+
+12. Haga click en ***Next***.
+13. En el campo de ***Stack name*** escriba ***storage-gateway-lab***.
+14. En el campo de **IPPublica** ingrese la dirección IP que copió anteriormente.
+15. En el menú desplegable de ***KeyPair*** bajo la sección de ***Parameters*** elija el key pair que creó anteriormente (***dm-lab***).
+16. Haga click en ***Next***.
+17. En la siguiente pantalla haga click de nuevo en ***Next***.
+18. En la siguiente pantalla haga click en ***Create stack***.
+19. Espere unos minutos a que el status de lanzamiento de la plantilla indique ***CREATE_COMPLETE***.
+20. Una vez que la plantilla haya sido desplegada, haga click en la sección de ***Outputs*** y copie el valor del parámetro ***ClientInstancePrivateIP*** (la dirección IP privada de la instancia cliente) y guárdelo en un archivo de texto ya que lo utilizará más adelante.
 
 
 ##### 3. Creación de bucket de Amazon S3
 
 En los siguientes pasos creará un bucket de Amazon S3 en donde almacenará la información que migre utilizando AWS DataSync.
 
-18. Haga click en ***Services*** y posteriormente seleccione el servicio de ***S3***.
-19. Haga click en ***Create bucket***.
-20. Ingrese un nombre para su bucket en el campo de ***Bucket name*** con la siguiente nomenclatura: 
+21. Haga click en ***Services*** y posteriormente seleccione el servicio de ***S3***.
+22. Haga click en ***Create bucket***.
+23. Ingrese un nombre para su bucket en el campo de ***Bucket name*** con la siguiente nomenclatura: 
 ***migracion-datos-su-nombre***.
-21. En el menú desplegable de ***Region*** asegúrese de que la región sea ***US East (N. Virginia)***.
-22. Haga click en ***Create***.
-23. Proceda al siguiente módulo.
+24. En el menú desplegable de ***Region*** asegúrese de que la región sea ***US East (N. Virginia)***.
+25. Haga click en ***Create***.
+26. Proceda al siguiente módulo.

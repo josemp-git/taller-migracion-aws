@@ -1,5 +1,5 @@
 ---
-draft: false
+
 title: 9. Eliminar recursos
 weight: 90
 ---

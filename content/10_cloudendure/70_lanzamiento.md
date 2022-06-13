@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: 7. Lanzamiento del servidor migrado
 weight: 70
 ---

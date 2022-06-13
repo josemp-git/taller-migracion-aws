@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: 8. Replicación continua de datos
 weight: 80
 ---

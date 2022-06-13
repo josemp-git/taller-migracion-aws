@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: 1. Preparación del ambiente
 weight: 10
 ---

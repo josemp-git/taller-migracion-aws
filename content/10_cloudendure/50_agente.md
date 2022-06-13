@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: 5. Instalación del agente de CloudEndure
 weight: 50
 ---

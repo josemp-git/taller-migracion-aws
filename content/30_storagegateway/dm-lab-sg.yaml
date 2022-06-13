@@ -1,5 +1,8 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Parameters:
+  IPPublica:
+  Description: Ingrese su dirección IP publica (la encuentra aquí http://checkip.amazonaws.com/)
+    Type: String
   KeyPair:
     Description: Select an existing EC2 key pair.
     Type: AWS::EC2::KeyPair::KeyName
@@ -61,40 +64,6 @@ Resources:
       SubnetId: !Ref PublicSubnet
       RouteTableId: !Ref PublicRouteTable
 
-  NFSInstance:
-    Type: AWS::EC2::Instance
-    Properties:
-      InstanceType: t2.micro
-      ImageId: ami-0f9fc25dd2506cf6d
-      BlockDeviceMappings: 
-      - DeviceName: "/dev/xvda"
-        Ebs: 
-          VolumeType: "standard"
-          DeleteOnTermination: "true"
-          VolumeSize: "8"
-      SecurityGroupIds: 
-        - !Ref NFSInstanceSecurityGroup
-      SubnetId: !Ref PublicSubnet
-      Tags:
-        - Key: "Name"
-          Value: "Servidor NFS"
-      KeyName: !Ref KeyPair
-      UserData:
-        'Fn::Base64': 
-          !Sub |
-            #!/bin/sh
-            yum update -y
-            service nfs start
-            echo "/mnt/nfs *(rw,sync,no_subtree_check,no_root_squash)" >> /etc/exports
-            mkdir /mnt/nfs
-            cd /mnt/nfs
-            wget https://github.com/chadwickbureau/baseballdatabank/archive/master.zip
-            unzip master.zip
-            rm master.zip
-            chmod 755 /mnt/nfs
-            exportfs -a
-            service nfs restart
-
   ClientInstance:
     Type: AWS::EC2::Instance
     Properties:
@@ -124,7 +93,7 @@ Resources:
             unzip v2019.2.zip
             mv /home/ec2-user/baseballdatabank-2019.2 /home/ec2-user/baseball-data-2018-version
             rm v2019.2.zip
-          #mount -t nfs ${NFSInstance.PrivateIp}:/mnt/nfs /home/ec2-user/nas
+        #mount -t nfs ${NFSInstance.PrivateIp}:/mnt/nfs /home/ec2-user/nas
      #DependsOn: NFSInstance
 
   ClientInstanceSecurityGroup:
@@ -135,28 +104,12 @@ Resources:
         - IpProtocol: tcp
           FromPort: '22'
           ToPort: '22'
-          CidrIp: 0.0.0.0/0
-      VpcId: !Ref VPC
-
-  NFSInstanceSecurityGroup:
-    Type: AWS::EC2::SecurityGroup
-    Properties:
-      GroupDescription: Enable access to NFS ports and SSH.
-      SecurityGroupIngress:
-      - IpProtocol: tcp
-        FromPort: '2049'
-        ToPort: '2049'
-        SourceSecurityGroupId: !Ref ClientInstanceSecurityGroup
-      - IpProtocol: tcp
-        FromPort: '22'
-        ToPort: '22'
-        SourceSecurityGroupId: !Ref ClientInstanceSecurityGroup
+          CidrIp: !Sub
+            - '${IP}/32'
+            - IP: !Ref IPPublica
       VpcId: !Ref VPC
 
 Outputs:
-  NFSInstancePrivateIP:
-    Description: Instancia NFS direcccion IP privada
-    Value: !GetAtt NFSInstance.PrivateIp
   ClientInstancePrivateIP:
     Description: Instancia cliente direcccion IP privada
     Value: !GetAtt ClientInstance.PrivateIp
