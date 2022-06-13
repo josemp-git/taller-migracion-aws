@@ -31,7 +31,7 @@ Para desplegar esta plantilla siga los siguientes pasos:
 7. Descargue la plantilla de CloudFormation:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
-https://taller-migracion-dev.s3.amazonaws.com/mgn-lab.yaml
+https://static.us-east-1.prod.workshops.aws/public/8b45b2f9-1eb3-49e5-afec-125a655a0155/static/15_mgn/mgn-lab.yaml
 :::
 
 8. Abra la siguiente URL en la pestaña de su navegador, copie la dirección IP que ahí aparece y guárdela en un archivo de texto.

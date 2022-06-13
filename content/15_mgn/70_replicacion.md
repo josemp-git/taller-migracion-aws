@@ -20,7 +20,7 @@ sudo mv index.html index.html.bak
 :::
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
-sudo wget https://taller-migracion-dev.s3.amazonaws.com/15_mgn/new/index.html
+sudo wget https://static.us-east-1.prod.workshops.aws/public/8b45b2f9-1eb3-49e5-afec-125a655a0155/static/15_mgn/new/index.html
 :::
 
 Este último comando descargará un archivo **index.html** en la ruta raíz del servidor Apache (/var/www/html/) con el que se sustituirá el mensaje anterior con uno nuevo. Esta es la modificación que hará para probar la funcionalidad de **Replicación continua de datos**. 

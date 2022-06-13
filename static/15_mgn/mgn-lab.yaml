@@ -32,7 +32,7 @@ Resources:
             service httpd start
             chkconfig httpd on
             cd /var/www/html
-            wget https://taller-migracion-dev.s3.amazonaws.com/15_mgn/origen/index.html
+            wget https://static.us-east-1.prod.workshops.aws/public/8b45b2f9-1eb3-49e5-afec-125a655a0155/static/15_mgn/origen/index.html
   OrigenSG:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
