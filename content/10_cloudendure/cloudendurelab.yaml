@@ -1,6 +1,9 @@
 Parameters:
+  IPPublica:
+    Description: Ingrese su dirección IP publica (la encuentra aquí http://checkip.amazonaws.com/)
+    Type: String
   KeyPair:
-    Description: Select an existing EC2 key pair.
+      Description: Select an existing EC2 key pair.
     Type: AWS::EC2::KeyPair::KeyName
 Resources:
   Ec2Instance:
@@ -36,11 +39,15 @@ Resources:
         - IpProtocol: tcp
           FromPort: '22'
           ToPort: '22'
-          #CidrIp: 0.0.0.0/0
+          CidrIp: !Sub
+            - '${IP}/32'
+            - IP: !Ref IPPublica
         - IpProtocol: tcp
           FromPort: '80'
           ToPort: '80'
-          #CidrIp: 0.0.0.0/0
+          CidrIp: !Sub
+            - '${IP}/32'
+            - IP: !Ref IPPublica
           
   TargetVPC:
     Type: AWS::EC2::VPC
