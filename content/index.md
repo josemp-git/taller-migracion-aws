@@ -5,7 +5,7 @@ weight: 0
 ---
 En este taller usted conocerá los diferentes servicios que tiene AWS para ayudarlo en su proceso de migración a la nube. Por medio de cuatro laboratorios autoguiados usted aprenderá acerca de:
 
-* **AWS Application Migration Service y AWS CloudEndure** para migrar sus servidores hacia AWS utilizando la estrategia de migración de **rehost**, también conocida como **lift-and-shift**.
+* **AWS Application Migration Service** para migrar sus servidores hacia AWS utilizando la estrategia de migración de **rehost**, también conocida como **lift-and-shift**.
 * **AWS DataSync** y como transferir los datos que se encuentran en sitio hacia servicios de almacenamiento en la nube como **Amazon S3**.
 * **AWS Storage Gateway** que le ayudará a ampliar sus capacidades de almacenamiento local, simplificar la infraestructura de almacenamiento de su centro de datos y acceder localmente a los datos que ya migró a la nube.
 * **AWS Transfer** para transferir sus datos a la nube utilizando protocolos estándar como SFTP mediante un servicio completamente administrado.
