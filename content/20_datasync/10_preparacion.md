@@ -27,7 +27,7 @@ A continuación, desplegará una plantilla de AWS CloudFormation que creará las
 7. Descargue la plantilla de CloudFormation:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
-https://taller-migracion-dev.s3.amazonaws.com/mgn-lab.yaml
+https://static.us-east-1.prod.workshops.aws/public/8b45b2f9-1eb3-49e5-afec-125a655a0155/static/20_datasync/dm-lab-ds.yaml
 :::
 
 8. Abra la siguiente URL en la pestaña de su navegador, copie la dirección IP que ahí aparece y guárdela en un archivo de texto.
