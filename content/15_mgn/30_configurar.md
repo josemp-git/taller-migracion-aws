@@ -5,7 +5,7 @@ weight: 30
 ---
 La primera vez que ingresa al servicio de AWS Application Migration Service deberá configurar el servicio y crear la plantilla de configuración de replicación.
 
-1. Haga clic en **Services** y posteriormente seleccione el servicio de **AWS Application Migration Service** que se encuentra bajo el rubro de **Migration & Transfer**.
+1. Haga clic en **Services** y posteriormente seleccione el servicio de **AWS Application Migration Service** (también puede usar el campo de búsqueda).
 2. Haga clic en **Get started**.
 3. En la siguiente pantalla seleccione los siguientes parámetros bajo el apartado de **Create Replication Settings template**:
 

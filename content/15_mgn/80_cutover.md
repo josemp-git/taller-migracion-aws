@@ -1,6 +1,6 @@
 ---
 draft: false
-title: 'OPCIONAL: 8. Lanzamiento en modo cutover (traspaso)'
+title: '8. Lanzamiento en modo cutover (traspaso) - OPCIONAL'
 weight: 80
 ---
 En este módulo lanzará de nuevo su servidor, esta vez en modo cutover, y marcará el proceso de migración como finalizado, lo cual eliminará los recursos contenidos en el área de Staging.
@@ -19,12 +19,13 @@ La operación anterior eliminará la instancia de prueba que lanzó previamente 
 ![Ready for cutover](/static/images/mgn/readyforcutover2.png)
 
 6. Seleccione la casilla de su servidor.
-7. Haga clic en **Test and cutover** y posteriormente en **Launch cutover instances**. Esto lanzará su instancia de nuevo y el valor de **Migration lifecycle** aparecerá como **Cutover in progress**.
+7. Haga clic en **Test and cutover** y posteriormente en **Launch cutover instances**. 
+8. Haga clic en **Launch**. Esto lanzará su instancia de nuevo y el valor de **Migration lifecycle** aparecerá como **Cutover in progress**.
 
 ![Ready for cutover](/static/images/mgn/cutoverinprogress1.png)
 ![Ready for cutover](/static/images/mgn/cutoverinprogress2.png)
 
-Una vez terminado el proceso de lanzamiento de su instancia, deberá finalizar el proceso de traspaso.
+Una vez terminado el proceso de lanzamiento de su instancia, deberá finalizar el proceso de **cutover**.
 
 8. Seleccione la casilla de su servidor.
 9. Haga clic en **Test and cutover** y posteriormente en **Finalize cutover**.

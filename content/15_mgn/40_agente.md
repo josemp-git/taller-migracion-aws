@@ -3,17 +3,15 @@ draft: false
 title: 4. Instalación del Agente de Replicación
 weight: 40
 ---
-AWS Application Migration Service es una solución de migración a la nube basado en un **Agente de Replicación** que le permite migrar cargas de trabajo que se ejecuten en versiones soportadas de sistemas operativos Windows y Linux. A continuación, instalará el Agente de Replicación de AWS MGN en la instancia que migrará.
+AWS Application Migration Service es una solución de migración a la nube basada en un **Agente de Replicación** que le permite migrar cargas de trabajo que se ejecuten en versiones soportadas de sistemas operativos Windows y Linux. A continuación, instalará el Agente de Replicación de AWS MGN en la instancia que migrará.
 
 Antes de instalar el agente, conozca los detalles del servidor que migrará.
 
-1. Haga clic en **Services** y posteriormente seleccione el servicio de **EC2** el cual se encuentra bajo la categoría de **Compute**.
+1. Haga clic en **Services** y posteriormente seleccione el servicio de **EC2**.
 2. Haga clic en **EC2 Dashboard** y después en **Instances (running)**.
-3. Seleccione la casilla de la instancia **Servidor Linux**.
+3. Seleccione la casilla de la instancia **Servidor Linux**. En el apartado de **Details** podrá ver información como VPC, subred y segmento de red en el que se encuentra su servidor, así como las direcciones IP pública y privada.
 
-En el apartado de **Details** podrá ver información como VPC, subred y segmento de red en el que se encuentra su servidor, así como las direcciones IP pública y privada.
-
-4. Copie la dirección IP pública (Public IPv4 address) que se encuentra bajo el apartado de **Details**  y péguela en su navegador. Encontrará el siguiente mensaje:
+4. Copie la dirección IP pública (Public IPv4 address) que se encuentra bajo el apartado de **Details**  y péguela en una pestaña de su navegador. Encontrará el siguiente mensaje:
 
 ![Este servidor será migrado utilizando AWS Application Migration Service](/static/images/mgn/seramigrado.png)
  
@@ -32,7 +30,7 @@ En el apartado de **Details** podrá ver información como VPC, subred y segment
 wget -O ./aws-replication-installer-init.py https://aws-application-migration-service-us-east-1.s3.amazonaws.com/latest/linux/aws-replication-installer-init.py
 :::
 
-9. Una vez que el instalador haya sido descargado exitosamente, ejecute el siguiente comando para instalar el agente, sustituyendo **ACCESS-KEY** y **SECRET-ACCESS-KEY** por el access key y secret access key que descargó previamente al crear el usuario IAM:
+9. Ejecute el siguiente comando para instalar el agente, sustituyendo **ACCESS-KEY** y **SECRET-ACCESS-KEY** por el access key y secret access key que descargó previamente al crear el usuario IAM:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
 sudo python3 aws-replication-installer-init.py --region us-east-1 --aws-access-key-id ACCESS-KEY --aws-secret-access-key SECRET-ACCESS-KEY
@@ -40,9 +38,7 @@ sudo python3 aws-replication-installer-init.py --region us-east-1 --aws-access-k
 
 10. Presione enter durante **Identify volumes for replication**.
 
-La instalación del agente tomará un par de minutos y al finalizar mostrará el siguiente mensaje:
-
-**<span style="color\:green">The AWS Replication Agent was successfully installed.</span>**
+La instalación del agente tomará un par de minutos y al finalizar mostrará el siguiente mensaje: **The AWS Replication Agent was successfully installed.**
 
 ![Agent Installation](/static/images/mgn/commands.png)
 

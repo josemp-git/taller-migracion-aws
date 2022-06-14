@@ -5,8 +5,8 @@ weight: 20
 ---
 Para instalar el Agente de Replicación, primero debe generar las credenciales de AWS necesarias. Deberá crear al menos un usuario de AWS IAM y asignarle la política de permisos adecuada. Al crear este usuario, obtendrá una clave de acceso y una clave de acceso secreta, que deberá ingresar durante la instalación del agente.
 
-1. Haga clic en **Services** y posteriormente seleccione el servicio de **IAM** que se encuentra bajo la categoría de **Security, Identity & Compliance** (también puede teclear IAM en el campo de búsqueda).
-2. Dentro de **IAM**, haga clic en **Users** en el menú lateral izquierdo y posteriormente haga clic en el botón de **Add user**.
+1. Haga clic en **Services** y posteriormente seleccione el servicio de **IAM** (también puede usar el campo de búsqueda).
+2. Dentro de **IAM**, haga clic en **Users** en el menú lateral izquierdo y posteriormente haga clic en el botón de **Add users**.
 3. En el campo de **User name** escriba el nombre del usuario que va a crear **(mgn)** y en **Access type** seleccione **Access key - Programmatic access**. 
 4. Haga clic en **Next: Permissions**.
 5. En la pantalla **Set permissions** seleccione la opción de **Attach existing policies directly** y en el campo de búsqueda ingrese **AWSApplicationMigrationAgentPolicy**. 
