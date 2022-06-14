@@ -7,9 +7,6 @@ Con las **Plantillas de lanzamiento** del servicio de Amazon EC2 se definen los 
 
 1. En la consola de AWS MGN, haga clic en el servidor que está migrando para entrar a ver los detalles.
 2. Haga clic en **Launch settings**.
-
-![Launch settings](/static/images/mgn/launchsettings.png)
-
 3. Haga clic en **Edit** en el apartado de **General launch settings**.
 4. Seleccione los siguientes valores:
 
@@ -18,7 +15,7 @@ Con las **Plantillas de lanzamiento** del servicio de Amazon EC2 se definen los 
 * **Copy private IP** = No
 * **Transfer server tags** = No
 
-![General launch settings](/static/images/mgn/generallaunchsettings.png)
+![Launch settings](/static/images/mgn/launchsettings.png)
 
 5. Haga clic en **Save settings**.
 
