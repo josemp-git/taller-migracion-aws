@@ -58,5 +58,9 @@ http://checkip.amazonaws.com/
 15. En el menú desplegable de **KeyPair** bajo la sección de **Parameters** elija el key pair que creó anteriormente **(mgn-lab)**.
 16. Haga clic en **Next**.
 17. En la siguiente pantalla haga clic de nuevo en **Next**.
-18. En la siguiente pantalla haga clic en **Create stack**.
-19. Proceda al siguiente módulo mientras AWS CloudFormation termina de desplegar los recursos.
+18. En la siguiente pantalla seleccione la casilla de **I acknowledge that AWS CloudFormation might create IAM resources** que aparece el final.
+19. Haga clic en **Create stack**.
+
+![CloudFormation](/static/images/mgn/acknowledgerole.png)
+
+20. Proceda al siguiente módulo mientras AWS CloudFormation termina de desplegar los recursos.

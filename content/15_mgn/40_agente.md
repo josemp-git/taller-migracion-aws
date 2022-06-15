@@ -20,7 +20,7 @@ Antes de instalar el agente, conozca los detalles del servidor que migrará.
 
 ![Connect to Linux Server](/static/images/mgn/connect1.png)
 
-7. En la pantalla de **Connect to instance** haga clic en **Connect** para tener acceso a su instancia vía SSH por medio del navegador web.
+7. En la pantalla de **Connect to instance** haga clic en **Session Manager** y después en **Connect** para tener acceso a su instancia vía SSH por medio del navegador web.
 
 ![Connect to Linux Server](/static/images/mgn/connect2.png)
 

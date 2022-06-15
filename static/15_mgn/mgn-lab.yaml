@@ -14,15 +14,21 @@ Resources:
       BlockDeviceMappings: 
       - DeviceName: "/dev/xvda"
         Ebs: 
-          VolumeType: "gp3"
+          VolumeType: "standard"
           DeleteOnTermination: "true"
           VolumeSize: "8"
-      SecurityGroups: 
-        - !Ref OrigenSG
+      NetworkInterfaces: 
+      - AssociatePublicIpAddress: "true"
+        DeviceIndex: "0"
+        GroupSet: 
+          - Ref: "OrigenSG"
+        SubnetId: 
+          Ref: "PublicSubnet3"
       Tags:
         - Key: "Name"
           Value: "Servidor Linux"
       KeyName: !Ref KeyPair
+      IamInstanceProfile: !Ref EC2InstanceProfile
       UserData:
         'Fn::Base64': 
           !Sub |
@@ -31,13 +37,18 @@ Resources:
             yum install httpd -y
             service httpd start
             chkconfig httpd on
+            sudo yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
+            sudo systemctl start amazon-ssm-agent
+            sudo systemctl status amazon-ssm-agent
             cd /var/www/html
             wget https://static.us-east-1.prod.workshops.aws/public/8b45b2f9-1eb3-49e5-afec-125a655a0155/static/15_mgn/origen/index.html
+  
   OrigenSG:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
       GroupDescription: Enable SSH access via port 22 and HTTP via port 80
       GroupName: MGN lab SG Origen
+      VpcId: !Ref MGNLabVPC
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: '22'
@@ -52,7 +63,7 @@ Resources:
             - '${IP}/32'
             - IP: !Ref IPPublica
           
-  TargetVPC:
+  MGNLabVPC:
     Type: AWS::EC2::VPC
     Properties:
       CidrBlock: 10.0.0.0/16
@@ -66,18 +77,18 @@ Resources:
     Properties:
       Tags:
       - Key: Name
-        Value: TargetVPC Internet Gateway
+        Value: MGNLabVPC Internet Gateway
 
   AttachGateway:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
-      VpcId: !Ref TargetVPC
+      VpcId: !Ref MGNLabVPC
       InternetGatewayId: !Ref InternetGateway
 
   PublicSubnet1:
     Type: AWS::EC2::Subnet
     Properties:
-      VpcId: !Ref TargetVPC
+      VpcId: !Ref MGNLabVPC
       CidrBlock: 10.0.0.0/24
       AvailabilityZone: !Select
         - '0'
@@ -89,7 +100,7 @@ Resources:
   PublicSubnet2:
     Type: AWS::EC2::Subnet
     Properties:
-      VpcId: !Ref TargetVPC
+      VpcId: !Ref MGNLabVPC
       CidrBlock: 10.0.1.0/24
       AvailabilityZone: !Select
         - '0'
@@ -98,22 +109,22 @@ Resources:
         - Key: Name
           Value: Staging area subnet - MGN lab
 
-  PrivateSubnet1:
+  PublicSubnet3:
     Type: AWS::EC2::Subnet
     Properties:
-      VpcId: !Ref TargetVPC
+      VpcId: !Ref MGNLabVPC
       CidrBlock: 10.0.2.0/24
       AvailabilityZone: !Select 
         - '0'
         - !GetAZs ''
       Tags:
         - Key: Name
-          Value: Private subnet - MGN lab
+          Value: Source subnet - MGN lab
 
   PublicRouteTable:
     Type: AWS::EC2::RouteTable
     Properties:
-      VpcId: !Ref TargetVPC
+      VpcId: !Ref MGNLabVPC
       Tags:
         - Key: Name
           Value: Public Route Table
@@ -137,26 +148,18 @@ Resources:
       SubnetId: !Ref PublicSubnet2
       RouteTableId: !Ref PublicRouteTable
 
-  PrivateRouteTable:
-    Type: AWS::EC2::RouteTable
-    Properties:
-      VpcId: !Ref TargetVPC
-      Tags:
-      - Key: Name
-        Value: Private Route Table
-
-  PrivateSubnetRouteTableAssociation1:
+  PublicSubnetRouteTableAssociation3:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
-      SubnetId: !Ref PrivateSubnet1
-      RouteTableId: !Ref PrivateRouteTable
+      SubnetId: !Ref PublicSubnet3
+      RouteTableId: !Ref PublicRouteTable
   
   DestinoSG:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
       GroupDescription: Enable SSH access via port 22 and HTTP via port 80
       GroupName: MGN lab SG Destino
-      VpcId: !Ref TargetVPC
+      VpcId: !Ref MGNLabVPC
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: '22'
@@ -170,11 +173,33 @@ Resources:
           CidrIp: !Sub
             - '${IP}/32'
             - IP: !Ref IPPublica
+  EC2Role:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+              - ec2.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      ManagedPolicyArns: 
+        - arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
 
+  EC2InstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties: 
+      InstanceProfileName: Ec2InstanceProfile
+      Path: /
+      Roles: 
+       - !Ref EC2Role
+       
 Outputs:
   VPC:
     Description: VPC
-    Value: !Ref TargetVPC
+    Value: !Ref MGNLabVPC
   AZ1:
     Description: Availability Zone 1
     Value: !GetAtt 

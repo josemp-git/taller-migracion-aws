@@ -8,7 +8,7 @@ A continuación, hará un cambio en el contenido del servidor **origen** (Servid
 1. Haga clic en **Services** y posteriormente en **EC2**.
 2. Haga clic en **EC2 Dashboard** y después en **Instances (running)**.
 3. Seleccione la instancia de **Servidor Linux** y haga clic en el botón de **Connect**.
-4. En la pantalla de **Connect to instance** haga clic en el botón de **Connect**.
+4. En la pantalla de **Connect to instance** haga clic en **Session Manager** y después en **Connect**
 5. En el CLI de la instancia ejecute los siguientes comandos: 
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
