@@ -14,6 +14,7 @@ Lo primero que debe hacer es crear un key pair. Este key pair le permitirá acce
 5. En el campo de **Key pair name** ingrese un nombre para su key pair (ejemplo: **dm-lab**).
 6. Haga click en **Create** y guarde el archivo que se va a descargar.
 
+![Create key pair](/static/images/mgn/keypair.png)
 
 ##### 2. Desplegar plantilla de AWS CloudFormation
 
@@ -38,15 +39,15 @@ http://checkip.amazonaws.com/
 
 9. Haga clic en **Services** y después en **CloudFormation** (también puede usar el campo de búsqueda).
 
-![CloudFormation](/static/images/mgn/cloudformation1.png)
+![CloudFormation](/static/images/ds/cloudformation1.png)
 
 10. Haga clic en **Create stack** y seleccione la opción de **With new resources (standard)**.
 
-![CloudFormation](/static/images/mgn/cloudformation2.png)
+![CloudFormation](/static/images/ds/cloudformation2.png)
 
 11. Seleccione **Upload a template file** y cargue la plantilla de CloudFormation que descargó anteriormente.
 
-![CloudFormation](/static/images/mgn/cloudformation3.png)
+![CloudFormation](/static/images/ds/cloudformation3.png)
 
 
 12. Haga click en **Next**.
@@ -55,9 +56,13 @@ http://checkip.amazonaws.com/
 15. En el menú desplegable de **KeyPair** bajo la sección de **Parameters** elija el key pair que creó anteriormente (**dm-lab**).
 16. Haga click en **Next**.
 17. En la siguiente pantalla haga click de nuevo en **Next**.
-18. En la siguiente pantalla haga click en **Create stack**.
-19. Espere unos minutos a que el status de lanzamiento de la plantilla indique **CREATE_COMPLETE**.
-20. Una vez que la plantilla haya sido desplegada, haga click en la sección de **Outputs** y copie el valor del parámetro **NFSInstancePrivateIP** (la dirección IP privada del servidor NFS) y guárdelo en un archivo de texto ya que lo utilizará más adelante.
+18. En la siguiente pantalla seleccione la casilla de **I acknowledge that AWS CloudFormation might create IAM resources** que aparece el final.
+19. Haga click en **Create stack**.
+
+![CloudFormation](/static/images/ds/acknowledgerole.png)
+
+20. Espere unos minutos a que el status de lanzamiento de la plantilla indique **CREATE_COMPLETE**.
+21. Una vez que la plantilla haya sido desplegada, haga click en la sección de **Outputs** y copie el valor del parámetro **NFSInstancePrivateIP** (la dirección IP privada del servidor NFS) y guárdelo en un archivo de texto ya que lo utilizará más adelante.
 
 ![Outputs](/static/images/ds/outputs.png)
 
@@ -66,26 +71,26 @@ http://checkip.amazonaws.com/
 
 En los siguientes pasos creará un bucket de Amazon S3 en donde almacenará la información que migre utilizando AWS DataSync.
 
-21. Haga click en **Services** y posteriormente seleccione el servicio de **S3**.
-22. Haga click en **Create bucket**.
-23. Ingrese un nombre para su bucket en el campo de **Bucket name** con la siguiente nomenclatura: 
+22. Haga click en **Services** y posteriormente seleccione el servicio de **S3**.
+23. Haga click en **Create bucket**.
+24. Ingrese un nombre para su bucket en el campo de **Bucket name** con la siguiente nomenclatura: 
 **migracion-datos-su-nombre**.
-24. En el menú desplegable de **Region** asegúrese de que la región sea **US East (N. Virginia)**.
-25. Haga click en **Create**.
+25. En el menú desplegable de **Region** asegúrese de que la región sea **US East (N. Virginia)**.
+26. Haga click en **Create**.
 
 ##### 4. Configuración de la instancia cliente
 
 A continuación se conectará a la instancia cliente para montar el recurso compartido por el servidor NFS y así poder acceder a los datos contenidos en directorio compartido.
 
-26. Haga click en **Services** y posteriormente seleccione el servicio de **EC2**.
-27. Haga click en **Running instances**.
-28. Seleccione la casilla  **Instancia cliente**.
-29. Haga click en **Connect**.
-30. Seleccione **EC2 Instance Connect** y haga click en **Connect** para tener acceso a la instancia cliente vía SSH por medio del navegador web.
+27. Haga click en **Services** y posteriormente seleccione el servicio de **EC2**.
+28. Haga click en **Running instances**.
+29. Seleccione la casilla  **Instancia cliente**.
+30. Haga click en **Connect**.
+31. Seleccione **EC2 Instance Connect** y haga click en **Connect** para tener acceso a la instancia cliente vía SSH por medio del navegador web.
 
 ![Connect to Linux Server](/static/images/ds/conectarec2.png)
 
-31. Una vez conectado a su instancia cliente ejecute el siguiente comando sustituyendo el parámetro **NFSInstancePrivateIP** por la dirección IP correspondiente que guardó en el editor de texto:
+32. Una vez conectado a su instancia cliente ejecute el siguiente comando sustituyendo el parámetro **NFSInstancePrivateIP** por la dirección IP correspondiente que guardó en el editor de texto:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
 sudo mount -t nfs NFSInstancePrivateIP:/mnt/nfs ~/nas
@@ -93,7 +98,7 @@ sudo mount -t nfs NFSInstancePrivateIP:/mnt/nfs ~/nas
 
 ::alert[Este comando montará un directorio compartido por la instancia que funge como servidor NFS.]{type="info"}
 
-32. Proceda a explorar el contenido de este directorio con los siguientes comandos:
+33. Proceda a explorar el contenido de este directorio con los siguientes comandos:
 
 Para acceder al directorio
 :::code{showCopyAction=true showLineNumbers=false language=java}
@@ -115,4 +120,4 @@ En este directorio compartido encontrará información estadística de baseball 
 
 ![EC2 CLI](/static/images/ds/explorenfs.png)
 
-33. Proceda al siguiente módulo.
+34. Proceda al siguiente módulo.
