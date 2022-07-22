@@ -19,6 +19,9 @@ Lo primero que debe hacer es crear un **key pair**. Este key pair le permitirá 
     - **Ppk**, para usuarios de Windows (PuTTy).
 6. Haga clic en **Create key pair** y guarde el archivo que se va a descargar.
 
+![Create key pair](/static/images/mgn/createkeypair.png)
+
+
 #### 2. Despliegue de plantilla de CloudFormation
 
 A continuación, desplegará una instancia de Linux en la región de N. Virgina utilizando una plantilla de CloudFormation. Esta plantilla se hará cargo de instalar la instancia, aplicar las actualizaciones de sistema operativo correspondientes, instalar el servidor web Apache y configurar un grupo de seguridad con los puertos 22 (ssh) y 80 (http) habilitados. Esta instancia es la que migrará utilizando AWS MGN. Esta plantilla también creará una VPC con tres subredes:

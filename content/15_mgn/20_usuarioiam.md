@@ -7,13 +7,25 @@ Para instalar el Agente de Replicación, primero debe generar las credenciales d
 
 1. Haga clic en **Services** y posteriormente seleccione el servicio de **IAM** (también puede usar el campo de búsqueda).
 2. Dentro de **IAM**, haga clic en **Users** en el menú lateral izquierdo y posteriormente haga clic en el botón de **Add users**.
-3. En el campo de **User name** escriba el nombre del usuario que va a crear **(mgn)** y en **Access type** seleccione **Access key - Programmatic access**. 
+
+![Add users](/static/images/mgn/addusers.png)
+
+3. En el campo de **User name** escriba el nombre del usuario que va a crear **(mgn)** y en **Access type** seleccione **Access key - Programmatic access**.
+
+![Add users](/static/images/mgn/addusers2.png)
+
 4. Haga clic en **Next: Permissions**.
 5. En la pantalla **Set permissions** seleccione la opción de **Attach existing policies directly** y en el campo de búsqueda ingrese **AWSApplicationMigrationAgentPolicy**. 
+
+![Add users](/static/images/mgn/addusers3.png)
+
 6. Seleccione la política y haga clic en **Next: Tags**.
 7. En la siguiente pantalla haga clic en **Next: Review**.
 8. Haga clic en **Create user**.
-9. Si todo salió bien, debe ver un mensaje de **<span style="color\:green">Success</span>** en la siguiente pantalla. Haga clic en **Download .csv** para descargar las credenciales del usuario que acaba de crear. Guarde este archivo ya que lo utilizará más adelante.
+9. En la siguiente pantalla deberá ver un mensaje de **Success**. Haga clic en **Download .csv** para descargar las credenciales del usuario que acaba de crear. Guarde este archivo ya que lo utilizará más adelante.
+
+![Add users](/static/images/mgn/addusers4.png)
+
 10. Proceda al siguiente módulo.
 
 

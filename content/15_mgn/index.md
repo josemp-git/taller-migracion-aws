@@ -17,6 +17,6 @@ En este laboratorio usted aprenderá a utilizar la herramienta de AWS MGN y llev
 Para efectos de este laboratorio, usted desplegará una instancia Linux con Apache ubicada en la región de N. Virgina que simulará ser un servidor que se encuentra en su centro de datos.
 Dentro de esta instancia usted instalará el agente de AWS MGN para llevar a cabo la migración hacia otra VPC dentro de la misma región.
 
-![Architecture Diagram](/static/images/ce/diagrama.png)
+![Architecture Diagram](/static/images/ce/diagrama-mgn.png)
 
 ::video{id="KVV5Hd70Uc8"}
