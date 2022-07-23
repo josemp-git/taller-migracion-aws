@@ -38,7 +38,7 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 
 11. En el apartado de **Firewall (security groups)** seleccione la opción de **Create security group** e ingrese un nombre en **Security group name** (datasync-agente-sg)
 
-![Create securigy group(/static/images/ds/createsg.png)
+![Create securigy group](/static/images/ds/createsg.png)
 
 12. Bajo el apartado de **Inbound security groups rules**, elimine la regla que permite el acceso al puerto 22 (SSH) y cree una regla nueva que habilite el acceso al puerto TCP 80 (HTTP) desde su dirección IP: 
 
