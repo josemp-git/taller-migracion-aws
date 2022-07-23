@@ -52,7 +52,7 @@ A continuación creará un bucket de Amazon S3 en donde almacenará la informaci
 13. Haga click en **Services** y posteriormente seleccione el servicio de **S3**.
 14. Haga click en **Create bucket**.
 15. Ingrese un nombre para su bucket en el campo de **Bucket name** con la siguiente nomenclatura: 
-**migracion-datos*****su-nombre***.
+migracion-datos-lab-**SU-NOMBRE**.
 
 16. En el menú desplegable de **Region** asegúrese de que la región sea **US East (N. Virginia)**.
 17. Haga click en **Create**.
