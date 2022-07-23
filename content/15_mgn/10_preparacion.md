@@ -11,6 +11,7 @@ A continuación, desplegará una instancia de Linux en la región de N. Virgina 
 *  **Target subnet** - Esta es la subred destino en la que lanzará su servidor una vez que este haya sido migrado por completo.
 *  **Private subnet** - Esta es una subred privada que no se utilizará en este laboratorio.
 
+
 1. Abra la siguiente URL en la pestaña de su navegador, copie la dirección IP que ahí aparece y guárdela en un archivo de texto.
 
 :::code{showCopyAction=true showLineNumbers=false language=java}

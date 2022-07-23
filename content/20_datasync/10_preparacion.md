@@ -12,6 +12,7 @@ A continuación, desplegará una plantilla de AWS CloudFormation que creará las
 - **Instancia cliente**
     - En esta instancia usted montará el recurso compartido por la instancia NFS. Esta instancia cliente actuará como si fuera su computadora "en sitio".
 
+
 1. Descargue esta plantilla de CloudFormation:
 
 ```bash
@@ -68,7 +69,7 @@ A continuación se conectará a la instancia cliente para montar el recurso comp
 
 ![Connect to Linux Server](/static/images/ds/connect1.png)
 
-22. En la pantalla de **Connect to instance** haga clic en **Session Manager** y después en **Connect** para tener acceso a su instancia vía SSH por medio del navegador web.
+22. En la pantalla de **Connect to instance** haga clic en **Session Manager** y después en **Connect**.
 
 ![Connect to Linux Server](/static/images/ds/connect2.png)
 
