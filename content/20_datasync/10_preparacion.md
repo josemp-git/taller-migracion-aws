@@ -11,10 +11,10 @@ Lo primero que debe hacer es crear un key pair. Este key pair le permitirá acce
 2. Haga click en **Services** y posteriormente seleccione el servicio de **EC2**.
 3. Una vez dentro de la consola de Amazon EC2, haga click en la sección de **Key Pairs** que se encuentra en el menú lateral izquierdo.
 4. Haga click en **Create key pair**.
-5. En el campo de **Key pair name** ingrese un nombre para su key pair (ejemplo: **dm-lab**).
+5. En el campo de **Key pair name** ingrese un nombre para su key pair (ejemplo: **datasync**).
 6. Haga click en **Create** y guarde el archivo que se va a descargar.
 
-![Create key pair](/static/images/mgn/keypair.png)
+![Create key pair](/static/images/ds/keypair.png)
 
 ##### 2. Desplegar plantilla de AWS CloudFormation
 
@@ -53,7 +53,7 @@ http://checkip.amazonaws.com/
 12. Haga click en **Next**.
 13. En el campo de **Stack name** escriba **datasync-lab**.
 14. En el campo de **IPPublica** ingrese la dirección IP que copió anteriormente.
-15. En el menú desplegable de **KeyPair** bajo la sección de **Parameters** elija el key pair que creó anteriormente (**dm-lab**).
+15. En el menú desplegable de **KeyPair** bajo la sección de **Parameters** elija el key pair que creó anteriormente (**datasync**).
 16. Haga click en **Next**.
 17. En la siguiente pantalla haga click de nuevo en **Next**.
 18. En la siguiente pantalla seleccione la casilla de **I acknowledge that AWS CloudFormation might create IAM resources** que aparece el final.
