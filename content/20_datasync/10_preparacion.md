@@ -85,10 +85,13 @@ A continuación se conectará a la instancia cliente para montar el recurso comp
 27. Haga click en **Services** y posteriormente seleccione el servicio de **EC2**.
 28. Haga click en **Running instances**.
 29. Seleccione la casilla  **Instancia cliente**.
-30. Haga click en **Connect**.
-31. Seleccione **EC2 Instance Connect** y haga click en **Connect** para tener acceso a la instancia cliente vía SSH por medio del navegador web.
+30. Haga clic en el botón de **Connect**.
 
-![Connect to Linux Server](/static/images/ds/conectarec2.png)
+![Connect to Linux Server](/static/images/ds/connect1.png)
+
+31. En la pantalla de **Connect to instance** haga clic en **Session Manager** y después en **Connect** para tener acceso a su instancia vía SSH por medio del navegador web.
+
+![Connect to Linux Server](/static/images/ds/connect2.png)
 
 32. Una vez conectado a su instancia cliente ejecute el siguiente comando sustituyendo el parámetro **NFSInstancePrivateIP** por la dirección IP correspondiente que guardó en el editor de texto:
 
