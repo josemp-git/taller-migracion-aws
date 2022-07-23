@@ -36,7 +36,7 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 
 ![VPC](/static/images/ds/requiredvpc.png)
 
-11. En el apartado de **Firewall (security groups)** seleccione la opción de **Create security group** e ingrese un nombre en **Security group name** (datasync-agente-sg)
+11. En el apartado de **Firewall (security groups)** seleccione la opción de **Create security group** e ingrese un nombre en **Security group name** (**datasync-agente-sg**).
 
 ![Create securigy group](/static/images/ds/createsg.png)
 
@@ -45,7 +45,7 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 * Type = **HTTP**
 * Source type = **My IP**
 
-![New rule(/static/images/ds/reglanueva.png)
+![New rule](/static/images/ds/reglanueva.png)
 
 13. Haga clic en **Launch**.
 14. Dentro de la consola de AWS, haga clic en **Services** y diríjase al servicio de **EC2**.
