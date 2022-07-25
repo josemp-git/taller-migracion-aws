@@ -13,13 +13,7 @@ A continuación, desplegará una plantilla de AWS CloudFormation que creará las
     - En esta instancia usted montará el recurso compartido por la instancia NFS. Esta instancia cliente actuará como si fuera su computadora "en sitio".
 
 
-1. Descargue esta link[plantilla de CloudFormation]{href="/static//20_datasync/dm-lab-ds.yaml" action=download}.
-
-
-```bash
-:assetUrl{path="/20_datasync/dm-lab-ds.yaml"}
-```
-
+1. Descargue esta :link[plantilla de CloudFormation]{href="/static//20_datasync/dm-lab-ds.yaml" action=download}.
 2. Haga clic en **Services** y después en **CloudFormation** (también puede usar el campo de búsqueda).
 
 ![CloudFormation](/static/images/ds/cloudformation1.png)
