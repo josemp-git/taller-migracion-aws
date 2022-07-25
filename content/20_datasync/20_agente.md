@@ -57,22 +57,16 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 
 ![IPs)](/static/images/ds/direccionesip.png)
 
-17. Seleccione la casilla de la instancia **Servidor NFS** y agregue una regla al grupo de seguridad que permita el acceso por el puerto TCP 2049 (NFS) desde la dirección IP **PRIVADA** del agente de AWS DataSync.
-
-![Habilitar puerto 2049](/static/images/ds/sg.png)
-
-![Habilitar puerto 2049](/static/images/ds/puerto2049.png)
-
-19. Dentro de la consola de AWS, haga clic en **Services** y diríjase al servicio de **DataSync**.
-20. Haga clic en **Agents** en el menú lateral izquierdo.
-21. Haga clic en el botón de **Create agent**.
-22. En el campo de **Agent adress** ingrese la dirección IP **PÚBLICA** del agente de AWS DataSync.
-23. Haga clic en **Get key**.
-24. Ingrese **Agente AWS DataSync** en el campo de **Agent name**.
-25. Haga clic en **Create agent**.
-26. Haga clic en **Agents** en el menú lateral izquierdo y compruebe que su agente se encuentra activo (**Status = Online**).
+17. Dentro de la consola de AWS, haga clic en **Services** y diríjase al servicio de **DataSync**.
+18. Haga clic en **Agents** en el menú lateral izquierdo.
+19. Haga clic en el botón de **Create agent**.
+20. En el campo de **Agent adress** ingrese la dirección IP **PÚBLICA** del agente de AWS DataSync.
+21. Haga clic en **Get key**.
+22. Ingrese **Agente AWS DataSync** en el campo de **Agent name**.
+23. Haga clic en **Create agent**.
+24. Haga clic en **Agents** en el menú lateral izquierdo y compruebe que su agente se encuentra activo (**Status = Online**).
 
 
 ![Agente en línea](/static/images/ds/agenteenlinea.png)
 
-27. Proceda al siguiente módulo.
+25. Proceda al siguiente módulo.

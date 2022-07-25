@@ -1,11 +1,4 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Parameters:
-  IPPublica:
-    Description: Ingrese su dirección IP publica (la encuentra aquí http://checkip.amazonaws.com/)
-    Type: String
-  KeyPair:
-    Description: Seleccione el key pair que creó anteriormente.
-    Type: AWS::EC2::KeyPair::KeyName
 Resources:
 
   VPC:
@@ -81,12 +74,11 @@ Resources:
       Tags:
         - Key: "Name"
           Value: "Servidor NFS"
-      KeyName: !Ref KeyPair
       IamInstanceProfile: !Ref EC2InstanceProfile
       UserData:
-        'Fn::Base64': 
+        Fn::Base64: 
           !Sub |
-            #!/bin/sh
+            #!/bin/bash
             yum update -y
             service nfs start
             echo "/mnt/nfs *(rw,sync,no_subtree_check,no_root_squash)" >> /etc/exports
@@ -98,9 +90,6 @@ Resources:
             chmod 755 /mnt/nfs
             exportfs -a
             service nfs restart
-            sudo yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
-            sudo systemctl start amazon-ssm-agent
-            sudo systemctl status amazon-ssm-agent
 
   ClientInstance:
     Type: AWS::EC2::Instance
@@ -114,40 +103,39 @@ Resources:
           DeleteOnTermination: "true"
           VolumeSize: "8"
       SecurityGroupIds: 
-        - !Ref ClientInstanceSecurityGroup
+        - !Ref 'ClientInstanceSecurityGroup'
       SubnetId: !Ref PublicSubnet 
       Tags:
         - Key: "Name"
           Value: "Instancia cliente"
-      KeyName: !Ref KeyPair
       IamInstanceProfile: !Ref EC2InstanceProfile
       UserData:
-        'Fn::Base64': 
+        Fn::Base64: 
           !Sub |
-            #!/bin/bash -xe 
+            #!/bin/bash
             yum update -y
-            sudo yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
-            sudo systemctl start amazon-ssm-agent
-            sudo systemctl status amazon-ssm-agent
-            cd /home/ssm-user/
+            cd /home/ec2-user/
             mkdir nas
             wget https://github.com/chadwickbureau/baseballdatabank/archive/refs/tags/v2022.2.zip
             unzip v2022.2.zip
-            mv /home/ssm-user/baseballdatabank-2022.2 /home/ssm-user/baseball-data-2021-version
             rm v2022.2.zip
-
+            mv baseballdatabank-2022.2 /home/ec2-user/baseball-data-2021-version
+            
   ClientInstanceSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: Enable SSH access via port 22
-      SecurityGroupIngress:
-        - IpProtocol: tcp
-          FromPort: '22'
-          ToPort: '22'
-          CidrIp: !Sub
-            - '${IP}/32'
-            - IP: !Ref IPPublica
       VpcId: !Ref VPC
+  
+  ClientInstanceSecurityGroupIngress:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      Description: Security group rule
+      GroupId: !Ref ClientInstanceSecurityGroup
+      IpProtocol: tcp
+      FromPort: 22
+      ToPort: 22
+      SourceSecurityGroupId: !Ref ClientInstanceSecurityGroup
 
   NFSInstanceSecurityGroup:
     Type: AWS::EC2::SecurityGroup
@@ -157,11 +145,11 @@ Resources:
       - IpProtocol: tcp
         FromPort: '2049'
         ToPort: '2049'
-        SourceSecurityGroupId: !Ref ClientInstanceSecurityGroup
+        CidrIp: 10.0.0.0/24
       - IpProtocol: tcp
         FromPort: '22'
         ToPort: '22'
-        SourceSecurityGroupId: !Ref ClientInstanceSecurityGroup
+        CidrIp: 10.0.0.0/24
       VpcId: !Ref VPC
   
   EC2Role:
@@ -190,6 +178,3 @@ Outputs:
   NFSInstancePrivateIP:
     Description: Instancia NFS direcccion IP privada
     Value: !GetAtt NFSInstance.PrivateIp
-  ClientInstancePrivateIP:
-    Description: Instancia cliente direcccion IP privada
-    Value: !GetAtt ClientInstance.PrivateIp
