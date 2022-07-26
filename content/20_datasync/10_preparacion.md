@@ -16,7 +16,7 @@ A continuación, desplegará una plantilla de AWS CloudFormation que creará los
 - **VPC y subred**
     - Donde se alojarán las instancias creadas para esta laboratorio y el agende de AWS DataSync.
 
-1. Descargue esta :link[plantilla de CloudFormation]{href="/static//20_datasync/dm-lab-ds.yaml" action=download}.
+1. Descargue esta :link[plantilla de CloudFormation]{href="/static/20_datasync/dm-lab-ds.yaml" action=download}.
 2. Haga clic en **Services** y después en **CloudFormation** (también puede usar el campo de búsqueda).
 
 ![CloudFormation](/static/images/ds/cloudformation1.png)
@@ -68,7 +68,6 @@ sudo mount -t nfs NFSInstancePrivateIP:/mnt/nfs /home/ec2-user/nas
 
 19. Proceda a explorar el contenido de este directorio con los siguientes comandos:
 
-Para enlistar el contenido
 :::code{showCopyAction=true showLineNumbers=false language=java}
 sudo ls /home/ec2-user/nas
 :::
