@@ -18,9 +18,6 @@ A continuación, desplegará una instancia de Linux en la región de N. Virgina 
 http://checkip.amazonaws.com/
 :::
 
-2. Descargue esta plantilla de CloudFormation:
-
-
 2. Descargue esta :link[plantilla de CloudFormation]{href="/static/15_mgn/mgn-lab.yaml" action=download}.
 
 3. Haga clic en **Services** y después en **CloudFormation** (también puede usar el campo de búsqueda).
