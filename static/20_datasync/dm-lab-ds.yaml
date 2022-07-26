@@ -8,7 +8,7 @@ Resources:
       EnableDnsHostnames: true
       Tags:
       - Key: Name
-        Value: Migracion-datos-VPC
+        Value: Lab-Migracion-datos-VPC
 
   InternetGateway:
     Type: AWS::EC2::InternetGateway
@@ -174,7 +174,27 @@ Resources:
       Path: /
       Roles: 
        - !Ref EC2Role
+
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Join 
+        - '-'
+        - - 'datasync-lab'
+          - !Ref AWS::AccountId
+          - !Select 
+            - 0
+            - !Split 
+              - '-'
+              - !Select 
+                - 2
+                - !Split 
+                  - /
+                  - !Ref AWS::StackId     
 Outputs:
   NFSInstancePrivateIP:
     Description: Instancia NFS direcccion IP privada
     Value: !GetAtt NFSInstance.PrivateIp
+  S3BucketName:
+    Description: Bucket Amazon S3 (destino de los datos)
+    Value: !Ref S3Bucket
