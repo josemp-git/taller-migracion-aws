@@ -5,7 +5,7 @@ weight: 10
 ---
 Antes de comenzar, debe asegurarse de estar trabajando en la región de **N. Virgina**. Esto lo puede verificar en el menú desplegable que se encuentra en la esquina superior derecha de la consola de AWS.
 
-A continuación, desplegará una instancia de Linux en la región de N. Virgina utilizando una plantilla de CloudFormation. Esta plantilla se hará cargo de instalar la instancia, aplicar las actualizaciones de sistema operativo correspondientes, instalar el servidor web Apache y configurar un grupo de seguridad con los puertos 22 (ssh) y 80 (http) habilitados. Esta instancia es la que migrará utilizando AWS MGN. Esta plantilla también creará una VPC con tres subredes:
+A continuación, desplegará una instancia de Linux en la región de N. Virgina utilizando una plantilla de CloudFormation. Esta plantilla se creará la instancia, aplicar las actualizaciones de sistema operativo correspondientes, instalar el servidor web Apache y configurará un grupo de seguridad con los puertos 22 (ssh) y 80 (http) habilitados. Esta instancia es la que migrará utilizando AWS MGN. Esta plantilla también creará una VPC con tres subredes:
 
 * **Staging Area subnet** - Esta es la subred en la que se desplegará el **servidor de replicación** necesario para el proceso de migración
 *  **Target subnet** - Esta es la subred destino en la que lanzará su servidor una vez que este haya sido migrado por completo.

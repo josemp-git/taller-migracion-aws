@@ -8,9 +8,9 @@ weight: 10
 A continuación, desplegará una plantilla de AWS CloudFormation que creará los siguientes recursos:
 
 - **Servidor NFS**
-    - Esta instancia de Amazon EC2 comparte un directorio en la red por medio de NFS. En este directorio se encuentra información estadística de baseball de los últimos 20 años que usted migrará a Amazon S3 utilizando AWS DataSync. Esta instancia actuará como un servidor NFS "en sitio" con información que se predente migrar a la nube de AWS.
+    - Esta instancia de Amazon EC2 comparte un directorio en la red por medio de NFS. En este directorio se encuentra información estadística de baseball de los últimos 20 años que usted migrará a Amazon S3 utilizando AWS DataSync. Esta instancia actuará como un servidor NFS "en sitio".
 - **Instancia cliente**
-    - En esta instancia de Amazon EC2 usted montará el recurso compartido por la instancia NFS. Esta instancia cliente actuará como si fuera su computadora "en sitio".
+    - En esta instancia de Amazon EC2 usted montará el recurso compartido por la servidor NFS. Esta instancia cliente actuará como si fuera su computadora "en sitio".
 - **Bucket Amazon S3**
     - El destino al cual migrará los datos.
 - **VPC y subred**
@@ -82,4 +82,16 @@ sudo ls /home/ec2-user/nas/baseballdatabank-master/core
 
 ![EC2 CLI](/static/images/ds/explorenfs.png)
 
-20. Proceda al siguiente módulo.
+20. Ejecute el siguiente comando:
+
+:::code{showCopyAction=true showLineNumbers=false language=java}
+aws ssm get-parameter --name /aws/service/datasync/ami --region us-east-1
+:::
+
+21. Copie el parámetro de **value** resultado de la ejecución del comando anterior y guárdelo en un archivo de texto ya que lo utilizará en el siguiente módulo.
+
+![Copy AMI id](/static/images/ds/copyamiid.png)
+
+::alert[La ejecución de este comando le permite conocer la versión más reciente de la AMI del agente de AWS DataSync (ami-id).]{type="info"}
+
+22. Proceda al siguiente módulo.
