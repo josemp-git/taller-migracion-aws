@@ -16,11 +16,12 @@ Una vez que su tarea haya sido creada con todos los parámetros necesarios, debe
 
 ![Task running](/static/images/ds/tareaejecutando.png)
 
-5. Una vez que el status de su tarea cambie de nuevo a **Available** haga clic en **History** bajo **Tasks** en el menú lateral izquierdo. Aquí podrá corroborar que su tarea de migración se ejecutó satisfactoriamente.
+5. Espere a que el status de la tarea cambie de nuevo a **Available**. Este cambio indicará que la tarea de migración ha concluido.
+6. Haga clic en **History** bajo **Tasks** en el menú lateral izquierdo. Aquí podrá corroborar que su tarea de migración se ejecutó satisfactoriamente.
 
 ![Task history](/static/images/ds/tareahistory.png)
 
 ::alert[Haga clic en el valor de **Execution ID** si desea conocer más detalles acerca de la ejecución de su tarea.]{type="info"}
 
-6. Haga clic en **Services** y posteriormente seleccione el servicio de **S3**.
-7. Haga clic en el bucket que creó anteriormente y corrobore que los datos se migraron exitosamente.
+7. Haga clic en **Services** y posteriormente seleccione el servicio de **S3**.
+8. Haga clic en el bucket que creó anteriormente y corrobore que los archivos que migró se encuentran ahí.

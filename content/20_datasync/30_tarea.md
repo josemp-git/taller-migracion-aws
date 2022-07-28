@@ -42,4 +42,4 @@ Una vez que su agente ha sido creado, deberá crear una tarea (task). En esta ta
 
 ![Tarea disponible](/static/images/ds/tareadisponible.png)
 
-|9. Proceda al siguiente módulo.
+19. Proceda al siguiente módulo.
