@@ -20,7 +20,7 @@ Una vez que su agente ha sido creado, deberá crear una tarea (task). En esta ta
 
 7. Haga clic en **Next**.
 8. En **Location type** seleccione **Amazon S3 bucket**.
-9. En **S3 bucket** seleccione el bucket que creó anteriormente.
+9. En **S3 bucket** seleccione el bucket que creó la plantilla de CloudFormation (datasync-lab-XXXXXXXXXXXX-YYYYYYY).
 10. En **S3 Storage class** seleccione **Standard**.
 
 ::alert[En el menú desplegable de **S3 Storage class** usted podrá ver que AWS DataSync le permite transferir datos directamente a cualquiera de las clases de almacenamiento de Amazon S3. Si, por ejemplo, usted requiere archivar datos históricos que no necesita acceder frecuentemente, puede transferir estos datos directamente a Amazon S3 Glacier o Amazon S3 Glacier Deep Archive.]{type="info"}
@@ -30,19 +30,15 @@ Una vez que su agente ha sido creado, deberá crear una tarea (task). En esta ta
 ![Tarea - Ubicación destino](/static/images/ds/tareadestino.png)
 
 12. Haga clic en **Next**
-13. En **Task Name** ingrese un nombre para su tarea.
-14. En **Task logging** seleccione **Log basic information such as transfer errors** del menú desplegable de **Log level**.
-15. Haga clic en el botón de **Autogenerate**.
+13. En **Task Name** ingrese un nombre para su tarea (**nfs-s3-task**).
+14. Bajo el apartado de **Task logging** seleccione **Log basic information such as transfer errors** del menú desplegable de **Log level**.
+15. Bajo el mismo apartado de **Task logging** haga clic en el botón de **Autogenerate**.
 
 ::alert[En la pantalla de **Configure settings**, usted puede configurar diferentes opciones adicionales como habilitar la verificación de los datos, regular el ancho de banda, modificar el modo de la transferencia, filtrar archivos y directorios, y calendarizar la frecuencia de ejecución de la tarea.]{type="info"}
 
 16. Haga clic en **Next**.
 17. En la pantalla de **Review** haga clic en **Create task**.
-18. Haga clic en **Tasks** en el menú lateral de la izquierda. Usted podrá ver que la tarea se está creando (**status = Creating**).
-
-![Creando tarea](/static/images/ds/creandotarea.png)
-
-19. Espere unos minutos a que el status de la tarea cambie a **Available**.
+18. Haga clic en **Tasks** en el menú lateral de la izquierda y espere a que el status de la tarea cambie a **Available**.
 
 ![Tarea disponible](/static/images/ds/tareadisponible.png)
 

@@ -5,7 +5,7 @@ weight: 20
 ---
 En este módulo, usted desplegará el agente de AWS DataSync en una instancia de Amazon EC2.
 
-1. Copie la siguiente URL y sustituya el valor de **ami-id** por el valor de **value** resultado de la ejecución del comando del paso anterior:
+1. Copie la siguiente URL y sustituya el valor de **ami-id** por el valor de **value** resultado de la ejecución del último comando del módulo anterior:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
 https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-id
@@ -52,7 +52,7 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 
 ::alert[Este paso puede tomar unos minutos.]{type="info"}
 
-14. Seleccione la casilla del agente de AWS DataSync, copie las direcciones IP pública y guárdela en un archivo de texto.
+14. Seleccione la casilla del agente de AWS DataSync, copie la dirección **IP PÚBLICA** y guárdela en un archivo de texto.
 
 ![IPs)](/static/images/ds/direccionip.png)
 
@@ -64,7 +64,7 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 ![Public Endpoints)](/static/images/ds/publicendpoint.png)
 
 19. Bajo el apartado de **Activation key** selccione la opción de **Automatically get the activation key from your agent**.
-20. En el campo de **Agent adress** ingrese la dirección IP **PÚBLICA** del agente de AWS DataSync.
+20. En el campo de **Agent aDdress** ingrese la dirección IP **PÚBLICA** del agente de AWS DataSync.
 21. Haga clic en **Get key**.
 
 ![Activation key)](/static/images/ds/activationkey.png)
