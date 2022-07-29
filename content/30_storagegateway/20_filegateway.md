@@ -23,27 +23,61 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 
 5. Una vez que haya sustituido los valores, copie la URL y péguela en su navegador web. Esta URL lo llevará a desplegar File Gateway como una instancia de Amazon EC2.
 6. Seleccione **m5.xlarge** como tipo de instancia.
-7. Haga clic en **Next: Configure instance details**.
-8. En Network, seleccione la VPC **Migracion-datos-VPC**.
-9. Haga clic en **Next: Add storage**.
-10. En la pantalla de **Add Storage**  haga clic en **Add new volume** y agregue un volumen EBS adicional con las siguientes características:
 
-- Size (GiB) = **150**
-- Volume Type = **Magnetic (standard)**
-- Delete on termination = ✅ 
+![Tipo de instancia](/static/images/sg/instancetypesg.png)
 
-![Agregar volúmen](/static/images/sg/agregarvolumen.png)
+7. Del menú desplegable de **Key pair**, elija **Proceed without a key pair**.
 
-11. Haga clic en **Next: Add tags**.
-12. Agregue la etiqueta **Name** con el valor **File Gateway**.
-13. Haga clic en **Next: Configure Security Group**.
-14. Habilite el acceso al puerto TCP 80 (HTTP) desde su dirección IP y al puerto TCP 2049 desde la dirección IP privada de la instancia cliente.
+![Proceed without a key pair](/static/images/sg/nokeypair.png)
 
-![Agregar volúmen](/static/images/sg/sg.png)
+8. Haga clic en **Edit** en el apartado de **Network settings**.
+9. En **VPC**, seleccione la VPC **Lab-Migracion-datos-VPC**.
 
-15. Haga clic en **Review and Launch**.
-16. Haga clic en **Launch**.
-17. Seleccione el key pair que creó anteriormente y haga clic en **Launch Instances**.
+![VPC](/static/images/sg/requiredvpc.png)
+
+10. Bajo el apartado de **Auto-assign public IP** elija **Enable**.
+
+![Auto-assign public IP - Enable](/static/images/sg/auto-assign-publicip.png)
+
+11. En el apartado de **Firewall (security groups)** seleccione la opción de **Create security group** e ingrese un nombre en el campo de **Security group name** (**storage-gateway-sg**).
+
+![Security group](/static/images/sg/sg.png)
+
+12. Bajo el apartado de **Inbound security groups rules**, elimine la regla que permite el acceso al puerto 22 (SSH) y agregue dos reglas nuevas que habilite el acceso al puerto TCP 80 (HTTP) desde su dirección IP y al acceso al puerto TCP 2049 (NFS) desde la dirección IP privada de la instancia cliente:
+
+* Regla 1:
+* Type = **HTTP**
+* Source type = **My IP**
+
+*Regla 2:
+* Type = **NFS**
+* Source type = **IP privada de instancia cliente**
+
+![Security group](/static/images/sg/sg2.png)
+
+13. Bajo el apartado de **Configure storage** haga clic en **Add new volume** y agregue un volumen con las siguientes caraceterísticas:
+
+- Capacidad (GiB) = **150**
+- Tipo de volumen  EBS = **Magnetic (standard)**
+
+![Volumen adicional](/static/images/sg/storage.png)
+
+14. Haga clic en **Launch**.
+15. Haga clic en **View all instances**.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 18. Dentro de la consola de AWS, haga clic en **Services** y diríjase al servicio de **EC2**.
 19. Asegúrese de que la instancia de su agente indique **<span style="color\:green">✔ Running</span>** bajo el apartado de **Instance State** y **<span style="color\:green">2/2 checks passed</span>** bajo el apartado de **Status check**.
 

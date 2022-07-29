@@ -28,7 +28,7 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 
 8. Bajo el apartado de **Auto-assign public IP** elija **Enable**.
 
-![Auto-assign public IP - Enable(/static/images/ds/auto-assign-publicip.png)
+![Auto-assign public IP - Enable](/static/images/ds/auto-assign-publicip.png)
 
 9. En el apartado de **Firewall (security groups)** seleccione la opción de **Create security group** e ingrese un nombre en el campo de **Security group name** (**datasync-agente-sg**).
 
