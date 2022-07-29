@@ -37,11 +37,8 @@ Resources:
             yum install httpd -y
             service httpd start
             chkconfig httpd on
-            sudo yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
-            sudo systemctl start amazon-ssm-agent
-            sudo systemctl status amazon-ssm-agent
             cd /var/www/html
-            wget https://static.us-east-1.prod.workshops.aws/public/8b45b2f9-1eb3-49e5-afec-125a655a0155/static/15_mgn/origen/index.html
+            wget https://static.us-east-1.prod.workshops.aws/public/42f62cda-a8e4-4b26-9eca-c045cd5c8a0f/static/15_mgn/origen/index.html
   
   OrigenSG:
     Type: 'AWS::EC2::SecurityGroup'
