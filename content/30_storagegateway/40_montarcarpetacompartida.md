@@ -36,7 +36,7 @@ ls /home/ec2-user/gateway
 
 ::alert[Si ejecutó el laboratorio de AWS DataSync y utilizó los mismos recursos para este laboratorio, encontrará los archivos que migró anteriormente.]{type="info"}
 
-10. Dentro de la ruta en la que se encuentra hay un directorio llamado **_baseball-data-2021-version_** que contiene archivos CSV con estadísticas de baseball. Ejecute el siguiente comando para copiar estos archivos al recurso compartido que acaba de montar:
+10. Dentro de la ruta en la que se encuentra hay un directorio llamado **baseball-data-2021-version** que contiene archivos CSV con estadísticas de baseball. Ejecute el siguiente comando para copiar estos archivos al recurso compartido que acaba de montar:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
 cp -rv /home/ec2-user/baseball-data-2021-version/ /home/ec2-user/gateway/
@@ -56,6 +56,6 @@ ls /home/ec2-user/gateway/baseball-data-2021-version
 
 ![Comandos)](/static/images/sg/comandos.png)
 
-13. Haga click en **_Services_** y después en ***S3***.
+13. Haga click en **Services** y después en **S3**.
 14. Ingrese al bucket que creó la plantilla de CloudFormation para este laboratorio.
 15. Verifique que el directorio que acaba de copiar se encuentre en el bucket.
