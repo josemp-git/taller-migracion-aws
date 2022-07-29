@@ -1,11 +1,5 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Parameters:
-  IPPublica:
-    Description: Ingrese su dirección IP pública (la encuentra aquí http://checkip.amazonaws.com/)
-    Type: String
-  KeyPair:
-    Description: Select an existing EC2 key pair.
-    Type: AWS::EC2::KeyPair::KeyName
+
 Resources:
 
   VPC:
@@ -15,7 +9,7 @@ Resources:
       EnableDnsHostnames: true
       Tags:
       - Key: Name
-        Value: Migracion-datos-VPC
+        Value: Lab-Migracion-datos-VPC
 
   InternetGateway:
     Type: AWS::EC2::InternetGateway
@@ -76,40 +70,84 @@ Resources:
           DeleteOnTermination: "true"
           VolumeSize: "8"
       SecurityGroupIds: 
-        - !Ref ClientInstanceSecurityGroup
+        - !Ref 'ClientInstanceSecurityGroup'
       SubnetId: !Ref PublicSubnet 
       Tags:
         - Key: "Name"
           Value: "Instancia cliente"
-      KeyName: !Ref KeyPair
+      IamInstanceProfile: !Ref EC2InstanceProfile
       UserData:
-        'Fn::Base64': 
+        Fn::Base64: 
           !Sub |
-            #!/bin/bash -xe 
+            #!/bin/bash
             yum update -y
             cd /home/ec2-user/
             mkdir nas
-            wget https://github.com/chadwickbureau/baseballdatabank/archive/v2019.2.zip
-            unzip v2019.2.zip
-            mv /home/ec2-user/baseballdatabank-2019.2 /home/ec2-user/baseball-data-2018-version
-            rm v2019.2.zip
-        #mount -t nfs ${NFSInstance.PrivateIp}:/mnt/nfs /home/ec2-user/nas
-     #DependsOn: NFSInstance
+            wget https://github.com/chadwickbureau/baseballdatabank/archive/refs/tags/v2022.2.zip
+            unzip v2022.2.zip
+            rm v2022.2.zip
+            mv baseballdatabank-2022.2 /home/ec2-user/baseball-data-2021-version
 
   ClientInstanceSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: Enable SSH access via port 22
-      SecurityGroupIngress:
-        - IpProtocol: tcp
-          FromPort: '22'
-          ToPort: '22'
-          CidrIp: !Sub
-            - '${IP}/32'
-            - IP: !Ref IPPublica
       VpcId: !Ref VPC
+  
+  ClientInstanceSecurityGroupIngress:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      Description: Security group rule
+      GroupId: !Ref ClientInstanceSecurityGroup
+      IpProtocol: tcp
+      FromPort: 22
+      ToPort: 22
+      SourceSecurityGroupId: !Ref ClientInstanceSecurityGroup
+  
+  EC2Role:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+              - ec2.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      ManagedPolicyArns: 
+        - arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
 
+  EC2InstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties: 
+      InstanceProfileName: Ec2InstanceProfile
+      Path: /
+      Roles: 
+       - !Ref EC2Role
+
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Join 
+        - '-'
+        - - 'storage-gateway-lab'
+          - !Ref AWS::AccountId
+          - !Select 
+            - 0
+            - !Split 
+              - '-'
+              - !Select 
+                - 2
+                - !Split 
+                  - /
+                  - !Ref AWS::StackId
+                  
 Outputs:
   ClientInstancePrivateIP:
     Description: Instancia cliente direcccion IP privada
     Value: !GetAtt ClientInstance.PrivateIp
+  S3BucketName:
+    Description: Bucket Amazon S3 (destino de los datos)
+    Value: !Ref S3Bucket
