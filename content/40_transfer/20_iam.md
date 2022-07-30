@@ -63,7 +63,7 @@ A continuación creará una política de IAM que se aplicará a un rol de IAM y 
 13. Haga clic en **Next**.
 14. En el campo de **Permission policies** ingrese el nombre de la política que creó anteriormente (**AWSTransferCustomPolicy**) y seleccione dicha política.
 
-![Select policy](/static/images/tr/selectpolicy.png.png)
+![Select policy](/static/images/tr/selectpolicy.png)
 
 15. haga clic en **Next**.
 16. Ingrese **AWSTransferCustomRole** en el campo de **Role name**.
