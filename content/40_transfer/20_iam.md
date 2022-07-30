@@ -47,7 +47,7 @@ A continuación creará una política de IAM que se aplicará a un rol de IAM y 
 
 5. Haga clic el botón de **Next: Tags**.
 6. Haga clic en **Next: Review**.
-7. Ingrese un **AWSTransferCustomPolicy** en el campo de **Name**.
+7. Ingrese **AWSTransferCustomPolicy** en el campo de **Name**.
 8. Haga clic en **Create policy**.
 
 #### Creación de rol IAM
