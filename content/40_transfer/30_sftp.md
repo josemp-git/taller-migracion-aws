@@ -13,11 +13,11 @@ weight: 30
 
 ![Identity provider](/static/images/tr/identityprovider.png)
 
-5. En **Choose an endpoint** seleccione **Publicly accesible** y haga clic en **Next**.
+5. En **Endpoint configuration** seleccione **Publicly accesible** y haga clic en **Next**.
 
 ![Identity provider](/static/images/tr/endpointconfiguration.png)
 
-6. En **Choose domain** seleccione Amazon S3 y haga clic en **Next**.
+6. En **Domain** seleccione **Amazon S3** y haga clic en **Next**.
 
 ![Domain](/static/images/tr/domain.png)
 
