@@ -27,16 +27,14 @@ Antes de instalar el agente, conozca los detalles del servidor que migrará.
 8. Ingrese el siguiente comando en el CLI del servidor para descargar el instalador del Agente de Replicación:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
-wget -O ./aws-replication-installer-init.py https://aws-application-migration-service-us-east-1.s3.amazonaws.com/latest/linux/aws-replication-installer-init.py
+sudo wget -O ./aws-replication-installer-init.py https://aws-application-migration-service-us-east-1.s3.amazonaws.com/latest/linux/aws-replication-installer-init.py
 :::
 
 9. Ejecute el siguiente comando para instalar el agente, sustituyendo **ACCESS-KEY** y **SECRET-ACCESS-KEY** por el access key y secret access key que descargó previamente al crear el usuario IAM:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
-sudo python3 aws-replication-installer-init.py --region us-east-1 --aws-access-key-id ACCESS-KEY --aws-secret-access-key SECRET-ACCESS-KEY
+sudo python3 aws-replication-installer-init.py --region us-east-1 --no-prompt --aws-access-key-id ACCESS-KEY --aws-secret-access-key SECRET-ACCESS-KEY
 :::
-
-10. Presione enter durante **Identify volumes for replication**.
 
 La instalación del agente tomará un par de minutos y al finalizar mostrará el siguiente mensaje: **The AWS Replication Agent was successfully installed.**
 
@@ -44,8 +42,8 @@ La instalación del agente tomará un par de minutos y al finalizar mostrará el
 
 ::alert[Para más información acerca de como agregar servidores origen, puede consultar la documentación disponible: [Adding source servers](https://docs.aws.amazon.com/mgn/latest/ug/adding-servers.html)]{type="info"}
 
-11. Haga clic en **Services** y posteriormente seleccione el servicio de **AWS Application Migration Service** para regresar a la consola de AWS MGN.
+10. Haga clic en **Services** y posteriormente seleccione el servicio de **AWS Application Migration Service** para regresar a la consola de AWS MGN.
 
 De regreso en el servicio de AWS MGN podrá verificar que el servidor ya aparece en la consola después de haber instalado el agente, y que la replicación ha comenzado. Usted podrá monitorear el progreso de la replicación bajo el apartado de **Data replication status**.
 
-12. Proceda al siguiente módulo en lo que se termina el proceso de replicación.
+11. Proceda al siguiente módulo en lo que se termina el proceso de replicación.

@@ -33,14 +33,13 @@ http://checkip.amazonaws.com/
 ![CloudFormation](/static/images/mgn/cloudformation3.png)
 
 6. Haga clic en **Next**.
-7. En el campo de **Stack name** escriba **MGN-Lab**.
+7. En el campo de **Stack name** ingrese **MGN-Lab**.
 8. En el campo de **IPPublica** ingrese la dirección IP que copió anteriormente.
-9. En el menú desplegable de **KeyPair** bajo la sección de **Parameters** elija el key pair que creó anteriormente **(mgn-lab)**.
-10. Haga clic en **Next**.
-11. En la siguiente pantalla haga clic de nuevo en **Next**.
-12. En la siguiente pantalla seleccione la casilla de **I acknowledge that AWS CloudFormation might create IAM resources** que aparece el final.
-13. Haga clic en **Create stack**.
+9. Haga clic en **Next**.
+10. En la siguiente pantalla haga clic de nuevo en **Next**.
+11. En la siguiente pantalla seleccione la casilla de **I acknowledge that AWS CloudFormation might create IAM resources** que aparece el final.
+12. Haga clic en **Create stack**.
 
 ![CloudFormation](/static/images/mgn/acknowledgerole.png)
 
-14. Proceda al siguiente módulo mientras AWS CloudFormation termina de desplegar los recursos.
+13. Proceda al siguiente módulo mientras AWS CloudFormation termina de desplegar los recursos.
