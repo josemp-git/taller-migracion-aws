@@ -56,7 +56,7 @@ Lo anterior lo llevará a modificar la plantilla de lanzamiento, en la cual crea
 ![Etiquetas](/static/images/mgn/launchtemplateid.png)
 
 20. Haga clic en **View launch templates**.
-21.Seleccione su plantilla (**Launch template ID**).
+21. Seleccione su plantilla (**Launch template ID**).
 22. Haga clic en **Actions** y posteriormente en **Set default version**.
 
 ![Set default version](/static/images/mgn/setdefaultversion.png)
