@@ -30,7 +30,7 @@ A continuación, desplegará una plantilla de AWS CloudFormation que creará los
 ![CloudFormation](/static/images/ds/cloudformation3.png)
 
 5. Haga click en **Next**.
-6. En el campo de **Stack name** escriba **datasync-lab**.
+6. En el campo de **Stack name** escriba **data-migration-lab**.
 7. Haga click en **Next**.
 8. En la siguiente pantalla haga click de nuevo en **Next**.
 9. En la siguiente pantalla seleccione la casilla de **I acknowledge that AWS CloudFormation might create IAM resources** que aparece el final.

@@ -35,7 +35,7 @@ Resources:
         - !GetAZs ''
       Tags:
         - Key: Name
-          Value: Target Subnet
+          Value: Lab-Migracion-datos-Subnet
 
   PublicRouteTable:
     Type: AWS::EC2::RouteTable
@@ -122,7 +122,6 @@ Resources:
   EC2InstanceProfile:
     Type: AWS::IAM::InstanceProfile
     Properties: 
-      InstanceProfileName: Ec2InstanceProfile
       Path: /
       Roles: 
        - !Ref EC2Role
