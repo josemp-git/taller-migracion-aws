@@ -5,17 +5,13 @@ weight: 20
 ---
 En este módulo, usted desplegará el agente de AWS DataSync en una instancia de Amazon EC2.
 
-1. Copie la siguiente URL y sustituya el valor de **ami-id** por el valor de **value** resultado de la ejecución del último comando del módulo anterior:
+1. Copie la siguiente URL y sustituya **ami-id** al por el valor de **value** resultado de la ejecución del último comando del módulo anterior:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
 https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-id
 :::
 
-Ejemplo:
-
-:::code{showCopyAction=true showLineNumbers=false language=java}
-https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=**ami-06dffdffeed1ce3c9**
-:::
+::alert[Ejemplo de la URL anterior: https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=**ami-06dffdffeed1ce3c9**.]{type="info"}
 
 2. Una vez que haya sustituido los valores, copie la URL y péguela en su navegador web. Esta URL lo llevará a desplegar el agente de AWS DataSync como una instancia de Amazon EC2.
 3. Ingrese **Agente AWS DataSync** en el campo de **Name**.
