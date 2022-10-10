@@ -180,7 +180,7 @@ Resources:
     Properties:
       BucketName: !Join 
         - '-'
-        - - 'datasync-lab'
+        - - 'data-migration-lab'
           - !Ref AWS::AccountId
           - !Select 
             - 0

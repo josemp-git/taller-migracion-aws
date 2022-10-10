@@ -132,7 +132,7 @@ Resources:
     Properties:
       BucketName: !Join 
         - '-'
-        - - 'storage-gateway-lab'
+        - - 'data-migration-lab'
           - !Ref AWS::AccountId
           - !Select 
             - 0
