@@ -79,3 +79,5 @@ A continuación, usted configurará las reglas en el servicio de Amazon EventBri
 ::alert[ Para más información acerca de como programar expresiones para reglas , consulte la [documentación disponible](https://docs.aws.amazon.com/es_es/AmazonCloudWatch/latest/events/ScheduledEvents.html).]{type="info"}
 
 25. **OPCIONAL**: Diríjase al servicio de AWS Lambda y haga pruebas con estas funciones para apagar y encender su servidor SFTP.
+
+Your current region is :code[us-west-2]{showCopyAction=true}.
