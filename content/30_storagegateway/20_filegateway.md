@@ -56,7 +56,7 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 
 ![Security group](/static/images/sg/sg.png)
 
-17. Bajo el apartado de **Inbound security groups rules**, elimine la regla que permite el acceso al puerto 22 (SSH) y agregue dos reglas nuevas que habilite el acceso al puerto TCP 80 (HTTP) desde su dirección IP y al acceso al puerto TCP 2049 (NFS) desde la dirección IP privada de la instancia cliente:
+17. Bajo el apartado de **Inbound security groups rules**, elimine la regla que permite el acceso al puerto 22 (SSH) y agregue dos reglas nuevas que habiliten el acceso al puerto TCP 80 (HTTP) desde su dirección IP y al acceso al puerto TCP 2049 (NFS) desde la dirección **IP privada** de la **instancia cliente**:
 
 * Regla 1:
 * Type = **HTTP**
