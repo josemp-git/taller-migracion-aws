@@ -45,12 +45,12 @@ cd /home/ec2-user/
 ls /home/ec2-user/
 :::
 
-::alert[Estos comandos les mostrarán el contenido de la ruta **/home/ec2-user/** en la que se encuentra montada la carpeta compartida de la instancia NFS y la carpeta compartida del File Storage Gateway. TAmbién encontrará un directorio llamado **baseball-data-2021-version** que contiene archivos CSV con estadísticas de baseball.]{type="info"}
+::alert[Estos comandos le mostrarán el contenido de la ruta **/home/ec2-user/** en la que se encuentra montada la carpeta compartida de la instancia NFS (**nas**) y la carpeta compartida del File Storage Gateway (**gateway**). También encontrará un directorio llamado **baseball-data-2021-version** que contiene archivos CSV con estadísticas de baseball.]{type="info"}
 
 
 ![Comandos)](/static/images/sg/comandos1.png)
 
-11. Ejecute el siguiente comando para copiar el directorio **baseball-data-2021-version** al recurso compartido que acaba de montar:
+11. Ejecute el siguiente comando para copiar el directorio **baseball-data-2021-version** a la carpeta compartida que acaba de montar:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
 cp -rv /home/ec2-user/baseball-data-2021-version/ /home/ec2-user/gateway/

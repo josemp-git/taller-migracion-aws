@@ -9,10 +9,11 @@ Para habilitar esta automatización en su ambiente, ejecute los pasos descritos 
 
 #### 1. Despliegue de plantilla de CloudFormation
 
-Esta plantilla desplegará dos funciones AWS Lambda escritas en Python 3.8 y el rol necesario para su correcta ejecución:
+Esta plantilla desplegará dos funciones AWS Lambda y el rol necesario para su correcta ejecución:
 
 * **StartTransferSFTPServer** - función para encendido.
 * **StopTransferSFTPServer** - función para apagado.
+
 
 1. Descargue esta :link[plantilla de CloudFormation]{href="/static/40_transfer/StartStopTransferSFTPServer.yaml" action=download}.
 2. Haga clic en **Services** y después en **CloudFormation**.
@@ -32,11 +33,11 @@ Esta plantilla desplegará dos funciones AWS Lambda escritas en Python 3.8 y el 
 10. Seleccione la casilla de **"I acknowledge that AWS CloudFormation might create IAM resources"**.
 11. Haga clic en **Create stack**.
 
-Después de un minuto, el status de la plantilla cambiará a **✔ CREATE_COMPLETE**, indicando que esta se ha desplegado satisfactoriamente.
+::alert[Después de un minuto, el status de la plantilla cambiará a **✔ CREATE_COMPLETE**, indicando que esta se ha desplegado satisfactoriamente.)]{type="info"}
 
 #### 2. Configuración de la regla en Amazon EventBridge
 
-A continuación, usted configurará una regla en el servicio de Amazon EventBridge que le permitirá calendarizar la ejecución de las funciones AWS Lambda que encenderán y apagarán su servidor SFTP en el horario de su conveniencia.
+A continuación, usted configurará las reglas en el servicio de Amazon EventBridge que le permitirán calendarizar la ejecución de las funciones AWS Lambda que encenderán y apagarán su servidor SFTP en el horario de su conveniencia.
 
 12. Haga clic en **Services** y posteriormente seleccione el servicio de **Amazon EventBridge**.
 13. Haga clic en **Create rule**.
@@ -53,8 +54,6 @@ A continuación, usted configurará una regla en el servicio de Amazon EventBrid
 
 ![Schedule pattern](/static/images/tr/schedule.png)
 
-
-
 17. Haga clic en **Next**.
 18. En **Target types** seleccione **AWS service**.
 19. En el menú desplegable de **Select a target** seleccione **Lambda function**.
@@ -66,7 +65,7 @@ A continuación, usted configurará una regla en el servicio de Amazon EventBrid
 22. Haga clic de nuevo en **Next**.
 23. Haga clic en **Create rule**.
 
-::alert[Lo anterior habrá creado una regla para ejecutar la función AWS Lambda que encenderá su servidor SFTP todos los días a las 21:00 UTC.)]{type="info"}
+::alert[Lo anterior habrá creado una regla para ejecutar la función AWS Lambda que encenderá su servidor SFTP todos los días a las 21:00 (UTC).]{type="info"}
 
 24. Repita los pasos anteriores para crear otra regla, pero esta vez seleccione la función **auto-on-off-lambda-StopTransferSFTPServer** como **Target** e ingrese lo siguiente en el campo de **Cron expression**:
 
@@ -74,4 +73,8 @@ A continuación, usted configurará una regla en el servicio de Amazon EventBrid
 0 08 * * ? *
 :::
 
-Esta regla ejecutará la función AWS Lambda que apagará su servidor SFTP todos los días a las 08:00 (UTC). Para más información acerca de como programar expresiones para reglas , consulte la [documentación disponible](https://docs.aws.amazon.com/es_es/AmazonCloudWatch/latest/events/ScheduledEvents.html).
+::alert[Esta regla ejecutará la función AWS Lambda que apagará su servidor SFTP todos los días a las 08:00 (UTC).]{type="info"}
+
+::alert[ Para más información acerca de como programar expresiones para reglas , consulte la [documentación disponible](https://docs.aws.amazon.com/es_es/AmazonCloudWatch/latest/events/ScheduledEvents.html).]{type="info"}
+
+25. **OPCIONAL**: Diríjase al servicio de AWS Lambda y haga pruebas con estas funciones para apagar y encender su servidor SFTP
