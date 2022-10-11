@@ -192,8 +192,11 @@ Resources:
                   - !Ref AWS::StackId     
 Outputs:
   NFSInstancePrivateIP:
-    Description: Instancia NFS direcccion IP privada
+    Description: Direcccion IP privada de la instancia NFS
     Value: !GetAtt NFSInstance.PrivateIp
+  ClientInstancePrivateIP:
+    Description: Direcccion IP privada de la instancia Cliente
+    Value: !GetAtt ClientInstance.PrivateIp
   S3BucketName:
     Description: Bucket Amazon S3 (destino de los datos)
     Value: !Ref S3Bucket
