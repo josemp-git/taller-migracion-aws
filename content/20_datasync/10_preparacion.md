@@ -17,7 +17,8 @@ A continuación, desplegará una plantilla de AWS CloudFormation que creará los
     - Donde se alojarán las instancias creadas para esta laboratorio.
 
 
-1. Descargue esta :link[plantilla de CloudFormation]{href="/static/20_datasync/dm-lab-ds.yaml" action=download}.
+1. Descargue esta plantilla de CloudFormation: :button[Descargar]{href="/static/20_datasync/dm-lab-ds.yaml" action=download variant="primary"}
+
 2. Haga clic en **Services** y después en **CloudFormation** (también puede usar el campo de búsqueda).
 
 ![CloudFormation](/static/images/ds/cloudformation1.png)
