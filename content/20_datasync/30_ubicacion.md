@@ -8,7 +8,7 @@ Una vez que su agente ha sido creado, usted definirá las ubicaciones origen y d
 - Ubicación origen: **servidor NFS**.
 - Ubicación destino: **bucket de Amazon S3**.
 
-##### 1. Creación de ubicación origen
+##### 1. Ubicación origen
 
 1. Haga clic en **Locations** en el menú lateral izquierdo.
 2. Haga clic en **Create location**.
@@ -25,7 +25,7 @@ Una vez que su agente ha sido creado, usted definirá las ubicaciones origen y d
 
 ![Ubicación origen](/static/images/ds/origen.png)
 
-##### 2. Creación de ubicación destino
+##### 2. Ubicación destino
 
 8. Haga clic de nuevo en **Locations** en el menú lateral izquierdo.
 9. Haga clic en **Create location**.
