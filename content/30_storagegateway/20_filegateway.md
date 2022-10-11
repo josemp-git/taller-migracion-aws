@@ -117,11 +117,11 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 ![Endpoint options](/static/images/sg/endpointoptions.png)
 
 36. En la pantalla de **Review and activate** haga clic en **Next**.
-37. En la siguiente pantalla seleccione **Cache** en el menú desplegable de **Allocated to** bajo el apartado de **Configure cache storage**. Esto puede tomar algunos minutos en cargar.
-
-![Configure gateway](/static/images/sg/configuregateway.png)
+37. En la siguiente pantalla seleccione **Cache** en el menú desplegable de **Allocated to** bajo el apartado de **Configure cache storage**.
 
 ::alert[Este apartado puede tardar unos minutos en habilitarse.]{type="info"}
+
+![Configure gateway](/static/images/sg/configuregateway.png)
 
 38. Haga clic en **Configure**.
 39. Proceda al siguiente módulo.
