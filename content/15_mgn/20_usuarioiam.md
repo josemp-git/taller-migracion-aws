@@ -10,12 +10,12 @@ Para instalar el Agente de Replicación, primero debe generar las credenciales d
 
 ![Add users](/static/images/mgn/addusers.png)
 
-3. En el campo de **User name** escriba el nombre del usuario que va a crear **(mgn)** y en **Access type** seleccione **Access key - Programmatic access**.
+3. En el campo de **User name** ingrese :code[mgn]{showCopyAction=true} y en **Access type** seleccione **Access key - Programmatic access**.
 
 ![Add users](/static/images/mgn/addusers2.png)
 
 4. Haga clic en **Next: Permissions**.
-5. En la pantalla **Set permissions** seleccione la opción de **Attach existing policies directly** y en el campo de búsqueda ingrese **AWSApplicationMigrationAgentPolicy**. 
+5. En la pantalla **Set permissions** seleccione la opción de **Attach existing policies directly** y en el campo de búsqueda ingrese :code[AWSApplicationMigrationAgentPolicy]{showCopyAction=true}. 
 
 ![Add users](/static/images/mgn/addusers3.png)
 

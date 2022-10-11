@@ -18,7 +18,7 @@ A continuación, desplegará una instancia de Linux en la región de N. Virgina 
 http://checkip.amazonaws.com/
 :::
 
-2. Descargue esta :link[plantilla de CloudFormation]{href="/static/15_mgn/mgn-lab.yaml" action=download}.
+2. 1. Descargue la plantilla de AWS CloudFormation: :button[Descargar]{href="/static/15_mgn/mgn-lab.yaml" action=download variant="primary"}
 
 3. Haga clic en **Services** y después en **CloudFormation** (también puede usar el campo de búsqueda).
 
@@ -33,7 +33,7 @@ http://checkip.amazonaws.com/
 ![CloudFormation](/static/images/mgn/cloudformation3.png)
 
 6. Haga clic en **Next**.
-7. En el campo de **Stack name** ingrese **MGN-Lab**.
+7. En el campo de **Stack name** ingrese :code[mgn-lab]{showCopyAction=true}.
 8. En el campo de **IPPublica** ingrese la dirección IP que copió anteriormente.
 9. Haga clic en **Next**.
 10. En la siguiente pantalla haga clic de nuevo en **Next**.

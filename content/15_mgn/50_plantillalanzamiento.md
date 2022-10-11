@@ -23,9 +23,9 @@ Con las **Plantillas de lanzamiento** del servicio de Amazon EC2 se definen los 
 7. Haga clic en **Modify**.
 8. Haga clic de nuevo en **Modify**.
 
-Lo anterior lo llevará a modificar la plantilla de lanzamiento, en la cual creará una nueva versión con los parámetros necesarios para hacer las pruebas de lanzamiento de su servidor.
+::alert[Lo anterior lo llevará a modificar la plantilla de lanzamiento, en la cual creará una nueva versión con los parámetros necesarios para hacer las pruebas de lanzamiento de su servidor.]{type="info"}
 
-9. En el campo de **Template version description** ingrese **mgn-lab-template**.
+9. Ingrese :code[mgn-lab-template]{showCopyAction=true} en el campo de **Template version description**.
 10. Bajo el apartado de **Instance type** seleccione **t2.micro** del menú desplegable.
 
 ![Instance type](/static/images/mgn/instancetype.png)
@@ -46,7 +46,7 @@ Lo anterior lo llevará a modificar la plantilla de lanzamiento, en la cual crea
 
 ![Storage Settings](/static/images/mgn/storagesettings.png)
 
-17. Bajo el apartado de **Resource tags** ingrese **Linux migrado** en el campo **Value** de la llave **Name**.
+17. Bajo el apartado de **Resource tags** ingrese :code[Linux migrado]{showCopyAction=true} en el campo **Value** de la llave **Name**.
 
 ![Etiquetas](/static/images/mgn/nametag.png)
 
