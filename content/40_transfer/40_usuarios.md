@@ -30,7 +30,7 @@ cat user01
 
 ![Add user](/static/images/tr/adduser.png)
 
-7. En el campo de **Username** escriba **user01**.
+7. Ingrese :code[user01]{showCopyAction=true} en el campo de **Username**.
 8. En el menú desplegable de **Role** seleccione el rol que creó anteriormente (:code[AWSTransferCustomRole]{showCopyAction=true}).
 9. En **Policy** seleccione **None**.
 10. En el menú desplegable de **Home directory** seleccione el bucket que creó para este laboratorio.

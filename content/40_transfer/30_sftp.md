@@ -27,8 +27,9 @@ weight: 30
 
 ![Starting](/static/images/tr/starting.png)
 
-10. Haga clic en el valor de **Server ID**.
-11. Copie el valor de **Endpoint** y guárdelo en un archivo de texto ya que lo utilizará más tarde para conectarse a su servidor SFTP.
+10. Guarde el **Server ID** en un archivo de texto ya que lo utilizará más adelante.
+11. Haga clic en el valor de **Server ID**.
+12. Copie el valor de **Endpoint** y guárdelo en un archivo de texto ya que lo utilizará más tarde para conectarse a su servidor SFTP.
 
 ![Endpoint](/static/images/tr/endpoint.png)
 

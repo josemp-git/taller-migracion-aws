@@ -68,7 +68,7 @@ A continuación, usted configurará las reglas en el servicio de Amazon EventBri
 
 ::alert[Lo anterior habrá creado una regla para ejecutar la función AWS Lambda que encenderá su servidor SFTP todos los días a las 21:00 (UTC).]{type="info"}
 
-24. Repita los pasos anteriores para crear otra regla, pero esta vez seleccione la función **auto-on-off-lambda-StopTransferSFTPServer** como **Target** e ingrese lo siguiente en el campo de **Cron expression**:
+24. Repita los pasos anteriores para crear otra regla llamada :code[ApagarServidorSFTP]{showCopyAction=true}, pero esta vez seleccione la función **auto-on-off-lambda-StopTransferSFTPServer** como **Target** e ingrese lo siguiente en los campos de **Cron expression**:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
 0 08 * * ? *

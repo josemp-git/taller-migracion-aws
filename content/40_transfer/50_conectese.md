@@ -8,6 +8,6 @@ weight: 50
 ![Create S3 bucket](/static/images/tr/conectar.png)
 
 2. Una vez conectado comience a subir archivos.
-3. Verifique que efectivamente su(s) usuario(s) solamente tiene(n) acceso al directorio de su nombre.
+3. Verifique que efectivamente su(s) usuario(s) solamente tiene(n) acceso al directorio de su nombre de usuario.
 4. Haga clic en **Services** y diríjase al servicio de **S3**.
 5. Ingrese al bucket que creó inicialmente y corrobore que los archivos que subió por medio del servidor SFTP se encuentran ahí.

@@ -20,7 +20,7 @@ Después de haber creado su File Gateway, deberá crear una carpeta compartida (
 ![File Share Settings](/static/images/sg/filesharesettings2.png)
 
 9. Haga clic en **Next**.
-10. En el menú desplegable de **Storage class for new objects** seleccione ***S3 Standard*** y mantenga los valores predeterminados del resto de las opciones.
+10. En el menú desplegable de **Storage class for new objects** seleccione ***3 Standard** y mantenga los valores predeterminados del resto de las opciones.
 
 ![Storage class for new objects](/static/images/sg/storageclass.png)
 
