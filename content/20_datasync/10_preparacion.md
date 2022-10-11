@@ -39,7 +39,7 @@ A continuación, desplegará una plantilla de AWS CloudFormation que creará los
 ![CloudFormation](/static/images/ds/acknowledgerole.png)
 
 11. Espere unos minutos a que el status de lanzamiento de la plantilla indique **CREATE_COMPLETE**.
-12. Una vez que la plantilla haya sido desplegada, haga click en la sección de **Outputs** y copie el valor del parámetro **NFSInstancePrivateIP** (la dirección IP privada del servidor NFS) y guárdelo en un archivo de texto ya que lo utilizará más adelante. En este apartado también encontrará el nombre del bucket que se creó para almacenar sus datos una vez que estos sean migrados.
+12. Una vez que la plantilla haya sido desplegada, haga click en la sección de **Outputs**, y copie los parámetros que ahí se encuentran y guárdelso en un archivo de texto ya que los utilizará más adelante.
 
 ![Outputs](/static/images/ds/outputs.png)
 

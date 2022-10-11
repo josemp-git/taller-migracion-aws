@@ -59,3 +59,5 @@ ls /home/ec2-user/gateway/baseball-data-2021-version
 13. Haga click en **Services** y después en **S3**.
 14. Ingrese al bucket que creó la plantilla de CloudFormation para este laboratorio.
 15. Verifique que el directorio que acaba de copiar se encuentre en el bucket.
+
+![Comandos)](/static/images/sg/bucket.png)
