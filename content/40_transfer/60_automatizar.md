@@ -7,7 +7,7 @@ Automatizar el encendido y apagado de su servidor SFTP en el horario de su elecc
 
 Para habilitar esta automatización en su ambiente, ejecute los pasos descritos a continuación.
 
-#### 1. Despliegue de plantilla de CloudFormation
+#### 1. Despliegue de plantilla de AWS CloudFormation
 
 Esta plantilla desplegará dos funciones AWS Lambda y el rol necesario para su correcta ejecución:
 
@@ -15,7 +15,8 @@ Esta plantilla desplegará dos funciones AWS Lambda y el rol necesario para su c
 * **StopTransferSFTPServer** - función para apagado.
 
 
-1. Descargue esta :link[plantilla de CloudFormation]{href="/static/40_transfer/StartStopTransferSFTPServer.yaml" action=download}.
+
+1. Descargue la plantilla de AWS CloudFormation: :button[Descargar]{href="/static/40_transfer/StartStopTransferSFTPServer.yaml" action=download variant="primary"}
 2. Haga clic en **Services** y después en **CloudFormation**.
 3. Haga clic en **Create stack** y seleccione la opción de **With new resources (standard)**.
 
