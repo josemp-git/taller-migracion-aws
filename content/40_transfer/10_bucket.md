@@ -12,11 +12,11 @@ Lo primero que debe hacer es crear un bucket en Amazon S3. En este bucket será 
 3. Ingrese un nombre para su bucket en el campo de **Bucket name** con la siguiente nomenclatura: **transfer-lab-su-nombre**.
 4. Haga clic en **Create bucket**.
 5. Haga clic en el bucket que acaba de crear.
-6. Haga clic en **Create folder** y cree un folder llamado **user01**.
+6. Haga clic en **Create folder** y cree un folder llamado :code[user01]{showCopyAction=true}.
 
 ![Create folder](/static/images/tr/createfolder.png)
 
-7. Repita el paso anterior y cree otro folder llamado **user02**.
+7. Repita el paso anterior y cree otro folder llamado :code[user02]{showCopyAction=true}.
 
 ![User folders](/static/images/tr/userfolders.png)
 

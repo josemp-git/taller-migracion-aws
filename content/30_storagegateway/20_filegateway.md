@@ -34,7 +34,7 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 ::alert[Ejemplo de la URL anterior: https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstances:ami=ami-05257a1f7eff27687]{type="info"}
 
 9. Una vez que haya sustituido los valores, copie la URL y péguela en su navegador web. Esta URL lo llevará a desplegar File Gateway como una instancia de Amazon EC2.
-10. Ingrese **File Storage Gateway** en el campo de **Name**.
+10. Ingrese :code[File Storage Gateway]{showCopyAction=true} en el campo de **Name**.
 11. Seleccione **m5.xlarge** como tipo de instancia.
 
 ![Tipo de instancia](/static/images/sg/instancetypesg.png)
@@ -52,7 +52,7 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 
 ![Auto-assign public IP - Enable](/static/images/sg/auto-assign-publicip.png)
 
-16. En el apartado de **Firewall (security groups)** seleccione la opción de **Create security group** e ingrese un nombre en el campo de **Security group name** (**storage-gateway-sg**).
+16. En el apartado de **Firewall (security groups)** seleccione la opción de **Create security group** e ingrese :code[storage-gateway-sg]{showCopyAction=true} en el campo de **Security group name**.
 
 ![Security group](/static/images/sg/sg.png)
 
@@ -70,7 +70,7 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 
 18. Bajo el apartado de **Configure storage** haga clic en **Add new volume** y agregue un volumen con las siguientes caraceterísticas:
 
-- Capacidad (GiB) = **150**
+- Capacidad (GiB) = :code[150]{showCopyAction=true}
 - Tipo de volumen  EBS = **Magnetic (standard)**
 
 ![Volumen adicional](/static/images/sg/storage.png)
@@ -90,7 +90,7 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 
 23. Haga clic en **Services** y después en **Storage Gateway**.
 24. Haga clic en **Get Started** o **Create Gateway** según sea el caso.
-25. En el campo de **Gateway name** ingrese **File storage gateway lab**.
+25. Ingrese :code[File storage gateway lab]{showCopyAction=true} en el campo de **Gateway name**.
 26. Seleccione su zona horaria bajo el menu desplegable de **Gateway time zone**.
 
 ![Settings](/static/images/sg/sgsettings1.png)

@@ -31,15 +31,15 @@ cat user01
 ![Add user](/static/images/tr/adduser.png)
 
 7. En el campo de **Username** escriba **user01**.
-8. En el menú desplegable de **Role** seleccione el rol que creó anteriormente (**AWSTransferCustomRole**).
+8. En el menú desplegable de **Role** seleccione el rol que creó anteriormente (:code[AWSTransferCustomRole]{showCopyAction=true}).
 9. En **Policy** seleccione **None**.
-9. En el menú desplegable de **Home directory** seleccione el bucket que creó para este laboratorio.
-10. En el campo adicional de **Home directory** ingrese **user01** (que es el nombre del usuario que está creando y del directorio que creó dentro del bucket de Amazon S3).
-11. Seleccione la casilla de **Restricted**.
-12. En el campo de **SSH public key** ingrese el contenido del archivo **user01.pub** (la llave pública) que generó anteriormente.
+10. En el menú desplegable de **Home directory** seleccione el bucket que creó para este laboratorio.
+11. En el campo adicional de **Home directory** ingrese :code[user01]{showCopyAction=true} (que es el nombre del usuario que está creando y del directorio que creó dentro del bucket de Amazon S3).
+12. Seleccione la casilla de **Restricted**.
+13. En el campo de **SSH public key** ingrese el contenido del archivo **user01.pub** (la llave pública) que generó anteriormente.
 
 ![Cración de usuarios](/static/images/tr/creacionusuarios.png)
 
-13. Haga clic en **Add**.
-14. **Opcional:** repita los pasos de este módulo para crear un segundo usuario (**user02**).
-15. Proceda al siguiente módulo.
+14. Haga clic en **Add**.
+15. **Opcional:** repita los pasos de este módulo para crear un segundo usuario (:code[user02]{showCopyAction=true}).
+16. Proceda al siguiente módulo.

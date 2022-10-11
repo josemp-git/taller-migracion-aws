@@ -19,7 +19,7 @@ Ahora debe crear una tarea (task). En esta tarea usted definirá las ubicaciones
 
 ![Tarea - Ubicación destino](/static/images/ds/tareadestino.png)
 
-9. En **Task Name** ingrese un nombre para su tarea (**nfs-s3-task**).
+9. Ingrese :code[nfs-s3-task]{showCopyAction=true} en el campo de **Task Name**.
 10. Bajo el apartado de **Task logging** seleccione **Log basic information such as transfer errors** del menú desplegable de **Log level**.
 11. Bajo el mismo apartado de **Task logging** haga clic en el botón de **Autogenerate**.
 

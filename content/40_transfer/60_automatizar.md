@@ -27,7 +27,7 @@ Esta plantilla desplegará dos funciones AWS Lambda y el rol necesario para su c
 ![CloudFormation](/static/images/tr/cloudformation3.png)
 
 5. Haga clic en **Next**.
-6. En el campo de **Stack name** escriba **auto-on-off-lambda**.
+6. Ingrese :code[auto-on-off-server-lambdas]{showCopyAction=true} en el campo de **Stack name**.
 7. En el campo de **server** ingrese el **Server ID** de su servidor SFTP.
 9. Haga clic en **Next**.
 9. En la siguiente pantalla haga clic de nuevo en **Next**.
@@ -42,7 +42,7 @@ A continuación, usted configurará las reglas en el servicio de Amazon EventBri
 
 12. Haga clic en **Services** y posteriormente seleccione el servicio de **Amazon EventBridge**.
 13. Haga clic en **Create rule**.
-14. Ingrese **IniciarServidorSFTP** en el campo de **Name**.
+14. Ingrese :code[IniciarServidorSFTP]{showCopyAction=true} en el campo de **Name**.
 15. En **Rule type** seleccione **Schedule** y haga clic en **Next**.
 
 ![Rule detail](/static/images/tr/ruledetail.png)

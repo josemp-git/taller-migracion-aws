@@ -47,7 +47,7 @@ A continuación creará una política de IAM que se aplicará a un rol de IAM y 
 
 5. Haga clic el botón de **Next: Tags**.
 6. Haga clic en **Next: Review**.
-7. Ingrese **AWSTransferCustomPolicy** en el campo de **Name**.
+7. Ingrese :code[AWSTransferCustomPolicy]{showCopyAction=true} en el campo de **Name**.
 8. Haga clic en **Create policy**.
 
 #### Creación de rol IAM
@@ -61,11 +61,11 @@ A continuación creará una política de IAM que se aplicará a un rol de IAM y 
 ![Create role](/static/images/tr/crearrol.png)
 
 13. Haga clic en **Next**.
-14. En el campo de **Permission policies** ingrese el nombre de la política que creó anteriormente (**AWSTransferCustomPolicy**) y seleccione dicha política.
+14. En el campo de **Permission policies** ingrese el nombre de la política que creó anteriormente (:code[AWSTransferCustomPolicy]{showCopyAction=true}) y seleccione dicha política.
 
 ![Select policy](/static/images/tr/selectpolicy.png)
 
 15. haga clic en **Next**.
-16. Ingrese **AWSTransferCustomRole** en el campo de **Role name**.
+16. Ingrese :code[AWSTransferCustomRole]{showCopyAction=true} en el campo de **Role name**.
 18. Haga clic en **Create role**.
 29. Proceda al siguiente módulo.

@@ -14,7 +14,7 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 ::alert[Ejemplo de la URL anterior: https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-06dffdffeed1ce3c9.]{type="info"}
 
 2. Una vez que haya sustituido los valores, copie la URL y péguela en su navegador web. Esta URL lo llevará a desplegar el agente de AWS DataSync como una instancia de Amazon EC2.
-3. Ingrese **Agente AWS DataSync** en el campo de **Name**.
+3. Ingrese :code[Agente AWS DataSync]{showCopyAction=true} en el campo de **Name**.
 4. Del menú desplegable de **Instance type**, seleccione **m5.2xlarge**.
 
 ![Tipo de instancia](/static/images/ds/instancetype.png)
@@ -32,7 +32,7 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 
 ![Auto-assign public IP - Enable](/static/images/ds/auto-assign-publicip.png)
 
-9. En el apartado de **Firewall (security groups)** seleccione la opción de **Create security group** e ingrese un nombre en el campo de **Security group name** (**datasync-agente-sg**).
+9. En el apartado de **Firewall (security groups)** seleccione la opción de **Create security group** e ingrese :code[datasync-agente-sg]{showCopyAction=true} en el campo de **Security group name**.
 
 ![Create securigy group](/static/images/ds/createsg.png)
 
@@ -71,7 +71,7 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 
 ![Activation key)](/static/images/ds/activationkey.png)
 
-22. Ingrese **Agente AWS DataSync** en el campo de **Agent name**.
+22. Ingrese :code[Agente AWS DataSync]{showCopyAction=true} en el campo de **Agent name**.
 23. Haga clic en **Create agent**.
 24. Haga clic en **Agents** en el menú lateral izquierdo y compruebe que su agente se encuentra activo (**Status = Online**).
 
