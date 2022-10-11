@@ -34,7 +34,7 @@ Resources:
             service httpd start
             chkconfig httpd on
             cd /var/www/html
-            wget https://static.us-east-1.prod.workshops.aws/public/a2077838-1072-4d50-91f8-58f8fdb80fcf/static/15_mgn/origen/index.html
+            wget https://awsimmersiondays.s3.amazonaws.com/workshop/origen/index.html
 
   OrigenSG:
     Type: 'AWS::EC2::SecurityGroup'
