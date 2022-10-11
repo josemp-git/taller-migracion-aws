@@ -3,10 +3,17 @@ draft: false
 title: 2. Creación de File Gateway
 weight: 20
 ---
-En este módulo usted creará un File Gateway utilizando una de las instancias que fueron creadas cuando lanzó la plantilla de [**AWS CloudFormation**](https://console.aws.amazon.com/cloudformation). Este gateway le permitirá acceder a los archivos contenidos en su bucket de [**Amazon S3**](https://s3.console.aws.amazon.com/s3/) desde su instancia local.
+En este módulo usted creará un File Gateway. Este gateway le permitirá acceder a los archivos contenidos en su bucket de [**Amazon S3**](https://s3.console.aws.amazon.com/s3/) desde su **Instancia cliente**.
 
-1. Dentro de la consola de AWS, haga clic en **Services** y diríjase al servicio de **CloudShell**.
-2. Ejecute el siguiente comando:
+1. Haga click en **Services** y posteriormente seleccione el servicio de **EC2**.
+2. Haga click en **Running instances**.
+2. Seleccione la casilla que se encuentra a lado de la **Instancia cliente**.
+4. Haga click en **Connect**.
+5. En la pantalla de **Connect to instance** haga clic en **Session Manager** y después en **Connect** para tener acceso a su instancia vía SSH por medio del navegador web.
+
+![Connect (browser-based SSH connection)](/static/images/sg/conectarec2.png)
+
+6. Ejecute el siguiente comando:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
 aws ssm get-parameter --name /aws/service/storagegateway/ami/FILE_S3/latest --region us-east-1
@@ -14,14 +21,19 @@ aws ssm get-parameter --name /aws/service/storagegateway/ami/FILE_S3/latest --re
 
 ::alert[La ejecución de este comando le permite conocer la versión más reciente de la AMI de AWS Storage Gateway (ami-id).]{type="info"}
 
-3. Copie el resultado de la ejecución del comando anterior y guárdelo en un archivo de texto.
-4. Copie la siguiente URL y sustituya el valor de **ami-id** por el valor de **value** resultado de la ejecución del comando del paso anterior:
+7. Copie el el valor del parámetro **Value** (sin las comillas) y guárdelo en un archivo de texto.
+
+![File Gateway AMI id](/static/images/sg/ami-id.png)
+
+8. Copie la siguiente URL y sustituya el valor de **ami-id** por el valor de **value** resultado de la ejecución del comando del paso anterior:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
-https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstances:ami=ami-id
+https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-id
 :::
 
-5. Una vez que haya sustituido los valores, copie la URL y péguela en su navegador web. Esta URL lo llevará a desplegar File Gateway como una instancia de Amazon EC2.
+::alert[Ejemplo de la URL anterior: https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstances:ami=ami-05257a1f7eff27687]{type="info"}
+
+9. Una vez que haya sustituido los valores, copie la URL y péguela en su navegador web. Esta URL lo llevará a desplegar File Gateway como una instancia de Amazon EC2.
 6. Ingrese **File Storage Gateway** en el campo de **Name**.
 7. Seleccione **m5.xlarge** como tipo de instancia.
 

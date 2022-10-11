@@ -88,9 +88,9 @@ sudo ls /home/ec2-user/nas/baseballdatabank-master/core
 aws ssm get-parameter --name /aws/service/datasync/ami --region us-east-1
 :::
 
-21. Copie el parámetro de **value** resultado de la ejecución del comando anterior y guárdelo en un archivo de texto ya que lo utilizará en el siguiente módulo.
+21. Copie el valor parámetro de **value** (sin las comillas) y guárdelo en un archivo de texto ya que lo utilizará en el siguiente módulo.
 
-![Copy AMI id](/static/images/ds/copyamiid.png)
+![Copy AMI id](/static/images/ds/copyami-id.png)
 
 ::alert[La ejecución de este comando le permite conocer la versión más reciente de la AMI del agente de AWS DataSync (ami-id).]{type="info"}
 

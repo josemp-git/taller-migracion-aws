@@ -24,4 +24,6 @@ Una vez que su tarea haya sido creada con todos los parámetros necesarios, debe
 ::alert[Haga clic en el valor de **Execution ID** si desea conocer más detalles acerca de la ejecución de su tarea.]{type="info"}
 
 7. Haga clic en **Services** y posteriormente seleccione el servicio de **S3**.
-8. Haga clic en el bucket que creó anteriormente y corrobore que los archivos que migró se encuentran ahí.
+8. Haga clic en su bucket y corrobore que los archivos que migró se encuentran ahí.
+
+![Bucket](/static/images/ds/bucket.png)

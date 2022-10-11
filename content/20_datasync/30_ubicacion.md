@@ -25,7 +25,7 @@ Una vez que su agente ha sido creado, usted definirá las ubicaciones origen y d
 
 ![Ubicación origen](/static/images/ds/origen.png)
 
-##### 1. Creación de ubicación destino
+##### 2. Creación de ubicación destino
 
 8. Haga clic de nuevo en **Locations** en el menú lateral izquierdo.
 9. Haga clic en **Create location**.
