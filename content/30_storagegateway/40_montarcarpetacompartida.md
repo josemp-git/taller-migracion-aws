@@ -36,28 +36,42 @@ ls /home/ec2-user/gateway
 
 ::alert[Si ejecutó el laboratorio de AWS DataSync y utilizó los mismos recursos para este laboratorio, encontrará los archivos que migró anteriormente.]{type="info"}
 
-10. Dentro de la ruta en la que se encuentra hay un directorio llamado **baseball-data-2021-version** que contiene archivos CSV con estadísticas de baseball. Ejecute el siguiente comando para copiar estos archivos al recurso compartido que acaba de montar:
+10. Ejecute los siguientes comandos:
+:::code{showCopyAction=true showLineNumbers=false language=java}
+cd /home/ec2-user/
+:::
+
+:::code{showCopyAction=true showLineNumbers=false language=java}
+ls /home/ec2-user/
+:::
+
+::alert[Estos comandos les mostrarán el contenido de la ruta **/home/ec2-user/** en la que se encuentra montada la carpeta compartida de la instancia NFS y la carpeta compartida del File Storage Gateway. TAmbién encontrará un directorio llamado **baseball-data-2021-version** que contiene archivos CSV con estadísticas de baseball.]{type="info"}
+
+
+![Comandos)](/static/images/sg/comandos1.png)
+
+11. Ejecute el siguiente comando para copiar el directorio **baseball-data-2021-version** al recurso compartido que acaba de montar:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
 cp -rv /home/ec2-user/baseball-data-2021-version/ /home/ec2-user/gateway/
 :::
 
-11. Ejecute el siguiente comando para enlistar de nuevo el contenido de la directorio compartido que acaba de montar:
+12. Ejecute el siguiente comando para enlistar de nuevo el contenido de la directorio compartido que acaba de montar:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
 ls /home/ec2-user/gateway
 :::
 
-12. Ejecute el siguiente comando para enlistar el contenido del directorio que copió:
+13. Ejecute el siguiente comando para enlistar el contenido del directorio que copió:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
 ls /home/ec2-user/gateway/baseball-data-2021-version
 :::
 
-![Comandos)](/static/images/sg/comandos.png)
+![Comandos)](/static/images/sg/comandos2.png)
 
-13. Haga click en **Services** y después en **S3**.
-14. Ingrese al bucket que creó la plantilla de CloudFormation para este laboratorio.
-15. Verifique que el directorio que acaba de copiar se encuentre en el bucket.
+14. Haga click en **Services** y después en **S3**.
+15. Ingrese al bucket que creó la plantilla de CloudFormation para este laboratorio.
+16. Verifique que el directorio que acaba de copiar se encuentre en el bucket.
 
 ![Comandos)](/static/images/sg/bucket.png)

@@ -10,11 +10,11 @@ Una vez que su agente ha sido creado, usted definirá las ubicaciones origen y d
 
 ##### 1. Ubicación origen
 
-1. Haga clic en **Locations** en el menú lateral izquierdo.
+1. En el servicio de DataSync, haga clic en **Locations** en el menú lateral izquierdo.
 2. Haga clic en **Create location**.
 3. En **Location type** seleccione **Network File System (NFS)**.
 4. En **Agents** seleccione el agente de AWS DataSync que creó anteriormente.
-5. En **NFS Server** ingrese la IP del parámetro **NFSInstancePrivateIP** que guardó en el editor de texto.
+5. En **NFS Server** ingrese la **IP PRIVADA** de la instancia NFS que guardó en el editor de texto.
 6. En **Mount path** ingrese la siguiente ruta:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}

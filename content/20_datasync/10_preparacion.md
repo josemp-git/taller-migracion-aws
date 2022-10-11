@@ -16,6 +16,7 @@ A continuación, desplegará una plantilla de AWS CloudFormation que creará los
 - **VPC y subred**
     - Donde se alojarán las instancias creadas para esta laboratorio y el agende de AWS DataSync.
 
+
 1. Descargue esta :link[plantilla de CloudFormation]{href="/static/20_datasync/dm-lab-ds.yaml" action=download}.
 2. Haga clic en **Services** y después en **CloudFormation** (también puede usar el campo de búsqueda).
 
@@ -39,7 +40,7 @@ A continuación, desplegará una plantilla de AWS CloudFormation que creará los
 ![CloudFormation](/static/images/ds/acknowledgerole.png)
 
 11. Espere unos minutos a que el status de lanzamiento de la plantilla indique **CREATE_COMPLETE**.
-12. Una vez que la plantilla haya sido desplegada, haga click en la sección de **Outputs**, y copie los parámetros que ahí se encuentran y guárdelso en un archivo de texto ya que los utilizará más adelante.
+12. Una vez que la plantilla haya sido desplegada, haga click en la sección de **Outputs**, copie los parámetros que ahí se encuentran y guárdelos en un archivo de texto ya que los utilizará más adelante.
 
 ![Outputs](/static/images/ds/outputs.png)
 

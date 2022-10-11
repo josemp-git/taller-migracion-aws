@@ -59,14 +59,14 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 ![IPs)](/static/images/ds/direccionip.png)
 
 15. Dentro de la consola de AWS, haga clic en **Services** y diríjase al servicio de **DataSync**.
-16. Haga clic en **Agents** en el menú lateral izquierdo.
+16. Haga clic en **Agents** en el menú lateral izquierdo (también puede hacer clic en **Get started** si es la primera vez que utiliza el servicio).
 17. Haga clic en el botón de **Create agent**.
 18. Seleccione **Public service endpoints** in US East (N. Virginia).
 
 ![Public Endpoints)](/static/images/ds/publicendpoint.png)
 
 19. Bajo el apartado de **Activation key** selccione la opción de **Automatically get the activation key from your agent**.
-20. En el campo de **Agent aDdress** ingrese la dirección **IP PÚBLICA** del agente de AWS DataSync.
+20. En el campo de **Agent address** ingrese la dirección **IP PÚBLICA** del agente de AWS DataSync que creó anteriormente.
 21. Haga clic en **Get key**.
 
 ![Activation key)](/static/images/ds/activationkey.png)

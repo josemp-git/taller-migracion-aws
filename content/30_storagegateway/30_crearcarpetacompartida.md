@@ -26,7 +26,7 @@ Después de haber creado su File Gateway, deberá crear una carpeta compartida (
 
 11. Haga clic en **Next**.
 12. En la pantalla de **File access settings** mantenga los valores predeterminados y haga clic en **Next**.
-13. En la pantalla de ***Review and create** haga clic en **Create**.
+13. En la pantalla de **Review and create** haga clic en **Create**.
 14. Haga clic en **File Shares** en el menú lateral del izquierdo.
 15. Corrobore que el status de la carpeta compartida recién creado sea **Available**.
 16. Haga clic sobre el valor de **File share ID** de su carpeta compartida (share-XXXXXXXX).
