@@ -14,7 +14,7 @@ A continuación, desplegará una plantilla de AWS CloudFormation que creará los
 - **Bucket Amazon S3**
     - El destino al cual migrará los datos.
 - **VPC y subred**
-    - Donde se alojarán las instancias creadas para esta laboratorio y el agende de AWS DataSync.
+    - Donde se alojarán las instancias creadas para esta laboratorio.
 
 
 1. Descargue esta :link[plantilla de CloudFormation]{href="/static/20_datasync/dm-lab-ds.yaml" action=download}.
