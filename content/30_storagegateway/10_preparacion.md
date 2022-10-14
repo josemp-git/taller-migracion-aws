@@ -3,7 +3,7 @@ draft: false
 title: 1. Preparación del ambiente
 weight: 10
 ---
-::alert[**ANTES DE CONTINUAR.** Si usted hizo el laboratorio de **Migración de datos con AWS DataSync** y no ha eliminado los recursos creados, puede omitir este módulo y continuar utilizando los recursos ya existentes.]{type="info"}
+::alert[Si usted hizo el laboratorio de **Migración de datos con AWS DataSync** y no ha eliminado los recursos creados, puede omitir este módulo y continuar utilizando los recursos ya existentes.]{header="ANTES DE CONTINUAR" type="warning"}
 
 A continuación, desplegará una plantilla de AWS CloudFormation que creará una instancia Amazon EC2 en la cual montará el recurso compartido que creará con AWS Storage Gateway. Esta **instancia cliente** actuará como si fuera su computadora "en sitio".
 
