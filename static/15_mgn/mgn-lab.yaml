@@ -1,7 +1,8 @@
 AWSTemplateFormatVersion: '2010-09-09'
+Description: Migración de servidores con AWS Application Migration Service
 Parameters:
-  IP_Publica:
-    Description: Ingrese su direccion IP publica (la encuentra aqui: http://checkip.amazonaws.com/)
+  DireccionIPPublica:
+    Description: 'Ingrese su direccion IP publica (la encuentra aqui: http://checkip.amazonaws.com/)'
     Type: String
 Resources:
   Ec2Instance:
@@ -49,13 +50,13 @@ Resources:
           ToPort: '22'
           CidrIp: !Sub
             - '${IP}/32'
-            - IP: !Ref IPPublica
+            - IP: !Ref DireccionIPPublica
         - IpProtocol: tcp
           FromPort: '80'
           ToPort: '80'
           CidrIp: !Sub
             - '${IP}/32'
-            - IP: !Ref IPPublica
+            - IP: !Ref DireccionIPPublica
           
   MGNLabVPC:
     Type: AWS::EC2::VPC
@@ -160,13 +161,13 @@ Resources:
           ToPort: '22'
           CidrIp: !Sub
             - '${IP}/32'
-            - IP: !Ref IPPublica
+            - IP: !Ref DireccionIPPublica
         - IpProtocol: tcp
           FromPort: '80'
           ToPort: '80'
           CidrIp: !Sub
             - '${IP}/32'
-            - IP: !Ref IPPublica
+            - IP: !Ref DireccionIPPublica
   EC2Role:
     Type: 'AWS::IAM::Role'
     Properties:
