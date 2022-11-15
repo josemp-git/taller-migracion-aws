@@ -13,7 +13,7 @@ La primera vez que ingresa al servicio de AWS Application Migration Service debe
 
 ::alert[Las pantallas anteriores aparecen cuando se accede por primera vez al servicio de AWS Application Migration Service. Si ya ha usado el servicio anteriormente o si las pantallas anteriores no aparecen, proceda directamente al paso 4.]{type="warning"}
 
-4. Haga clic en **Settings* en el menú lateral izquierdo.
+4. Haga clic en **Settings** en el menú lateral izquierdo.
 
 ![MGN Settings](/static/images/mgn/mgnsettings.png)
 
