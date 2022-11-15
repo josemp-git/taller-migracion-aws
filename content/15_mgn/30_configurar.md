@@ -9,9 +9,9 @@ La primera vez que ingresa al servicio de AWS Application Migration Service debe
 2. Haga clic en **Get started**.
 3. Haga clic en **Set up service**.
 
-::alert[Estas pantallas aparecen unicamente durante la primera vez que se acccede al servicio de AWS Application Migration Service. Si ya ha usado el servicio anteriormente o si las pantallas anteriores no aparecen, proceda directamente al paso 4 ]{type="warning"}
-
 ![Set up service](/static/images/mgn/setupservice.png)
+
+::alert[Las pantallas anteriores aparecen cuando se accede por primera vez al servicio de AWS Application Migration Service. Si ya ha usado el servicio anteriormente o si las pantallas anteriores no aparecen, proceda directamente al paso 4.]{type="warning"}
 
 4. Haga clic en **Settings* en el menú lateral izquierdo.
 
