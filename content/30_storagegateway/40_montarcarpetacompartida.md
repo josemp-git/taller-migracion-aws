@@ -23,7 +23,7 @@ sudo su
 mkdir /home/ec2-user/gateway
 :::
 
-8. Ejecute el comando que guardó en el editor de texto para montar el file share en Linux sustituyendo **_[MounthPath]_** por la siguiente ruta:
+8. Ejecute el comando que guardó en el editor de texto para montar el file share en Linux sustituyendo **[MounthPath]** por la siguiente ruta:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
 /home/ec2-user/gateway

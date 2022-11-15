@@ -48,7 +48,7 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 
 ![View all instances](/static/images/ds/viewallinstances.png)
 
-13. De regreso en la consola de EC2, asegúrese de que la instancia de su agente indique **✔ Running** bajo el apartado de **Instance State** y **✔ 2/2 checks passed** bajo el apartado de **Status check**.
+13. De regreso en la consola de EC2, espere a que la instancia de su agente indique **✔ Running** bajo el apartado de **Instance State** y **✔ 2/2 checks passed** bajo el apartado de **Status check**.
 
 ![Status check passed (2/2)](/static/images/ds/statuscheck.png)
 
