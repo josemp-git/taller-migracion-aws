@@ -1,6 +1,7 @@
+AWSTemplateFormatVersion: '2010-09-09'
 Parameters:
-  IPPublica:
-    Description: "Ingrese su dirección IP pública (la encuentra aquí: http://checkip.amazonaws.com/)"
+  IP_Publica:
+    Description: Ingrese su direccion IP publica (la encuentra aqui: http://checkip.amazonaws.com/)
     Type: String
 Resources:
   Ec2Instance:
