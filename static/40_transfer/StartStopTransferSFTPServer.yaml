@@ -46,7 +46,7 @@ Resources:
           transfer = boto3.client('transfer', region_name=region)
           def lambda_handler(event, context):
             transfer.start_server(ServerId=server)
-            print('Stopped your server: ' + str(server))
+            print('Started your server: ' + str(server))
       Description: Function that starts server
 
   Role:
