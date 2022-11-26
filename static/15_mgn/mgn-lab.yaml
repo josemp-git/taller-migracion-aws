@@ -4,12 +4,15 @@ Parameters:
   DireccionIPPublica:
     Description: 'Ingrese su direccion IP publica (la encuentra aqui: http://checkip.amazonaws.com/)'
     Type: String
+  LatestAmiId:
+    Type: 'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
+    Default: '/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2'
 Resources:
   Ec2Instance:
     Type: 'AWS::EC2::Instance'
     Properties:
       InstanceType: t2.micro
-      ImageId: ami-09d3b3274b6c5d4aa
+      ImageId: !Ref LatestAmiId
       BlockDeviceMappings: 
       - DeviceName: "/dev/xvda"
         Ebs: 
