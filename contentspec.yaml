@@ -29,3 +29,7 @@ params:
   disableSearch: false
   disableShortcutsTitle: true
   themeVariant: aws
+infrastructure:
+      cloudformationTemplates:
+        - templateLocation: static/cfn.yaml
+          label: MigrationWorkshop

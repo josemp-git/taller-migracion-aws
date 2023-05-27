@@ -1,0 +1,322 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Taller de Migración en AWS
+Parameters:
+  LatestAmiId:
+    Type: 'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
+    Default: '/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2'
+
+Resources:
+  
+  WebServerInstance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.micro
+      ImageId: !Ref LatestAmiId
+      BlockDeviceMappings: 
+      - DeviceName: "/dev/xvda"
+        Ebs: 
+          VolumeType: "gp3"
+          DeleteOnTermination: "true"
+          VolumeSize: "8"
+      NetworkInterfaces: 
+      - AssociatePublicIpAddress: "true"
+        DeviceIndex: "0"
+        GroupSet: 
+          - Ref: "MGNOrigenSG"
+        SubnetId: 
+          Ref: "SourceSubnet"
+      Tags:
+        - Key: "Name"
+          Value: "Servidor Web"
+      IamInstanceProfile: !Ref EC2InstanceProfile
+      UserData:
+        'Fn::Base64': 
+          !Sub |
+            #!/bin/bash -xe 
+            yum update -y
+            yum install httpd -y
+            service httpd start
+            chkconfig httpd on
+            cd /var/www/html
+            wget https://awsimmersiondays.s3.amazonaws.com/workshop/origen/index.html
+
+  NFSInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: !Ref LatestAmiId
+      BlockDeviceMappings: 
+      - DeviceName: "/dev/xvda"
+        Ebs: 
+          VolumeType: "gp3"
+          DeleteOnTermination: "true"
+          VolumeSize: "8"
+      SecurityGroupIds: 
+        - !Ref NFSInstanceSecurityGroup
+      SubnetId: !Ref SourceSubnet
+      Tags:
+        - Key: "Name"
+          Value: "Servidor NFS"
+      IamInstanceProfile: !Ref EC2InstanceProfile
+      UserData:
+        Fn::Base64: 
+          !Sub |
+            #!/bin/bash
+            yum update -y
+            service nfs start
+            echo "/mnt/nfs *(rw,sync,no_subtree_check,no_root_squash)" >> /etc/exports
+            mkdir /mnt/nfs
+            cd /mnt/nfs
+            wget https://github.com/chadwickbureau/baseballdatabank/archive/master.zip
+            unzip master.zip
+            rm master.zip
+            chmod 755 /mnt/nfs
+            exportfs -a
+            service nfs restart
+
+  ClientInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: !Ref LatestAmiId
+      BlockDeviceMappings: 
+      - DeviceName: "/dev/xvda"
+        Ebs: 
+          VolumeType: "gp3"
+          DeleteOnTermination: "true"
+          VolumeSize: "8"
+      SecurityGroupIds: 
+        - !Ref 'ClientInstanceSecurityGroup'
+      SubnetId: !Ref SourceSubnet
+      Tags:
+        - Key: "Name"
+          Value: "Cliente NFS"
+      IamInstanceProfile: !Ref EC2InstanceProfile
+      UserData:
+        Fn::Base64: 
+          !Sub |
+            #!/bin/bash
+            yum update -y
+            cd /home/ec2-user/
+            mkdir nas
+            wget https://github.com/chadwickbureau/baseballdatabank/archive/refs/tags/v2022.2.zip
+            unzip v2022.2.zip
+            rm v2022.2.zip
+            mv baseballdatabank-2022.2 /home/ec2-user/baseball-data-2021-version
+
+  MGNOrigenSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Enable SSH access via port 22 and HTTP via port 80
+      GroupName: MGN lab SG Origen
+      VpcId: !Ref MigrationLabVPC
+
+  MGNOrigenSGGroupIngress22:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      Description: Security group rule
+      GroupId: !Ref MGNOrigenSG
+      IpProtocol: tcp
+      FromPort: 22
+      ToPort: 22
+      SourceSecurityGroupId: !Ref MGNOrigenSG
+  
+  MGNOrigenSGGroupIngress80:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      Description: Security group rule
+      GroupId: !Ref MGNOrigenSG
+      IpProtocol: tcp
+      FromPort: 80
+      ToPort: 80
+      SourceSecurityGroupId: !Ref MGNOrigenSG  
+
+  MGNDestinoSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Enable SSH access via port 22 and HTTP via port 80
+      GroupName: MGN lab SG Destino
+      VpcId: !Ref MigrationLabVPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: '80'
+          ToPort: '80'
+          CidrIp: 0.0.0.0/0
+
+  ClientInstanceSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Enable SSH access via port 22
+      VpcId: !Ref MigrationLabVPC
+  
+  ClientInstanceSecurityGroupIngress:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      Description: Security group rule
+      GroupId: !Ref ClientInstanceSecurityGroup
+      IpProtocol: tcp
+      FromPort: 22
+      ToPort: 22
+      SourceSecurityGroupId: !Ref ClientInstanceSecurityGroup
+
+  NFSInstanceSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Enable access to NFS ports and SSH.
+      SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: '2049'
+        ToPort: '2049'
+        CidrIp: 10.0.0.0/24
+      - IpProtocol: tcp
+        FromPort: '22'
+        ToPort: '22'
+        CidrIp: 10.0.0.0/24
+      VpcId: !Ref MigrationLabVPC
+
+  MigrationLabVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsHostnames: true
+      Tags:
+      - Key: Name
+        Value: MigrationLabVPC
+
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+      - Key: Name
+        Value: Migration-Lab Internet Gateway
+
+  AttachGateway:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref MigrationLabVPC
+      InternetGatewayId: !Ref InternetGateway
+
+  TargetSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref MigrationLabVPC
+      CidrBlock: 10.0.2.0/24
+      AvailabilityZone: !Select
+        - '0'
+        - !GetAZs ''
+      Tags:
+        - Key: Name
+          Value: Target Subnet
+
+  StagingAreaSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref MigrationLabVPC
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: !Select
+        - '0'
+        - !GetAZs ''
+      Tags:
+        - Key: Name
+          Value: Staging Area Subnet
+
+  SourceSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref MigrationLabVPC
+      CidrBlock: 10.0.0.0/24
+      AvailabilityZone: !Select 
+        - '0'
+        - !GetAZs ''
+      Tags:
+        - Key: Name
+          Value: Source Subnet
+
+  PublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref MigrationLabVPC
+      Tags:
+        - Key: Name
+          Value: Public Route Table
+
+  PublicRoute:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId: !Ref PublicRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref InternetGateway
+
+  TargetSubnetRouteTableAssociation1:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref TargetSubnet
+      RouteTableId: !Ref PublicRouteTable
+  
+  StaginAreaSubnetRouteTableAssociation2:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref StagingAreaSubnet
+      RouteTableId: !Ref PublicRouteTable
+
+  SourceSubnetRouteTableAssociation3:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref SourceSubnet
+      RouteTableId: !Ref PublicRouteTable
+  
+  EC2Role:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+              - ec2.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      ManagedPolicyArns: 
+        - arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
+
+  EC2InstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties: 
+      InstanceProfileName: Ec2InstanceProfile
+      Path: /
+      Roles: 
+       - !Ref EC2Role
+
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Join 
+        - '-'
+        - - 'migration-lab'
+          - !Ref AWS::AccountId
+          - !Select 
+            - 0
+            - !Split 
+              - '-'
+              - !Select 
+                - 2
+                - !Split 
+                  - /
+                  - !Ref AWS::StackId  
+
+Outputs:
+  NFSInstancePrivateIP:
+    Description: Direcccion IP privada de la instancia NFS
+    Value: !GetAtt NFSInstance.PrivateIp
+  ClientInstancePrivateIP:
+    Description: Direcccion IP privada de la instancia Cliente
+    Value: !GetAtt ClientInstance.PrivateIp
+  S3BucketName:
+    Description: Bucket Amazon S3 (destino de los datos)
+    Value: !Ref S3Bucket
+  
