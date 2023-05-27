@@ -1,0 +1,15 @@
+defaultLocaleCode: en
+localeCodes:
+- en
+params:
+  author: Amazon AWS
+  description: Taller de Migración a AWS
+  disableAssetsBusting: true
+  disableBreadcrumb: false
+  disableInlineCopyToClipBoard: true
+  disableLanguageSwitchingButton: false
+  disableNextPrev: false
+  disableSearch: false
+  disableShortcutsTitle: true
+  themeVariant: aws
+version: 2.0

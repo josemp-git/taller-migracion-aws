@@ -1,6 +1,23 @@
-defaultLocaleCode: en
+version: 2.0
+defaultLocaleCode: en-US
 localeCodes:
-- en
+  - en-US
+awsAccountConfig:
+  accountSources:
+    - WorkshopStudio
+  regionConfiguration:
+    deployableRegions:
+      required:
+        - us-east-1
+    minAccessibleRegions: 1
+    maxAccessibleRegions: 3
+    accessibleRegions:
+      required:
+        - us-east-1
+        - us-west-2
+  participantRole:
+    managedPolicies:
+      - "arn:aws:iam::aws:policy/PowerUserAccess"
 params:
   author: Amazon AWS
   description: Taller de Migración a AWS
@@ -12,4 +29,3 @@ params:
   disableSearch: false
   disableShortcutsTitle: true
   themeVariant: aws
-version: 2.0
