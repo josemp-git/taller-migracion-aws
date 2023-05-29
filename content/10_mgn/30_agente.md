@@ -17,7 +17,7 @@ Antes de instalar el agente, conozca los detalles del servidor que migrará.
 5. Haga clic en el apartado de **Security**, junto a **Details**.
 6. Haga clic el grupo de seguridad de la instancia **sg-0xxxxxxxxxxxxxxxx (MGN Lab SG)**
 
-![Security - Security groups](/static/images/mgn/publicipaddress.png)
+![Security - Security groups](/static/images/mgn/securitygroups.png)
 
 7. Haga clic en **Edit Inbound rules**
 
