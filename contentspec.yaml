@@ -17,7 +17,7 @@ awsAccountConfig:
         - us-west-2
   participantRole:
     managedPolicies:
-      - "arn:aws:iam::aws:policy/PowerUserAccess"
+      - "arn:aws:iam::aws:policy/AdministratorAccess"
 params:
   author: Amazon AWS
   description: Taller de Migración a AWS
