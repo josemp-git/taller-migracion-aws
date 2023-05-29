@@ -43,19 +43,19 @@ Antes de instalar el agente, conozca los detalles del servidor que migrará.
 
 ![Connect to Web Server](/static/images/mgn/connect1.png)
 
-7. En la pantalla de **Connect to instance** haga clic en **Session Manager** y después en **Connect** para tener acceso a su instancia vía SSH por medio del navegador web.
+13. En la pantalla de **Connect to instance** haga clic en **Session Manager** y después en **Connect** para tener acceso a su instancia vía SSH por medio del navegador web.
 
 ![Connect to Web Server](/static/images/mgn/connect2.png)
 
-8. Ingrese el siguiente comando en el CLI del servidor para descargar el instalador del Agente de Replicación:
+14. Ingrese el siguiente comando en el CLI del servidor para descargar el instalador del Agente de Replicación:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
 sudo wget -O ./aws-replication-installer-init.py https://aws-application-migration-service-us-east-1.s3.amazonaws.com/latest/linux/aws-replication-installer-init.py
 :::
 
-![Descargar agente(/static/images/mgn/agentdownload.png)
+![Descargar agente](/static/images/mgn/agentdownload.png)
 
-9. Ejecute el siguiente comando para instalar el agente, sustituyendo **ACCESS-KEY** y **SECRET-ACCESS-KEY** por el access key y secret access key que descargó previamente al crear el usuario IAM:
+15. Ejecute el siguiente comando para instalar el agente, sustituyendo **ACCESS-KEY** y **SECRET-ACCESS-KEY** por el access key y secret access key que descargó previamente al crear el usuario IAM:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
 sudo python3 aws-replication-installer-init.py --region us-east-1 --no-prompt --aws-access-key-id ACCESS-KEY --aws-secret-access-key SECRET-ACCESS-KEY
@@ -67,8 +67,8 @@ La instalación del agente tomará un par de minutos y al finalizar mostrará el
 
 ::alert[Para más información acerca de como agregar servidores origen, puede consultar la documentación disponible: [Adding source servers](https://docs.aws.amazon.com/mgn/latest/ug/adding-servers.html)]{type="info"}
 
-10. Haga clic en **Services** y posteriormente seleccione el servicio de **AWS Application Migration Service** para regresar a la consola de AWS MGN. Podrá verificar que el servidor ya aparece en la consola después de haber instalado el agente, y que la replicación ha comenzado. Usted podrá monitorear el progreso de la replicación bajo el apartado de **Data replication status**.
+16. Haga clic en **Services** y posteriormente seleccione el servicio de **AWS Application Migration Service** para regresar a la consola de AWS MGN. Podrá verificar que el servidor ya aparece en la consola después de haber instalado el agente, y que la replicación ha comenzado. Usted podrá monitorear el progreso de la replicación bajo el apartado de **Data replication status**.
 
-![Source servers(/static/images/mgn/sourceservers.png)
+![Source servers](/static/images/mgn/sourceservers.png)
 
-11. Proceda al siguiente módulo en lo que se termina el proceso de replicación.
+17. Proceda al siguiente módulo en lo que se termina el proceso de replicación.
