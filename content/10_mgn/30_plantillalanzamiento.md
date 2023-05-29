@@ -1,23 +1,26 @@
 ---
 draft: false
-title: 5. Plantilla de lanzamiento
-weight: 50
+title: 3. Plantilla de lanzamiento
+weight: 30
 ---
-Con las **Plantillas de lanzamiento** del servicio de Amazon EC2 se definen los parámetros necesarios para el lanzamiento del servidor tales como la subred, direcciones IP, roles IAM, grupos de seguridad y tipo de volumen EBS, entre otros.En este módulo usted configurará la plantailla de lanzamiento para ejecutar esta migración satisfactoriamente.
-
-1. En la consola de AWS MGN, haga clic en el servidor que está migrando para entrar a ver los detalles.
-2. Haga clic en **Launch settings**.
-3. Haga clic en **Edit** en el apartado de **General launch settings**.
-4. Seleccione los siguientes valores:
-
-* **Instance type right sizing** = Off
-* **Start instance upon launch** = Yes
-* **Copy private IP** = No
-* **Transfer server tags** = No
+1. En la consola de AWS MGN, haga clic en **Launch template** bajo **Settings** en el menú lateral izquierdo.
 
 ![Launch settings](/static/images/mgn/launchsettings.png)
 
-5. Haga clic en **Save settings**.
+2. Haga clic en **Edit**.
+3. Bajo el apartado de **General launch settings**, desactive la funcionalidad de **Activate instance type right-sizing** .
+
+![General launch settings](/static/images/mgn/generallaunchsettings.png)
+
+4. Bajo el apartado de **Default EC2 Launch Template**, efectúe los siguientes cambios:
+
+* Default target subnet =  **Target Subnet**
+* Additional security groups = **MGN Lab SG**
+* EBS volume type =  **General Purpose SSD (gp3)**
+
+![Default EC2 Launch Template](/static/images/mgn/defaultec2launchtemplate.png)
+
+5. Haga clic en **Save template**.
 
 6. En el apartado de **EC2 Launch Template**, guarde el **Template ID** en un archivo de texto ya que lo utilizará más tarde.
 7. Haga clic en **Modify**.
