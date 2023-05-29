@@ -1,6 +1,6 @@
 ---
 draft: false
-title: 2. Creación de usuario AWS IAM
+title: 1. Creación de usuario IAM
 weight: 10
 ---
 Para instalar el Agente de Replicación, primero debe generar las credenciales de AWS necesarias. En este módulo usted creará un usuario de AWS IAM y le asignará la política de permisos adecuada. Al crear este usuario, obtendrá una clave de acceso y una clave de acceso secreta, que ingresará durante la instalación del agente.

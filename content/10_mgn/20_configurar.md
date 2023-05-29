@@ -1,7 +1,7 @@
 ---
 draft: false
-title: 3. Plantilla de configuración de replicación
-weight: 30
+title: 2. Plantilla de replicación
+weight: 20
 ---
 La primera vez que ingresa al servicio de AWS Application Migration Service deberá configurar el servicio y crear la plantilla de configuración de replicación.
 
@@ -9,21 +9,17 @@ La primera vez que ingresa al servicio de AWS Application Migration Service debe
 2. Haga clic en **Get started**.
 3. Haga clic en **Set up service**.
 
-![Set up service](/static/images/mgn/setupservice.png)
-
 ::alert[Las pantallas anteriores aparecen cuando se accede por primera vez al servicio de AWS Application Migration Service. Si ya ha usado el servicio anteriormente o si las pantallas anteriores no aparecen, proceda directamente al paso 4.]{type="warning"}
 
-4. Haga clic en **Settings** en el menú lateral izquierdo.
+4. Haga clic en **Relication template** bajo *Settings** en el menú lateral izquierdo.
 
-![MGN Settings](/static/images/mgn/mgnsettings.png)
+![Replication template](/static/images/mgn/replicationtemplate.png)
 
-5. Haga clic en **Edit template**.
-
-![Edit template](/static/images/mgn/edittemplate.png)
+5. Haga clic en **Edit**.
 
 6. Bajo el apartado de **Replication server configuration** seleccione los siguientes valores:
 
-* **Staging area subnet** = Staging area subnet - MGN lab
+* **Staging area subnet** = Staging Area Subnet
 * **Replication Server instance type** = t3.small
 
 ![Replication server configuration](/static/images/mgn/replicationserverconfiguration.png)
