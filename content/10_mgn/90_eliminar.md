@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: '9. Eliminar recursos'
 weight: 90
 ---

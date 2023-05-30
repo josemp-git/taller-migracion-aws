@@ -46,8 +46,8 @@ Esta operación eliminará el servidor que fue lanzado previamente y dejará su 
 ![Servidor lanzado en modo prueba](/static/images/mgn/lanzado.png)
 
 17. Haga clic en **Services** y posteriormente seleccione el servicio de **EC2**.
-18. Seleccione la casilla de la instancia **Linux migrado**.
-19. Bajo el apartado de **Details** copie la dirección IP pública (Public IPv4 address) y péguela en su navegador y corrobore que, en esta ocación, se despliega un mensaje diferente al que se mostraba originalmente en el servidor de origen.
+18. Seleccione la casilla de la instancia **Servidor Web MIGRADO**.
+19. Bajo el apartado de **Details** copie la dirección **IP pública (Public IPv4 address)** y péguela en su navegador y corrobore que, en esta ocación, se despliega un mensaje diferente al que se mostraba originalmente en el servidor de origen.
 
 ::alert[Usted puede repetir estos pasos para llevar a cabo cuantas pruebas considere pertinentes previo a la migración final. Una vez que haya hecho las pruebas necesarias, deberá marcar sus servidores como listos para el trapaso (cutover).]{type="info"}
 

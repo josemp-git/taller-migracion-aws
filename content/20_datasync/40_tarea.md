@@ -5,7 +5,7 @@ weight: 40
 ---
 Ahora debe crear una tarea (task). En esta tarea usted definirá las ubicaciones origen y destino, y podrá configurar otros parámetros de la tarea si así lo desea.
 
-1. Haga clic en **Tasks** en el menú lateral izquierdo.
+1. Denntro del servicio de AWS DataSync, haga clic en **Tasks** en el menú lateral izquierdo.
 2. Haga clic en **Create task**.
 3. Seleccione la opción de **Choose an existing location**
 4. Bajo el menú desplegable de **Existing locations** seleccione el servidor NFS.

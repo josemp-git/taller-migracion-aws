@@ -23,58 +23,58 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 
 ![Proceed without a key pair](/static/images/ds/nokeypair.png)
 
-6. Haga clic en **Edit** en el apartado de **Network settings**.
-7. En **VPC**, seleccione la VPC **Lab-Migracion-datos-VPC**.
+6. Bajo el apartado de **Network settings** seleccione los siguientes parámetros:
 
-![VPC](/static/images/ds/requiredvpc.png)
+* VPC = **MigrationLabVPC**
+* Subnet = **Source Subnet**
+* Auto-assign public IP = **Enable**
 
-8. Bajo el apartado de **Auto-assign public IP** elija **Enable**.
+![VPC](/static/images/ds/networksettings.png)
 
-![Auto-assign public IP - Enable](/static/images/ds/auto-assign-publicip.png)
-
-9. En el apartado de **Firewall (security groups)** seleccione la opción de **Create security group** e ingrese :code[datasync-agente-sg]{showCopyAction=true} en el campo de **Security group name**.
+7. En el apartado de **Firewall (security groups)** seleccione la opción de **Create security group** e ingrese :code[datasync-agente-sg]{showCopyAction=true} en el campo de **Security group name**.
 
 ![Create securigy group](/static/images/ds/createsg.png)
 
-10. Bajo el apartado de **Inbound security groups rules**, elimine la regla que permite el acceso al puerto 22 (SSH) y agregue una regla nueva que habilite el acceso al puerto TCP 80 (HTTP) desde su dirección IP: 
+8. Bajo el apartado de **Inbound security groups rules**, elimine la regla que permite el acceso al puerto 22 (SSH) y agregue una regla nueva que habilite el acceso al puerto TCP 80 (HTTP) desde su dirección IP: 
 
 * Type = **HTTP**
 * Source type = **My IP**
 
 ![New rule](/static/images/ds/reglanueva.png)
 
-11. Haga clic en **Launch**.
-12. Haga clic en **View all instances**.
-
-![View all instances](/static/images/ds/viewallinstances.png)
-
-13. De regreso en la consola de EC2, espere a que la instancia de su agente indique **✔ Running** bajo el apartado de **Instance State** y **✔ 2/2 checks passed** bajo el apartado de **Status check**.
+9. Haga clic en **Launch instance**.
+10. Haga clic en **View all instances**.
+11. De regreso en la consola de EC2, espere a que la instancia de su agente indique **✔ Running** bajo el apartado de **Instance State** y **✔ 2/2 checks passed** bajo el apartado de **Status check**.
 
 ![Status check passed (2/2)](/static/images/ds/statuscheck.png)
 
 ::alert[Este paso puede tomar unos minutos.]{type="info"}
 
-14. Seleccione la casilla del agente de AWS DataSync, copie la dirección **IP PÚBLICA** y guárdela en un archivo de texto.
+12. Seleccione la casilla del agente de AWS DataSync, copie la dirección **IP pública (Public IPv4 address)** y guárdela en un archivo de texto.
 
-![IPs)](/static/images/ds/direccionip.png)
+![IP pública (Public IPv4 address)](/static/images/ds/direccionip.png)
 
-15. Dentro de la consola de AWS, haga clic en **Services** y diríjase al servicio de **DataSync**.
-16. Haga clic en **Agents** en el menú lateral izquierdo (también puede hacer clic en **Get started** si es la primera vez que utiliza el servicio).
-17. Haga clic en el botón de **Create agent**.
-18. Seleccione **Public service endpoints** in US East (N. Virginia).
+13. Dentro de la consola de AWS, haga clic en **Services** y diríjase al servicio de **DataSync**.
+14. Haga clic en **Transfer data**.
+15. Haga clic en **Agents** en el menú lateral izquierdo.
+
+![Menu - Agents)](/static/images/ds/agentsmenu.png)
+
+16. Haga clic en el botón de **Create agent**.
+17. Seleccione **Public service endpoints in US East (N. Virginia)** en el menú desplegable de **Endpoint type**.
 
 ![Public Endpoints)](/static/images/ds/publicendpoint.png)
 
-19. Bajo el apartado de **Activation key** selccione la opción de **Automatically get the activation key from your agent**.
-20. En el campo de **Agent address** ingrese la dirección **IP PÚBLICA** del agente de AWS DataSync que creó anteriormente.
-21. Haga clic en **Get key**.
+18. Bajo el apartado de **Activation key** selccione la opción de **Automatically get the activation key from your agent**.
+19. En el campo de **Agent address** ingrese la dirección **IP pública** del agente de AWS DataSync que creó anteriormente.
+20. Haga clic en **Get key**.
 
 ![Activation key)](/static/images/ds/activationkey.png)
 
-22. Ingrese :code[Agente AWS DataSync]{showCopyAction=true} en el campo de **Agent name**.
-23. Haga clic en **Create agent**.
-24. Haga clic en **Agents** en el menú lateral izquierdo y compruebe que su agente se encuentra activo (**Status = Online**).
+21. Ingrese :code[Agente AWS DataSync]{showCopyAction=true} en el campo de **Agent name**.
+22. Haga clic en **Create agent**.
+23. Haga clic en **Agents** en el menú lateral izquierdo y compruebe que su agente se encuentra activo (**Status = Online**).
 
 ![Agente en línea](/static/images/ds/agenteenlinea.png)
 
-25. Proceda al siguiente módulo.
+24. Proceda al siguiente módulo.

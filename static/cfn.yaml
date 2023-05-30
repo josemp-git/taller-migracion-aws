@@ -22,7 +22,7 @@ Resources:
       - AssociatePublicIpAddress: "true"
         DeviceIndex: "0"
         GroupSet: 
-          - Ref: "MGNOrigenSG"
+          - Ref: "MGNSG"
         SubnetId: 
           Ref: "SourceSubnet"
       Tags:
@@ -51,9 +51,13 @@ Resources:
           VolumeType: "gp3"
           DeleteOnTermination: "true"
           VolumeSize: "8"
-      SecurityGroupIds: 
-        - !Ref NFSInstanceSecurityGroup
-      SubnetId: !Ref SourceSubnet
+      NetworkInterfaces: 
+      - AssociatePublicIpAddress: "true"
+        DeviceIndex: "0"
+        GroupSet: 
+          - Ref: "NFSInstanceSecurityGroup"
+        SubnetId: 
+          Ref: "SourceSubnet"
       Tags:
         - Key: "Name"
           Value: "Servidor NFS"
@@ -85,9 +89,13 @@ Resources:
           VolumeType: "gp3"
           DeleteOnTermination: "true"
           VolumeSize: "8"
-      SecurityGroupIds: 
-        - !Ref 'ClientInstanceSecurityGroup'
-      SubnetId: !Ref SourceSubnet
+      NetworkInterfaces: 
+      - AssociatePublicIpAddress: "true"
+        DeviceIndex: "0"
+        GroupSet: 
+          - Ref: "ClientInstanceSecurityGroup"
+        SubnetId: 
+          Ref: "SourceSubnet"
       Tags:
         - Key: "Name"
           Value: "Cliente NFS"
@@ -104,48 +112,27 @@ Resources:
             rm v2022.2.zip
             mv baseballdatabank-2022.2 /home/ec2-user/baseball-data-2021-version
 
-  MGNOrigenSG:
+  MGNSG:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
       GroupDescription: Enable SSH access via port 22 and HTTP via port 80
-      GroupName: MGN lab SG Origen
-      VpcId: !Ref MigrationLabVPC
-
-  MGNOrigenSGGroupIngress22:
-    Type: AWS::EC2::SecurityGroupIngress
-    Properties:
-      Description: Security group rule
-      GroupId: !Ref MGNOrigenSG
-      IpProtocol: tcp
-      FromPort: 22
-      ToPort: 22
-      SourceSecurityGroupId: !Ref MGNOrigenSG
-  
-  MGNOrigenSGGroupIngress80:
-    Type: AWS::EC2::SecurityGroupIngress
-    Properties:
-      Description: Security group rule
-      GroupId: !Ref MGNOrigenSG
-      IpProtocol: tcp
-      FromPort: 80
-      ToPort: 80
-      SourceSecurityGroupId: !Ref MGNOrigenSG  
-
-  MGNDestinoSG:
-    Type: 'AWS::EC2::SecurityGroup'
-    Properties:
-      GroupDescription: Enable SSH access via port 22 and HTTP via port 80
-      GroupName: MGN lab SG Destino
+      GroupName: MGN lab SG
       VpcId: !Ref MigrationLabVPC
       SecurityGroupIngress:
         - IpProtocol: tcp
-          FromPort: '22'
-          ToPort: '22'
-          CidrIp: 0.0.0.0/0
-        - IpProtocol: tcp
           FromPort: '80'
           ToPort: '80'
-          CidrIp: 0.0.0.0/0
+          CidrIp: 10.0.0.0/24
+
+  MGNOSGGroupIngress22:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      Description: Security group rule
+      GroupId: !Ref MGNSG
+      IpProtocol: tcp
+      FromPort: 22
+      ToPort: 22
+      SourceSecurityGroupId: !Ref MGNSG
 
   ClientInstanceSecurityGroup:
     Type: AWS::EC2::SecurityGroup
