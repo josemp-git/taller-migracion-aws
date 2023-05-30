@@ -41,7 +41,7 @@ Una vez que el lanzamiento haya concluido, el servidor mostrará el estado de **
 10. Haga clic en **EC2 Dashboard** y después en **Instances (running)**. En la consola de Amazon EC2 verá su servidor origen (Servidor Linux) y el servidor que acaba de lanzar con el nombre de **Linux migrado**. Si selecciona la casilla de cada uno de los servidores, podrá ver bajo el apartado de **Details** que cada uno pertenece a una VPC, subred y segmentos de red diferentes.
 
 11. Seleccione la casilla de la instancia **Linux migrado**.
-12. Bajo el apartado de **Details** copie la dirección IP pública (Public IPv4 address) y péguela en su navegador y corrobore que se despliega el mismo mensaje que se mostraba en el servidor de origen.
+12. Bajo el apartado de **Details** copie la dirección **IP pública (Public IPv4 address)**, péguela en una pestaña de su navegador y corrobore que se despliega el mismo mensaje que se mostraba en el servidor de origen.
  
 ![Este servidor será migrado utilizando AWS Application Migration Service](/static/images/mgn/seramigrado.png)
 

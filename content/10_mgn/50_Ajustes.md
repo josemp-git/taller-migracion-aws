@@ -1,15 +1,22 @@
 ---
 draft: false
-title: 5. Ajustes
+title: 5. Ajustes a la plantilla de lanzamiento
 weight: 50
 ---
+En este módulo usted hará ajustes a la plantilla de lanzamiento que aplican unicamente para el servidor  que está por migrar:
+
+* Definirá el tipo de instancia EC2 para este servidor.
+* Habilitará la opción de tener una dirección IP públoca.
+
+::alert[En la plantilla de lanzamiento general no se especificó un tipo predeterminado de instancia EC2 y tampoco se habilitó el uso de dirección IP pública.  ]{type="info"}
+
 1. En la consola de AWS MGN, haga clic en **Source servers** en el menú lateral izquierdo.
 2. Haga clic en el nombre del servidor que va a migrar bajo la columna de **Source server name**.
 3. Haga clic en **Launch settings**.
 
 ![Instance type](/static/images/mgn/launchsettings2.png)
 
-4. Anote el template ID que se encuentra en el apartado de **EC2 Launch Template** y haga clic en **Modify**.
+4. Anote el **Template ID** que se encuentra en el apartado de **EC2 Launch Template** y haga clic en **Modify**.
 
 ![Modify EC2 Launch Template](/static/images/mgn/modifyec2launchtemplate.png)
 
@@ -36,7 +43,7 @@ weight: 50
 
 14. Haga clic en **Create template version**.
 15. Haga clic en **View launch templates**.
-16. Seleccione su plantilla (**Launch template ID**).
+16. Seleccione su plantilla (**Template ID**).
 17. Haga clic en **Actions** y posteriormente en **Set default version**.
 
 ![Set default version](/static/images/mgn/setdefaultversion.png)
@@ -46,7 +53,7 @@ weight: 50
 
 ![Set default version](/static/images/mgn/setdefaultversion2.png)
 
-20. Regrese al servicio de AWS MGN y verifique que los cambios efectuados en la plantilla se ven reflejados en ela sección de **Launch settings**.
+20. Regrese al servicio de AWS MGN y verifique que los cambios efectuados en la plantilla se ven reflejados en ela sección de **Launch settings** de su servidor.
 
 ![EC2 Launch Template](/static/images/mgn/ec2launchtemplatemodified.png)
 
