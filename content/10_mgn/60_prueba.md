@@ -20,11 +20,16 @@ Esto significa que el proceso de replicación se ha completado al 100%, por lo t
 ![Ready for testing](/static/images/mgn/readyfortesting.png)
 
 3. Seleccione la casilla de su servidor.
-4. Haga clic en el menú desplegable de **Test and Cutover**.
-5. Haga clic en **Launch test instances**. 
-6. Haga clic en **Launch**. Esto lanzará su instancia en modo de prueba de acuerdo a los parámetros especificados en la plantilla de lanzamiento.
+4. Haga clic en el menú desplegable de **Test and Cutover** en la esquina superior derecha.
+5. Haga clic en **Launch test instances**.
 
-7. Haga clic en **Launch history**. En **Launch history** se guarda el historial de lanzamientos que se hacen en modo de prueba y cutover.
+![Launch test instances](/static/images/mgn/launchtestinstances.png)
+
+6. Haga clic en **Launch**. 
+
+::alert[Esto lanzará su instancia en modo de prueba de acuerdo a los parámetros especificados en la plantilla de lanzamiento.]{type="info"}
+
+7. Haga clic en **Launch history** en el menú lateral izquierdo. En **Launch history** se guarda el historial de lanzamientos que se hacen en modo de prueba y cutover.
 8. Haga clic en el **Job ID** correspondiente al lanzamiento que acaba de realizar para monitorear el progreso. También puede hacer clic en el botón de **View job details** que apareció en la esquina superior derecha.
 
 ![View job details](/static/images/mgn/viewjobdetails.png)
@@ -38,9 +43,9 @@ Una vez que el lanzamiento haya concluido, el servidor mostrará el estado de **
 ![Test in progress](/static/images/mgn/testinprogress.png)
 
 9. Haga clic en **Services** y posteriormente seleccione el servicio de **EC2**.
-10. Haga clic en **EC2 Dashboard** y después en **Instances (running)**. En la consola de Amazon EC2 verá su servidor origen (Servidor Linux) y el servidor que acaba de lanzar con el nombre de **Linux migrado**. Si selecciona la casilla de cada uno de los servidores, podrá ver bajo el apartado de **Details** que cada uno pertenece a una VPC, subred y segmentos de red diferentes.
+10. Haga clic en **EC2 Dashboard** y después en **Instances (running)**. En la consola de Amazon EC2 verá su servidor origen (Servidor Web) y el servidor que acaba de lanzar con el nombre de **Servidor Web MIGRADO**. Si selecciona la casilla de cada uno de los servidores, podrá ver bajo el apartado de **Details** que pertenecen a subredes diferentes.
 
-11. Seleccione la casilla de la instancia **Linux migrado**.
+11. Seleccione la casilla de la instancia **Servidor Web MIGRADO**.
 12. Bajo el apartado de **Details** copie la dirección **IP pública (Public IPv4 address)**, péguela en una pestaña de su navegador y corrobore que se despliega el mismo mensaje que se mostraba en el servidor de origen.
  
 ![Este servidor será migrado utilizando AWS Application Migration Service](/static/images/mgn/seramigrado.png)
