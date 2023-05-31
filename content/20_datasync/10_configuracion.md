@@ -7,8 +7,8 @@ A continuación se conectará a la instancia cliente para montar el recurso comp
 
 1. Haga click en **Services** y posteriormente seleccione el servicio de **EC2**.
 2. Haga click en **Running instances**.
-3. Seleccione la casilla  **Cliente NFS*.
-4. Copie la dirección *IP privada (Private IPv4 addresses)* y guárdela en un archivo de texto ya que la usará más adelante.
+3. Seleccione la casilla  **Cliente NFS**.
+4. Copie la dirección **IP privada (Private IPv4 addresses)** y guárdela en un archivo de texto ya que la usará más adelante.
 
 ![Copiar dirección IP privada](/static/images/ds/ipprivada.png)
 
@@ -20,7 +20,7 @@ A continuación se conectará a la instancia cliente para montar el recurso comp
 
 ![Connect to NFS Client](/static/images/ds/connect2.png)
 
-7. Una vez conectado a su instancia cliente ejecute el siguiente comando sustituyendo el parámetro **NFSInstancePrivateIP** por la dirección IP correspondiente que guardó en el editor de texto:
+7. Una vez conectado a su instancia cliente ejecute el siguiente comando sustituyendo el parámetro **NFSInstancePrivateIP** por la dirección **IP privada (Private IPv4 addresses)** que guardó en el archivo de texto:
 
 :::code{showCopyAction=true showLineNumbers=false language=java}
 sudo mount -t nfs NFSInstancePrivateIP:/mnt/nfs /home/ec2-user/nas

@@ -16,8 +16,8 @@ awsAccountConfig:
         - us-east-1
         - us-west-2
   participantRole:
-    iamPolicies:
-      - static/iam-policy.json
+    managedPolicies:
+      - "arn:aws:iam::aws:policy/AdministratorAccess"
 params:
   author: Amazon AWS
   description: Taller de Migración a AWS
