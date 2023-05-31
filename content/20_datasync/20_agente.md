@@ -23,7 +23,7 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard
 
 ![Proceed without a key pair](/static/images/ds/nokeypair.png)
 
-6. Bajo el apartado de **Network settings** seleccione los siguientes parámetros:
+6. En el apartado de **Network settings** haga clic en **Edit** y seleccione los siguientes parámetros:
 
 * VPC = **MigrationLabVPC**
 * Subnet = **Source Subnet**
